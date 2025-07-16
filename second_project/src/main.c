@@ -1,60 +1,44 @@
-#include "dependencies_project.h"
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <stddef.h>
 
-#include <libudev.h>
+#include <systemd/sd-device.h>
 
-int create_monitor(struct udev *udev)
+#include "dependencies_project.h"
+
+// const char *action = NULL;
+// const char *vendor_id = NULL;
+// const char *product_id = NULL;
+// 
+// sd_device_get_property_value(device, "VENDOR_ID", &vendor_id);
+// sd_device_get_property_value(device, "ID_MODEL_ID", &product_id);
+
+int create_enumerator(void)
 {
-    struct udev_monitor *monitor = udev_monitor_new_from_netlink(udev, "udev");
-    struct udev_device *device = {0};
+    sd_device *device = NULL;
+    sd_device_enumerator *enumerator = NULL;
+    int ret = sd_device_enumerator_new(&enumerator);
     const char *vendor_id = NULL;
     const char *product_id = NULL;
 
-    if (monitor == NULL) {
-        printf("failed to create udev monitor\n");
+    if (ret < 0) {
+        dprintf(STDERR_FILENO, "device error in enumerator\n");
         return EXIT_FAILURE;
     }
-    udev_monitor_filter_add_match_subsystem_devtype(monitor, "usb", NULL);
-    udev_monitor_enable_receiving(monitor);
-
-    device = udev_monitor_receive_device(monitor);
-    if (device == NULL) {
-        printf("no event found");
-        udev_device_unref(monitor);
-        return EXIT_FAILURE;
+    sd_device_enumerator_add_match_subsystem(enumerator, "usb", 1);
+    device = sd_device_enumerator_get_device_first(enumerator);
+    while (device != NULL) {
+        sd_device_get_property_value(device, "VENDOR_ID", &vendor_id);
+        sd_device_get_property_value(device, "ID_MODEL_ID", &product_id);
+        device = sd_device_enumerator_get_device_next(enumerator);
     }
-    vendor_id = udev_device_get_property_value(device, "ID_VENDOR_ID");
-    product_id = udev_device_get_property_value(device, "ID_MODEL_ID");
-    
-    printf("vendor_id : %s\n", vendor_id);
-    printf("product_id : %s\n", product_id);
-
-    udev_device_unref(device);
-    udev_device_unref(monitor);
-    return EXIT_SUCCESS;
-}
-
-int create_context(void)
-{
-    struct udev *udev = {0};
-
-    printf("welcome to usb detection project\n");
-    udev = udev_new();
-    if (udev == NULL) {
-        printf("failed to create udev context\n");
-        return EXIT_FAILURE;
-    }
-    create_monitor(udev);
-    udev_unref(udev);
+    sd_device_enumerator_unref(enumerator);
     return EXIT_SUCCESS;
 }
 
 int main(void)
 {
-    create_context();
+    create_enumerator();
     return EXIT_SUCCESS;
 }

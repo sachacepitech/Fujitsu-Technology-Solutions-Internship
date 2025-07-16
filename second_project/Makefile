@@ -14,7 +14,7 @@ CFLAGS += -Wall -Wextra
 
 CPPFLAGS = -iquoteinclude
 
-LDFLAGS = -ludev
+LDFLAGS = -lsystemd
 
 $(NAME): $(OBJ)
 	$(CC) -o $(NAME) $(OBJ) $(LDFLAGS)
