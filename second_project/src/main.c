@@ -34,6 +34,7 @@ int create_enumerator(void)
         device = sd_device_enumerator_get_device_next(enumerator);
     }
     sd_device_enumerator_unref(enumerator);
+    printf("test\n");
     return EXIT_SUCCESS;
 }
 
