@@ -1,12 +1,13 @@
-SRC =	$(addprefix src/, \
-			main.c \
-		)
+SRC =;$(addprefix src/, \
+;;;create_enumerator.c \
+;;;main.c \
+;;)
 
-OBJ =	$(SRC:.c=.o)
+OBJ =;$(SRC:.c=.o)
 
-NAME =	second_project
+NAME =;second_project
 
-all:	$(NAME)
+all:;$(NAME)
 
 CC ?= gcc
 
@@ -17,13 +18,13 @@ CPPFLAGS = -iquoteinclude
 LDFLAGS = -lsystemd
 
 $(NAME): $(OBJ)
-	$(CC) -o $(NAME) $(OBJ) $(LDFLAGS)
+;$(CC) -o $(NAME) $(OBJ) $(LDFLAGS)
 
 clean:
-	$(RM) $(OBJ)
+;$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+;$(RM) $(NAME)
 
 re: fclean all
 
