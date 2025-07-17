@@ -1,3 +1,17 @@
+/*
+** FUJITSU PROJECT, 2025
+** second_project
+** Version:
+** 1.0
+** File description:
+** create_enumerator.c
+** Author:
+** Sacha Lemée, @sacha-lemee on Linkedin
+** Junior Cybersecurity Consultant
+** Created:
+** ???
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -7,37 +21,27 @@
 
 #include "dependencies_project.h"
 
-int create_enumerator(void)
+static void init_con_data_usb_struct(con_data_usb_t *con_data_usb)
 {
-    sd_device *device = NULL;
-    sd_device_enumerator *enumerator = NULL;
-    int ret = sd_device_enumerator_new(&enumerator);
-    const char *vendor_id = NULL;
-    const char *id_vendor_id = NULL;
-    const char *product_id = NULL;
-    const char *id_product_id = NULL;
-    const char *devname = NULL;
+    con_data_usb->vendor_id = NULL;
+    con_data_usb->vendor_name = NULL;
+    con_data_usb->product_id = NULL;
+    con_data_usb->product_name = NULL;
+}
 
-    if (ret < 0) {
-        dprintf(STDERR_FILENO, "device error in enumerator\n");
+static void init_usb_tools_struct(usb_tools_t *usb_tools)
+{
+    usb_tools->device = NULL;
+    usb_tools->enumerator = NULL;
+}
+
+int create_enumerator(usb_tools_t *usb_tools, con_data_usb_t *con_data_usb)
+{
+    init_usb_tools_struct(usb_tools);
+    init_con_data_usb_struct(con_data_usb);
+    if (sd_device_enumerator_new(&usb_tools->enumerator) < 0)
         return EXIT_FAILURE;
-    }
-    sd_device_enumerator_add_match_subsystem(enumerator, "usb", 1);
-    device = sd_device_enumerator_get_device_first(enumerator);
-    while (device != NULL) {
-        sd_device_get_property_value(device, "ID_VENDOR", &vendor_id);
-        printf("vendor id : %s\n", vendor_id ? vendor_id : "unknown");
-        sd_device_get_property_value(device, "ID_MODEL", &id_product_id);
-        printf("id product id : %s\n", id_product_id ? id_product_id : "unknown");
-        sd_device_get_property_value(device, "ID_VENDOR_ID", &id_vendor_id);
-        printf("id vendor id : %s\n", id_vendor_id ? id_vendor_id : "unknown");
-        sd_device_get_property_value(device, "ID_MODEL_ID", &product_id);
-        printf("product id : %s\n", product_id ? product_id : "unknown");
-        sd_device_get_property_value(device, "DEVNAME", &devname);
-        printf("device name : %s\n", devname ? devname : "unknown");
-        printf("--------------------------------\n");
-        device = sd_device_enumerator_get_device_next(enumerator);
-    }
-    sd_device_enumerator_unref(enumerator);
+    sd_device_enumerator_add_match_subsystem(usb_tools->enumerator, "usb", 1);
+    usb_tools->device = sd_device_enumerator_get_device_first(usb_tools->enumerator);
     return EXIT_SUCCESS;
 }

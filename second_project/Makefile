@@ -1,13 +1,29 @@
-SRC =;$(addprefix src/, \
-;;;create_enumerator.c \
-;;;main.c \
-;;)
+##
+## FUJITSU PROJECT, 2025
+## second_project
+## Version:
+## 1.0
+## File description:
+## Makefile
+## Author:
+## Sacha Lemée, @sacha-lemee on Linkedin
+## Junior Cybersecurity Consultant
+## Created:
+## ???
+##
 
-OBJ =;$(SRC:.c=.o)
+SRC =	$(addprefix src/, \
+			create_enumerator.c \
+			comparator.c \
+			browse_device.c \
+			main.c \
+		)
 
-NAME =;second_project
+OBJ =	$(SRC:.c=.o)
 
-all:;$(NAME)
+NAME =	second_project
+
+all:	$(NAME)
 
 CC ?= gcc
 
@@ -18,13 +34,13 @@ CPPFLAGS = -iquoteinclude
 LDFLAGS = -lsystemd
 
 $(NAME): $(OBJ)
-;$(CC) -o $(NAME) $(OBJ) $(LDFLAGS)
+	$(CC) -o $(NAME) $(OBJ) $(LDFLAGS)
 
 clean:
-;$(RM) $(OBJ)
+	$(RM) $(OBJ)
 
 fclean: clean
-;$(RM) $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
