@@ -41,7 +41,7 @@ typedef struct usb_tools_s {
 
 int create_enumerator(usb_tools_t *usb_tools, con_data_usb_t *con_data_usb);
 int comparator(usb_tools_t *usb_tools, con_data_usb_t *con_data_usb);
-int browse_device(sd_device *device, sd_device_enumerator *enumerator,
-    con_data_usb_t *con_data_usb, temp_data_usb_t *temp_data_usb);
+int browse_device(usb_tools_t *usb_tools, con_data_usb_t *con_data_usb,
+    temp_data_usb_t *temp_data_usb);
 
 #endif /* DEPENDENCIES_H */

@@ -43,7 +43,7 @@ static int data_reader(FILE *data_file, temp_data_usb_t *temp_data_usb,
         temp_data_usb->vendor_name = strtok(NULL, temp_data_usb->separator);
         temp_data_usb->product_id = strtok(NULL, temp_data_usb->separator);
         temp_data_usb->product_name = strtok(NULL, temp_data_usb->separator);
-        browse_device(usb_tools->device, usb_tools->enumerator,
+        browse_device(usb_tools,
             con_data_usb, temp_data_usb);
         usb_tools->device = sd_device_enumerator_get_device_first(
             usb_tools->enumerator);
@@ -57,7 +57,8 @@ int comparator(usb_tools_t *usb_tools, con_data_usb_t *con_data_usb)
     FILE *data_file = fopen(DATA_FILE_PATH, "r");
     temp_data_usb_t temp_data_usb = {0};
 
-    if (data_reader(data_file, &temp_data_usb, usb_tools, con_data_usb) == EXIT_FAILURE)
+    if (data_reader(data_file, &temp_data_usb, usb_tools, con_data_usb)
+        == EXIT_FAILURE)
         return EXIT_FAILURE;
     fclose(data_file);
     return EXIT_SUCCESS;

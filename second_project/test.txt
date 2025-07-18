@@ -1,0 +1,72 @@
+Device n°1 ID/NAME:
+	vendor id (from device / from data): 04b4/04b4
+	product id (from device / from data): 6502/6502
+	vendor name (from device / from data): 04b4/Cypress Semiconductor Corp.
+	product name (from device / from data): 6502/CY4609
+-------------------------------------------------------------------------------------------------
+Device n°2 ID/NAME:
+	vendor id (from device / from data): 04b4/04b4
+	product id (from device / from data): 6502/6502
+	vendor name (from device / from data): 04b4/Cypress Semiconductor Corp.
+	product name (from device / from data): 6502/CY4609
+-------------------------------------------------------------------------------------------------
+Device n°3 ID/NAME:
+	vendor id (from device / from data): 0bda/0bda
+	product id (from device / from data): 8153/8153
+	vendor name (from device / from data): Realtek/Realtek Semiconductor Corp.
+	product name (from device / from data): USB_10_100_1000_LAN/RTL8153 Gigabit Ethernet Adapter
+-------------------------------------------------------------------------------------------------
+Device n°4 ID/NAME:
+	vendor id (from device / from data): 0bda/0bda
+	product id (from device / from data): 8153/8153
+	vendor name (from device / from data): Realtek/Realtek Semiconductor Corp.
+	product name (from device / from data): USB_10_100_1000_LAN/RTL8153 Gigabit Ethernet Adapter
+-------------------------------------------------------------------------------------------------
+Device n°5 ID/NAME:
+	vendor id (from device / from data): 1d6b/1d6b
+	product id (from device / from data): 0002/0002
+	vendor name (from device / from data): Linux_6.11.0-29-generic_xhci-hcd/Linux Foundation
+	product name (from device / from data): xHCI_Host_Controller/2.0 root hub
+-------------------------------------------------------------------------------------------------
+Device n°6 ID/NAME:
+	vendor id (from device / from data): 1d6b/1d6b
+	product id (from device / from data): 0002/0002
+	vendor name (from device / from data): Linux_6.11.0-29-generic_xhci-hcd/Linux Foundation
+	product name (from device / from data): xHCI_Host_Controller/2.0 root hub
+-------------------------------------------------------------------------------------------------
+Device n°7 ID/NAME:
+	vendor id (from device / from data): 1d6b/1d6b
+	product id (from device / from data): 0002/0002
+	vendor name (from device / from data): Linux_6.11.0-29-generic_xhci-hcd/Linux Foundation
+	product name (from device / from data): xHCI_Host_Controller/2.0 root hub
+-------------------------------------------------------------------------------------------------
+Device n°8 ID/NAME:
+	vendor id (from device / from data): 1d6b/1d6b
+	product id (from device / from data): 0002/0002
+	vendor name (from device / from data): Linux_6.11.0-29-generic_xhci-hcd/Linux Foundation
+	product name (from device / from data): xHCI_Host_Controller/2.0 root hub
+-------------------------------------------------------------------------------------------------
+Device n°9 ID/NAME:
+	vendor id (from device / from data): 1d6b/1d6b
+	product id (from device / from data): 0003/0003
+	vendor name (from device / from data): Linux_6.11.0-29-generic_xhci-hcd/Linux Foundation
+	product name (from device / from data): xHCI_Host_Controller/3.0 root hub
+-------------------------------------------------------------------------------------------------
+Device n°10 ID/NAME:
+	vendor id (from device / from data): 1d6b/1d6b
+	product id (from device / from data): 0003/0003
+	vendor name (from device / from data): Linux_6.11.0-29-generic_xhci-hcd/Linux Foundation
+	product name (from device / from data): xHCI_Host_Controller/3.0 root hub
+-------------------------------------------------------------------------------------------------
+Device n°11 ID/NAME:
+	vendor id (from device / from data): 1d6b/1d6b
+	product id (from device / from data): 0003/0003
+	vendor name (from device / from data): Linux_6.11.0-29-generic_xhci-hcd/Linux Foundation
+	product name (from device / from data): xHCI_Host_Controller/3.0 root hub
+-------------------------------------------------------------------------------------------------
+Device n°12 ID/NAME:
+	vendor id (from device / from data): 1d6b/1d6b
+	product id (from device / from data): 0003/0003
+	vendor name (from device / from data): Linux_6.11.0-29-generic_xhci-hcd/Linux Foundation
+	product name (from device / from data): xHCI_Host_Controller/3.0 root hub
+-------------------------------------------------------------------------------------------------

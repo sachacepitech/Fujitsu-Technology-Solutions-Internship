@@ -42,6 +42,7 @@ int create_enumerator(usb_tools_t *usb_tools, con_data_usb_t *con_data_usb)
     if (sd_device_enumerator_new(&usb_tools->enumerator) < 0)
         return EXIT_FAILURE;
     sd_device_enumerator_add_match_subsystem(usb_tools->enumerator, "usb", 1);
-    usb_tools->device = sd_device_enumerator_get_device_first(usb_tools->enumerator);
+    usb_tools->device = sd_device_enumerator_get_device_first(
+        usb_tools->enumerator);
     return EXIT_SUCCESS;
 }
