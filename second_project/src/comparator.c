@@ -56,6 +56,7 @@ static void fill_temp_data_struct(temp_data_usb_t *temp_data_usb, char *line)
     char *product_id = strtok(NULL, FILE_SEPARATOR);
     char *product_name = strtok(NULL, FILE_SEPARATOR);
 
+    remove_newline(product_name);
     temp_data_usb->vendor_id = vendor_id ? strdup(vendor_id) : NULL;
     temp_data_usb->vendor_name = vendor_name ? strdup(vendor_name) : NULL;
     temp_data_usb->product_id = product_id ? strdup(product_id) : NULL;
@@ -78,16 +79,14 @@ void get_device_values(usb_tools_t *usb_tools,
 static void display_known_device(con_data_usb_t *con_data_usb,
     temp_data_usb_t *temp_data_usb, unsigned int device_count)
 {
-    printf("\e[1;32mDevice n°%u ID/NAME:\n"
-        "\tvendor id (from device / from data): %s/%s\n"
-        "\tproduct id (from device / from data): %s/%s\n"
-        "\tvendor name (from device / from data): %s/%s\n"
-        "\tproduct name (from device / from data): %s/%s"
-        "-----------------------------------------------"
-        "--------------------------------------------------\n\e[0m",
+    printf("Device n°%u ID/NAME:\n"
+           "    VendorID (\e[1;32m%s\e[0m) / ProductID (\e[1;32m%s\e[0m)\n"
+           "    From System:\tvendorID (\e[1;32m%s\e[0m) \t/\t productID (\e[1;32m%s\e[0m)\n"
+           "    From Dtabase:\tvendorID (\e[1;32m%s\e[0m) \t/\t productID (\e[1;32m%s\e[0m)\n"
+           "-----------------------------------------------"
+           "--------------------------------------------------\n",
         device_count,
-        con_data_usb->vendor_id, temp_data_usb->vendor_id,
-        con_data_usb->product_id, temp_data_usb->product_id,
+        con_data_usb->vendor_id, con_data_usb->product_id,
         con_data_usb->vendor_name, temp_data_usb->vendor_name,
         con_data_usb->product_name, temp_data_usb->product_name);
 }
@@ -146,8 +145,7 @@ int comparator(usb_tools_t *usb_tools, con_data_usb_t *con_data_usb,
         for (size_t i = 0; i < usb_db.count; ++i) {
             temp_data_usb = &usb_db.entries[i];
             if (strcmp(con_data_usb->vendor_id, temp_data_usb->vendor_id) == 0 &&
-                strcmp(con_data_usb->product_id, temp_data_usb->product_id)
-                == 0) {
+                strcmp(con_data_usb->product_id, temp_data_usb->product_id) == 0) {
                 display_known_device(con_data_usb, temp_data_usb, seen_count);
                 if (seen_count < MAX_SEEN_DEVICES) {
                     seen[seen_count].vendor_id = con_data_usb->vendor_id;

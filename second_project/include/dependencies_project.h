@@ -49,6 +49,8 @@ typedef struct usb_db_s {
     size_t count;
 } usb_db_t;
 
+
+void remove_newline(char *str);
 int create_enumerator(usb_tools_t *usb_tools, con_data_usb_t *con_data_usb);
 int comparator(usb_tools_t *usb_tools, con_data_usb_t *con_data_usb,
     temp_data_usb_t *temp_data_usb);
