@@ -1,0 +1,25 @@
+[1;31mDevice n°0 ID/NAME:
+	vendor id (from device / from data): 1d6b/0002
+	product id (from device / from data): 0002/0002
+	vendor name (from device / from data): Linux_6.11.0-29-generic_xhci-hcd/Ingram
+	product name (from device / from data): xHCI_Host_Controller/passport00
+-------------------------------------------------------------------------------------------------
+[0m[1;31mDevice n°1 ID/NAME:
+	vendor id (from device / from data): 322e/04f9
+	product id (from device / from data): 202c/202c
+	vendor name (from device / from data): Sonix_Technology_Co.__Ltd./Brother Industries, Ltd
+	product name (from device / from data): USB2.0_HD_UVC_WebCam/PT-1230PC P-touch Label Printer E mode
+-------------------------------------------------------------------------------------------------
+[0m[1;31mDevice n°2 ID/NAME:
+	vendor id (from device / from data): 1d6b/043d
+	product id (from device / from data): 0003/0003
+	vendor name (from device / from data): Linux_6.11.0-29-generic_xhci-hcd/Lexmark International, Inc.
+	product name (from device / from data): xHCI_Host_Controller/Laser Printer
+-------------------------------------------------------------------------------------------------
+[0m[1;31mDevice n°3 ID/NAME:
+	vendor id (from device / from data): 13d3/13d3
+	product id (from device / from data): 3563/Unknown
+	vendor name (from device / from data): MediaTek_Inc./IMC Networks
+	product name (from device / from data): Wireless_Device/Unknown
+-------------------------------------------------------------------------------------------------
+[0m

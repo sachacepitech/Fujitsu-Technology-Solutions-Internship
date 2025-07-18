@@ -39,19 +39,6 @@ static void display_known_device(con_data_usb_t *con_data_usb,
         con_data_usb->product_name, temp_data_usb->product_name);
 }
 
-static void get_device_values(usb_tools_t *usb_tools,
-    con_data_usb_t *con_data_usb)
-{
-    sd_device_get_property_value(usb_tools->device, "ID_VENDOR_ID",
-        &con_data_usb->vendor_id);
-    sd_device_get_property_value(usb_tools->device, "ID_VENDOR",
-        &con_data_usb->vendor_name);
-    sd_device_get_property_value(usb_tools->device, "ID_MODEL_ID",
-        &con_data_usb->product_id);
-    sd_device_get_property_value(usb_tools->device, "ID_MODEL",
-        &con_data_usb->product_name);
-}
-
 int browse_device(usb_tools_t *usb_tools, con_data_usb_t *con_data_usb,
     temp_data_usb_t *temp_data_usb)
 {
