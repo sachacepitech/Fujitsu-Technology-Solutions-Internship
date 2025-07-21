@@ -123,16 +123,26 @@ static void free_unknown_temp_data_usb(temp_data_usb_t *unknown)
 static void display_couple_vendor_product_device(con_data_usb_t *con_data_usb,
     temp_data_usb_t *temp_data_usb, unsigned int device_count)
 {
-    printf("Device n°%u ID/NAME:\n"
-        "    VendorID (\e[1;32m%s\e[0m) / ProductID (\e[1;32m%s\e[0m)\n"
-        "    From System:\tvendorNAME (\e[1;34m%s\e[0m) \t/\t productNAME (\e[1;34m%s\e[0m)\n"
-        "    From Database:\tvendorNAME (\e[1;34m%s\e[0m) \t/\t productNAME (\e[1;34m%s\e[0m)\n"
-        "-----------------------------------------------"
-        "--------------------------------------------------\n",
+    printf(
+        "\e[1;37m╭───────────────────────────── Device n°""\e[1;32m%u\e[0m ""─────────────────────────────╮\e[0m\n"
+        "│ VendorID  (\e[1;32m%s\e[0m)\n"
+        "│ ProductID (\e[1;32m%s\e[0m)\n"
+        "│\n"
+        "│ \e[1;36mFrom System\e[0m:\n"
+        "│     Vendor Name : \e[1;34m%s\e[0m\n"
+        "│     Product Name: \e[1;34m%s\e[0m\n"
+        "│\n"
+        "│ \e[1;36mFrom Database\e[0m:\n"
+        "│     Vendor Name : \e[1;34m%s\e[0m\n"
+        "│     Product Name: \e[1;34m%s\e[0m\n"
+        "\e[1;37m╰────────────────────────────────────────────────────────────────────╯\e[0m\n\n",
         device_count,
-        con_data_usb->vendor_id, con_data_usb->product_id,
-        con_data_usb->vendor_name, con_data_usb->product_name,
-        temp_data_usb->vendor_name, temp_data_usb->product_name);
+        con_data_usb->vendor_id,
+        con_data_usb->product_id,
+        con_data_usb->vendor_name,
+        con_data_usb->product_name,
+        temp_data_usb->vendor_name,
+        temp_data_usb->product_name);
 }
 
 static int check_already_seen(usb_tools_t *usb_tools,
@@ -156,51 +166,64 @@ static int check_already_seen(usb_tools_t *usb_tools,
 static void display_vendor_found_product_unknown_device(con_data_usb_t *con_data_usb,
     temp_data_usb_t *temp_data_usb, unsigned int device_count)
 {
-    if (temp_data_usb->vendor_name != NULL) {
-        free(temp_data_usb->vendor_name);
-        temp_data_usb->vendor_name = NULL;
-        temp_data_usb->vendor_name = strdup("Unknown");
-    }
-    if (temp_data_usb->product_name != NULL) {
-        free(temp_data_usb->product_name);
-        temp_data_usb->product_name = NULL;
-        temp_data_usb->product_name = strdup("Unknown");
-    }
-    printf("Device n°%u ID/NAME:\n"
-        "    VendorID (\e[1;32m%s\e[0m) / ProductID (\e[1;31mUnknown : %s\e[0m)\n"
-        "    From System:\tvendorNAME (\e[1;34m%s\e[0m) \t/\t productNAME (\e[1;34m%s\e[0m)\n"
-        "    From Database:\tvendorNAME (\e[1;31m%s\e[0m) \t/\t productNAME (\e[1;31m%s\e[0m)\n"
-        "-----------------------------------------------"
-        "--------------------------------------------------\n",
+    
+    printf(
+        "\e[1;37m╭───────────────────────────── Device n°""\e[1;33m%u\e[0m ""─────────────────────────────╮\e[0m\n"
+        "│ VendorID  (\e[1;32m%s\e[0m)\n"
+        "│ ProductID (\e[1;31mUnknown : %s\e[0m)\n"
+        "│\n"
+        "│ \e[1;36mFrom System\e[0m:\n"
+        "│     Vendor Name : \e[1;34m%s\e[0m\n"
+        "│     Product Name: \e[1;34m%s\e[0m\n"
+        "│\n"
+        "│ \e[1;36mFrom Database\e[0m:\n"
+        "│     Vendor Name : \e[1;31m%s\e[0m\n"
+        "│     Product Name: \e[1;31m%s\e[0m\n"
+        "\e[1;37m╰────────────────────────────────────────────────────────────────────╯\e[0m\n\n",
         device_count,
-        con_data_usb->vendor_id, con_data_usb->product_id,
-        con_data_usb->vendor_name, con_data_usb->product_name,
-        temp_data_usb->vendor_name, temp_data_usb->product_name);
+        con_data_usb->vendor_id,
+        con_data_usb->product_id,
+        con_data_usb->vendor_name,
+        con_data_usb->product_name,
+        temp_data_usb->vendor_name,
+        temp_data_usb->product_name);
 }
 
 static void display_vendor_unknown_product_unknown_device(con_data_usb_t *con_data_usb,
     temp_data_usb_t *temp_data_usb, unsigned int device_count)
 {
-    if (temp_data_usb->vendor_name != NULL) {
-        free(temp_data_usb->vendor_name);
-        temp_data_usb->vendor_name = NULL;
-        temp_data_usb->vendor_name = strdup("Unknown");
-    }
-    if (temp_data_usb->product_name != NULL) {
-        free(temp_data_usb->product_name);
-        temp_data_usb->product_name = NULL;
-        temp_data_usb->product_name = strdup("Unknown");
-    }
-    printf("Device n°%u ID/NAME:\n"
-        "    VendorID (\e[1;31mUnknown : %s\e[0m) / ProductID (\e[1;31mUnknown : %s\e[0m)\n"
-        "    From System:\tvendorNAME (\e[1;31m%s\e[0m) \t/\t productNAME (\e[1;31m%s\e[0m)\n"
-        "    From Database:\tvendorNAME (\e[1;31m%s\e[0m) \t/\t productNAME (\e[1;31m%s\e[0m)\n"
-        "-----------------------------------------------"
-        "--------------------------------------------------\n",
+    
+    printf(
+        "\e[1;37m╭───────────────────────────── Device n°""\e[1;31m%u\e[0m ""─────────────────────────────╮\e[0m\n"
+        "│ VendorID  \e[1;31m(Unknown : %s\e[0m)\n"
+        "│ ProductID \e[1;31m(Unknown : %s\e[0m)\n"
+        "│\n"
+        "│ \e[1;36mFrom System\e[0m:\n"
+        "│     Vendor Name : \e[1;31m%s\e[0m\n"
+        "│     Product Name: \e[1;31m%s\e[0m\n"
+        "│\n"
+        "│ \e[1;36mFrom Database\e[0m:\n"
+        "│     Vendor Name : \e[1;31m%s\e[0m\n"
+        "│     Product Name: \e[1;31m%s\e[0m\n"
+        "\e[1;37m╰────────────────────────────────────────────────────────────────────╯\e[0m\n\n",
         device_count,
-        con_data_usb->vendor_id, con_data_usb->product_id,
-        con_data_usb->vendor_name, con_data_usb->product_name,
-        temp_data_usb->vendor_name, temp_data_usb->product_name);
+        con_data_usb->vendor_id,
+        con_data_usb->product_id,
+        con_data_usb->vendor_name,
+        con_data_usb->product_name,
+        temp_data_usb->vendor_name,
+        temp_data_usb->product_name);
+}
+
+static void add_to_seen(con_data_usb_t *con_data_usb, size_t *seen_count)
+{
+    if (*seen_count < MAX_SEEN_DEVICES) {
+        seen[*seen_count].vendor_id = con_data_usb->vendor_id
+            ? con_data_usb->vendor_id : strdup(con_data_usb->vendor_id);
+        seen[*seen_count].product_id = con_data_usb->product_id
+            ? con_data_usb->product_id : strdup(con_data_usb->product_id);
+        ++(*seen_count);
+    }
 }
 
 static void check_usb_exist(usb_db_t *usb_db, temp_data_usb_t *temp_data_usb,
@@ -218,10 +241,10 @@ static void check_usb_exist(usb_db_t *usb_db, temp_data_usb_t *temp_data_usb,
                 match_vendor_and_product = true;
                 matching_entry = temp_data_usb;
                 break;
+            } else if (matching_entry == NULL) {
+                match_vendor_only = true;
+                matching_entry = temp_data_usb;
             }
-        } else if (matching_entry == NULL) {
-            match_vendor_only = true;
-            matching_entry = temp_data_usb;
         }
     }
     if (match_vendor_and_product == true) {
@@ -233,14 +256,9 @@ static void check_usb_exist(usb_db_t *usb_db, temp_data_usb_t *temp_data_usb,
         display_vendor_unknown_product_unknown_device(con_data_usb, &unknown, *seen_count);
         free_unknown_temp_data_usb(&unknown);
     }
-    if (*seen_count < MAX_SEEN_DEVICES) {
-        seen[*seen_count].vendor_id = con_data_usb->vendor_id
-            ? con_data_usb->vendor_id : strdup(con_data_usb->vendor_id);
-        seen[*seen_count].product_id = con_data_usb->product_id
-            ? con_data_usb->product_id : strdup(con_data_usb->product_id);
-        ++(*seen_count);
-    }
+    add_to_seen(con_data_usb, seen_count);
 }
+
 static void free_usb_db(usb_db_t *usb_db)
 {
     for (size_t i = 0; i < usb_db->count; i++) {
