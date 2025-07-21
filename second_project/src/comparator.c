@@ -104,6 +104,8 @@ static void get_vendor_product_device(usb_tools_t *usb_tools,
         &con_data_usb->product_id);
     sd_device_get_property_value(usb_tools->device, "ID_MODEL",
         &con_data_usb->product_name);
+    sd_device_get_property_value(usb_tools->device, "DEVNAME",
+        &con_data_usb->path_usb);
 }
 
 static void init_struct_unknown_temp_data_usb(temp_data_usb_t *unknown)
@@ -124,25 +126,25 @@ static void display_couple_vendor_product_device(con_data_usb_t *con_data_usb,
     temp_data_usb_t *temp_data_usb, unsigned int device_count)
 {
     printf(
-        "\e[1;37m╭───────────────────────────── Device n°""\e[1;32m%u\e[0m ""\e[1;37m─────────────────────────────╮\e[0m\n"
-        "│ VendorID  (\e[1;32m%s\e[0m)\n"
-        "│ ProductID (\e[1;32m%s\e[0m)\n"
+        "\e[1;37m╭───────────────────────────────────────────────── Device n°""\e[1;32m%u\e[0m ""\e[1;37m─────────────────────────────────────────────────╮\e[0m\n"
+        "│ VendorID  (\e[1;32m%s\e[0m)   │   ProductID (\e[1;32m%s\e[0m)\n"
         "│\n"
         "│ \e[1;36mFrom System\e[0m:\n"
-        "│     Vendor Name (\e[1;34m%s\e[0m)\n"
-        "│     Product Name (\e[1;34m%s\e[0m)\n"
+        "│     Vendor Name (\e[1;34m%s\e[0m)   │   Product Name (\e[1;34m%s\e[0m)\n"
         "│\n"
         "│ \e[1;36mFrom Database\e[0m:\n"
-        "│     Vendor Name (\e[1;34m%s\e[0m)\n"
-        "│     Product Name (\e[1;34m%s\e[0m)\n"
-        "\e[1;37m╰────────────────────────────────────────────────────────────────────╯\e[0m\n\n",
+        "│     Vendor Name (\e[1;34m%s\e[0m)   │   Product Name (\e[1;34m%s\e[0m)\n"
+        "│\n"
+        "│ Path : %s\n"
+        "\e[1;37m╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯\e[0m\n\n",
         device_count,
         con_data_usb->vendor_id,
         con_data_usb->product_id,
         con_data_usb->vendor_name,
         con_data_usb->product_name,
         temp_data_usb->vendor_name,
-        temp_data_usb->product_name);
+        temp_data_usb->product_name,
+        con_data_usb->path_usb);
 }
 
 static int check_already_seen(usb_tools_t *usb_tools,
@@ -168,25 +170,25 @@ static void display_vendor_found_product_unknown_device(con_data_usb_t *con_data
 {
     
     printf(
-        "\e[1;37m╭───────────────────────────── Device n°""\e[1;33m%u\e[0m ""\e[1;37m─────────────────────────────╮\e[0m\n"
-        "│ VendorID  (\e[1;32m%s\e[0m)\n"
-        "│ ProductID (\e[1;31mUnknown : %s\e[0m)\n"
+        "\e[1;37m╭───────────────────────────────────────────────── Device n°""\e[1;33m%u\e[0m ""\e[1;37m─────────────────────────────────────────────────╮\e[0m\n"
+        "│ VendorID  (\e[1;32m%s\e[0m)   │   ProductID (\e[1;31mUnknown : %s\e[0m)\n"
         "│\n"
         "│ \e[1;36mFrom System\e[0m:\n"
-        "│     Vendor Name (\e[1;34m%s\e[0m)\n"
-        "│     Product Name (\e[1;34m%s\e[0m)\n"
+        "│     Vendor Name (\e[1;34m%s\e[0m)   │   Product Name (\e[1;34m%s\e[0m)\n"
         "│\n"
         "│ \e[1;36mFrom Database\e[0m:\n"
-        "│     Vendor Name (\e[1;31m%s\e[0m)\n"
-        "│     Product Name (\e[1;31m%s\e[0m)\n"
-        "\e[1;37m╰────────────────────────────────────────────────────────────────────╯\e[0m\n\n",
+        "│     Vendor Name (\e[1;31m%s\e[0m)   │   Product Name (\e[1;31m%s\e[0m)\n"
+        "│\n"
+        "│ Path : %s\n"
+        "\e[1;37m╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯\e[0m\n\n",
         device_count,
         con_data_usb->vendor_id,
         con_data_usb->product_id,
         con_data_usb->vendor_name,
         con_data_usb->product_name,
         temp_data_usb->vendor_name,
-        temp_data_usb->product_name);
+        temp_data_usb->product_name,
+        con_data_usb->path_usb);
 }
 
 static void display_vendor_unknown_product_unknown_device(con_data_usb_t *con_data_usb,
@@ -194,25 +196,25 @@ static void display_vendor_unknown_product_unknown_device(con_data_usb_t *con_da
 {
     
     printf(
-        "\e[1;37m╭───────────────────────────── Device n°""\e[1;31m%u\e[0m ""\e[1;37m─────────────────────────────╮\e[0m\n"
-        "│ VendorID  \e[1;31m(Unknown : %s\e[0m)\n"
-        "│ ProductID \e[1;31m(Unknown : %s\e[0m)\n"
+        "\e[1;37m╭───────────────────────────────────────────────── Device n°""\e[1;31m%u\e[0m ""\e[1;37m─────────────────────────────────────────────────╮\e[0m\n"
+        "│ VendorID  \e[1;31m(Unknown : %s\e[0m)   │   ProductID \e[1;31m(Unknown : %s\e[0m)\n"
         "│\n"
         "│ \e[1;36mFrom System\e[0m:\n"
-        "│     Vendor Name (\e[1;31m%s\e[0m)\n"
-        "│     Product Name (\e[1;31m%s\e[0m)\n"
+        "│     Vendor Name (\e[1;31m%s\e[0m)   │   Product Name (\e[1;31m%s\e[0m)\n"
         "│\n"
         "│ \e[1;36mFrom Database\e[0m:\n"
-        "│     Vendor Name (\e[1;31m%s\e[0m)\n"
-        "│     Product Name (\e[1;31m%s\e[0m)\n"
-        "\e[1;37m╰────────────────────────────────────────────────────────────────────╯\e[0m\n\n",
+        "│     Vendor Name (\e[1;31m%s\e[0m)   │   Product Name (\e[1;31m%s\e[0m)\n"
+        "│\n"
+        "│ Path : %s\n"
+        "\e[1;37m╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯\e[0m\n\n",
         device_count,
         con_data_usb->vendor_id,
         con_data_usb->product_id,
         con_data_usb->vendor_name,
         con_data_usb->product_name,
         temp_data_usb->vendor_name,
-        temp_data_usb->product_name);
+        temp_data_usb->product_name,
+        con_data_usb->path_usb);
 }
 
 static void add_to_seen(con_data_usb_t *con_data_usb, size_t *seen_count)

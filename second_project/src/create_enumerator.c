@@ -33,6 +33,7 @@ static void init_con_data_usb_struct(con_data_usb_t *con_data_usb)
     con_data_usb->vendor_name = NULL;
     con_data_usb->product_id = NULL;
     con_data_usb->product_name = NULL;
+    con_data_usb->path_usb = NULL;
 }
 
 int create_enumerator(usb_tools_t *usb_tools, con_data_usb_t *con_data_usb)

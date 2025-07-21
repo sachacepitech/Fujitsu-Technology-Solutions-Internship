@@ -38,6 +38,7 @@ typedef struct data_usb_con_s {
     const char *vendor_name;
     const char *product_id;
     const char *product_name;
+    const char *path_usb;
 } con_data_usb_t;
 
 typedef struct usb_tools_s {
