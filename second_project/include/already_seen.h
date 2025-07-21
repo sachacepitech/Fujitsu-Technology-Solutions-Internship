@@ -14,10 +14,8 @@
 
 #ifndef SEEN_H
     #define SEEN_H
-    #define EXIT_SUCCESS 0
 
     #define FILE_SEPARATOR ";"
-    #define DATA_FILE_PATH "data-files/vendor_id_product_id_and_name.csv"
 
     #include <stddef.h>
     #include <systemd/sd-device.h>

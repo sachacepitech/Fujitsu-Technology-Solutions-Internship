@@ -13,10 +13,8 @@
 ##
 
 SRC =	$(addprefix src/, \
-			remove_newline.c \
 			create_enumerator.c \
 			comparator.c \
-			browse_device.c \
 			main.c \
 		)
 
