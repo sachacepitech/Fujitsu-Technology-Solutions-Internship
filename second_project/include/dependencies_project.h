@@ -15,6 +15,10 @@
 #ifndef DEPENDENCIES_H
     #define DEPENDENCIES_H
 
+    #define SUCCESS 0
+    #define ERROR -1
+    #define MAJOR_ERROR 84
+
     #define FILE_SEPARATOR ";"
     #define DATA_FILE_PATH "data-files/vendor_id_product_id_and_name.csv"
     #define READ_MODE "r"

@@ -21,6 +21,12 @@
 
 #include "dependencies_project.h"
 
+static void init_usb_tools_struct(usb_tools_t *usb_tools)
+{
+    usb_tools->device = NULL;
+    usb_tools->enumerator = NULL;
+}
+
 static void init_con_data_usb_struct(con_data_usb_t *con_data_usb)
 {
     con_data_usb->vendor_id = NULL;
@@ -29,18 +35,12 @@ static void init_con_data_usb_struct(con_data_usb_t *con_data_usb)
     con_data_usb->product_name = NULL;
 }
 
-static void init_usb_tools_struct(usb_tools_t *usb_tools)
-{
-    usb_tools->device = NULL;
-    usb_tools->enumerator = NULL;
-}
-
 int create_enumerator(usb_tools_t *usb_tools, con_data_usb_t *con_data_usb)
 {
     init_usb_tools_struct(usb_tools);
     init_con_data_usb_struct(con_data_usb);
     if (sd_device_enumerator_new(&usb_tools->enumerator) < 0)
-        return EXIT_FAILURE;
+        return MAJOR_ERROR;
     sd_device_enumerator_add_match_subsystem(usb_tools->enumerator, "usb", 1);
     usb_tools->device = sd_device_enumerator_get_device_first(
         usb_tools->enumerator);
