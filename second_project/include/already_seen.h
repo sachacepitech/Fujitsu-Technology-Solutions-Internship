@@ -1,15 +1,11 @@
-/*
-** FUJITSU PROJECT, 2025
-** second_project
-** Version:
-** 1.0
-** File description:
-** already_seen.h
-** Author:
-** Sacha Lemée, @sacha-lemee on Linkedin
-** Junior Cybersecurity Consultant
-** Created:
-** ???
+/**
+ * @name second project
+ * @version 1.0
+ * @author Sacha Lemée
+ * @author Fujitsu Technology Solutions
+ * @file already_seen.h
+ * @date 17 July 2025
+ * @copyright have to fill
 */
 
 #ifndef SEEN_H
@@ -19,7 +15,6 @@
 
     #include <stddef.h>
     #include <systemd/sd-device.h>
-
 
 typedef struct seen_device_s {
     const char *vendor_id;

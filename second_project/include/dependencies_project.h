@@ -1,16 +1,13 @@
-/*
-** FUJITSU PROJECT, 2025
-** second_project
-** Version:
-** 1.0
-** File description:
-** dependencies_project.h
-** Author:
-** Sacha Lemée, @sacha-lemee on Linkedin
-** Junior Cybersecurity Consultant
-** Created:
-** ???
+/**
+ * @name second project
+ * @version 1.0
+ * @author Sacha Lemée
+ * @author Fujitsu Technology Solutions
+ * @file dependencies_project.h
+ * @date 17 July 2025
+ * @copyright have to fill
 */
+
 
 #ifndef DEPENDENCIES_H
     #define DEPENDENCIES_H

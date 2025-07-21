@@ -1,15 +1,11 @@
+
 ##
-## FUJITSU PROJECT, 2025
-## second_project
-## Version:
-## 1.0
-## File description:
-## Makefile
-## Author:
-## Sacha Lemée, @sacha-lemee on Linkedin
-## Junior Cybersecurity Consultant
-## Created:
-## ???
+## @name second project
+## @version 1.0
+## @author Sacha Lemée
+## @author Fujitsu Technology Solutions
+## @file comparator.c
+## @date 17 July 2025
 ##
 
 SRC =	$(addprefix src/, \

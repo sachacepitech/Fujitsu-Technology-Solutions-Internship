@@ -1,15 +1,11 @@
-/*
-** FUJITSU PROJECT, 2025
-** second_project
-** Version:
-** 1.0
-** File description:
-** create_enumerator.c
-** Author:
-** Sacha Lemée, @sacha-lemee on Linkedin
-** Junior Cybersecurity Consultant
-** Created:
-** ???
+/**
+ * @name second project
+ * @version 1.0
+ * @author Sacha Lemée
+ * @author Fujitsu Technology Solutions
+ * @file create_enumerator.c
+ * @date 17 July 2025
+ * @copyright have to fill
 */
 
 #include <stdio.h>

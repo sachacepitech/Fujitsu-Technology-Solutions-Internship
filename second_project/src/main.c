@@ -1,15 +1,11 @@
-/*
-** FUJITSU PROJECT, 2025
-** second_project
-** Version:
-** 1.0
-** File description:
-** main.c
-** Author:
-** Sacha Lemée, @sacha-lemee on Linkedin
-** Junior Cybersecurity Consultant
-** Created:
-** ???
+/**
+ * @name second project
+ * @version 1.0
+ * @author Sacha Lemée
+ * @author Fujitsu Technology Solutions
+ * @file main.c
+ * @date 17 July 2025
+ * @copyright have to fill
 */
 
 #include <stdio.h>
@@ -21,6 +17,9 @@
 
 #include "dependencies_project.h"
 
+/**
+ * le
+*/
 int main(void)
 {
     con_data_usb_t con_data_usb = {0};
