@@ -124,17 +124,17 @@ static void display_couple_vendor_product_device(con_data_usb_t *con_data_usb,
     temp_data_usb_t *temp_data_usb, unsigned int device_count)
 {
     printf(
-        "\e[1;37m╭───────────────────────────── Device n°""\e[1;32m%u\e[0m ""─────────────────────────────╮\e[0m\n"
+        "\e[1;37m╭───────────────────────────── Device n°""\e[1;32m%u\e[0m ""\e[1;37m─────────────────────────────╮\e[0m\n"
         "│ VendorID  (\e[1;32m%s\e[0m)\n"
         "│ ProductID (\e[1;32m%s\e[0m)\n"
         "│\n"
         "│ \e[1;36mFrom System\e[0m:\n"
-        "│     Vendor Name : \e[1;34m%s\e[0m\n"
-        "│     Product Name: \e[1;34m%s\e[0m\n"
+        "│     Vendor Name (\e[1;34m%s\e[0m)\n"
+        "│     Product Name (\e[1;34m%s\e[0m)\n"
         "│\n"
         "│ \e[1;36mFrom Database\e[0m:\n"
-        "│     Vendor Name : \e[1;34m%s\e[0m\n"
-        "│     Product Name: \e[1;34m%s\e[0m\n"
+        "│     Vendor Name (\e[1;34m%s\e[0m)\n"
+        "│     Product Name (\e[1;34m%s\e[0m)\n"
         "\e[1;37m╰────────────────────────────────────────────────────────────────────╯\e[0m\n\n",
         device_count,
         con_data_usb->vendor_id,
@@ -168,17 +168,17 @@ static void display_vendor_found_product_unknown_device(con_data_usb_t *con_data
 {
     
     printf(
-        "\e[1;37m╭───────────────────────────── Device n°""\e[1;33m%u\e[0m ""─────────────────────────────╮\e[0m\n"
+        "\e[1;37m╭───────────────────────────── Device n°""\e[1;33m%u\e[0m ""\e[1;37m─────────────────────────────╮\e[0m\n"
         "│ VendorID  (\e[1;32m%s\e[0m)\n"
         "│ ProductID (\e[1;31mUnknown : %s\e[0m)\n"
         "│\n"
         "│ \e[1;36mFrom System\e[0m:\n"
-        "│     Vendor Name : \e[1;34m%s\e[0m\n"
-        "│     Product Name: \e[1;34m%s\e[0m\n"
+        "│     Vendor Name (\e[1;34m%s\e[0m)\n"
+        "│     Product Name (\e[1;34m%s\e[0m)\n"
         "│\n"
         "│ \e[1;36mFrom Database\e[0m:\n"
-        "│     Vendor Name : \e[1;31m%s\e[0m\n"
-        "│     Product Name: \e[1;31m%s\e[0m\n"
+        "│     Vendor Name (\e[1;31m%s\e[0m)\n"
+        "│     Product Name (\e[1;31m%s\e[0m)\n"
         "\e[1;37m╰────────────────────────────────────────────────────────────────────╯\e[0m\n\n",
         device_count,
         con_data_usb->vendor_id,
@@ -194,17 +194,17 @@ static void display_vendor_unknown_product_unknown_device(con_data_usb_t *con_da
 {
     
     printf(
-        "\e[1;37m╭───────────────────────────── Device n°""\e[1;31m%u\e[0m ""─────────────────────────────╮\e[0m\n"
+        "\e[1;37m╭───────────────────────────── Device n°""\e[1;31m%u\e[0m ""\e[1;37m─────────────────────────────╮\e[0m\n"
         "│ VendorID  \e[1;31m(Unknown : %s\e[0m)\n"
         "│ ProductID \e[1;31m(Unknown : %s\e[0m)\n"
         "│\n"
         "│ \e[1;36mFrom System\e[0m:\n"
-        "│     Vendor Name : \e[1;31m%s\e[0m\n"
-        "│     Product Name: \e[1;31m%s\e[0m\n"
+        "│     Vendor Name (\e[1;31m%s\e[0m)\n"
+        "│     Product Name (\e[1;31m%s\e[0m)\n"
         "│\n"
         "│ \e[1;36mFrom Database\e[0m:\n"
-        "│     Vendor Name : \e[1;31m%s\e[0m\n"
-        "│     Product Name: \e[1;31m%s\e[0m\n"
+        "│     Vendor Name (\e[1;31m%s\e[0m)\n"
+        "│     Product Name (\e[1;31m%s\e[0m)\n"
         "\e[1;37m╰────────────────────────────────────────────────────────────────────╯\e[0m\n\n",
         device_count,
         con_data_usb->vendor_id,
