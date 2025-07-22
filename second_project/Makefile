@@ -1,16 +1,25 @@
 
-##
-## @name second project
-## @version 1.0
-## @author Sacha Lemée
-## @author Fujitsu Technology Solutions
-## @file comparator.c
-## @date 17 July 2025
-##
+# ==============================================================================
+# @name           second project
+# @version        1.0
+# @author         Sacha Lemée
+# @author 		  Fujitsu Technology Solutions
+# @file           Makefile
+# @date           17 July 2025
+# @copyright      Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
+# 
+# This file is part of the "second project" repository.
+# 
+# You can use, modify, and distribute this code under the terms of the
+# Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+# See the full license at: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+# ==============================================================================
 
 SRC =	$(addprefix src/, \
-			create_enumerator.c \
 			comparator.c \
+			create_enumerator.c \
+			display_file.c \
+			flags_files.c \
 			main.c \
 		)
 

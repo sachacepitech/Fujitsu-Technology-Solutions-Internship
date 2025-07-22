@@ -5,8 +5,14 @@
  * @author Fujitsu Technology Solutions
  * @file create_enumerator.c
  * @date 17 July 2025
- * @copyright have to fill
-*/
+ * @copyright Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
+ * 
+ * This file is part of the "second project" repository.
+ * 
+ * You can use, modify, and distribute this code under the terms of the
+ * Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+ * See the full license at: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+ */
 
 #include <stdio.h>
 #include <stdlib.h>

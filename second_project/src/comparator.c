@@ -5,8 +5,14 @@
  * @author Fujitsu Technology Solutions
  * @file comparator.c
  * @date 17 July 2025
- * @copyright have to fill
-*/
+ * @copyright Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
+ * 
+ * This file is part of the "second project" repository.
+ * 
+ * You can use, modify, and distribute this code under the terms of the
+ * Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+ * See the full license at: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -119,10 +125,10 @@ static void free_unknown_temp_data_usb(temp_data_usb_t *unknown)
 }
 
 static void display_couple_vendor_product_device(con_data_usb_t *con_data_usb,
-    temp_data_usb_t *temp_data_usb, unsigned int device_count)
+    temp_data_usb_t *temp_data_usb, usb_risk_t *usb_risk)
 {
     printf(
-        "\e[1;37m╭───────────────────────────────────────────────── Device n°""\e[1;32m%u\e[0m ""\e[1;37m─────────────────────────────────────────────────╮\e[0m\n"
+        "\e[1;37m╭───────────────────────────────────────────────── Device n°""\e[1;32m%lu\e[0m ""\e[1;37m─────────────────────────────────────────────────╮\e[0m\n"
         "│ VendorID  (\e[1;32m%s\e[0m)   │   ProductID (\e[1;32m%s\e[0m)\n"
         "│\n"
         "│ \e[1;36mFrom System\e[0m:\n"
@@ -133,7 +139,7 @@ static void display_couple_vendor_product_device(con_data_usb_t *con_data_usb,
         "│\n"
         "│ Path : %s\n"
         "\e[1;37m╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯\e[0m\n\n",
-        device_count,
+        usb_risk->seen_count,
         con_data_usb->vendor_id,
         con_data_usb->product_id,
         con_data_usb->vendor_name,
@@ -141,6 +147,7 @@ static void display_couple_vendor_product_device(con_data_usb_t *con_data_usb,
         temp_data_usb->vendor_name,
         temp_data_usb->product_name,
         con_data_usb->path_usb);
+    ++usb_risk->low;
 }
 
 static int check_already_seen(usb_tools_t *usb_tools,
@@ -162,11 +169,11 @@ static int check_already_seen(usb_tools_t *usb_tools,
 }
 
 static void display_vendor_found_product_unknown_device(con_data_usb_t *con_data_usb,
-    temp_data_usb_t *temp_data_usb, unsigned int device_count)
+    temp_data_usb_t *temp_data_usb, usb_risk_t *usb_risk)
 {
     
     printf(
-        "\e[1;37m╭───────────────────────────────────────────────── Device n°""\e[1;33m%u\e[0m ""\e[1;37m─────────────────────────────────────────────────╮\e[0m\n"
+        "\e[1;37m╭───────────────────────────────────────────────── Device n°""\e[1;33m%lu\e[0m ""\e[1;37m─────────────────────────────────────────────────╮\e[0m\n"
         "│ VendorID  (\e[1;32m%s\e[0m)   │   ProductID (\e[1;31mUnknown : %s\e[0m)\n"
         "│\n"
         "│ \e[1;36mFrom System\e[0m:\n"
@@ -177,7 +184,7 @@ static void display_vendor_found_product_unknown_device(con_data_usb_t *con_data
         "│\n"
         "│ Path : %s\n"
         "\e[1;37m╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯\e[0m\n\n",
-        device_count,
+        usb_risk->seen_count,
         con_data_usb->vendor_id,
         con_data_usb->product_id,
         con_data_usb->vendor_name,
@@ -185,14 +192,15 @@ static void display_vendor_found_product_unknown_device(con_data_usb_t *con_data
         temp_data_usb->vendor_name,
         temp_data_usb->product_name,
         con_data_usb->path_usb);
+    ++usb_risk->medium;
 }
 
 static void display_vendor_unknown_product_unknown_device(con_data_usb_t *con_data_usb,
-    temp_data_usb_t *temp_data_usb, unsigned int device_count)
+    temp_data_usb_t *temp_data_usb, usb_risk_t *usb_risk)
 {
     
     printf(
-        "\e[1;37m╭───────────────────────────────────────────────── Device n°""\e[1;31m%u\e[0m ""\e[1;37m─────────────────────────────────────────────────╮\e[0m\n"
+        "\e[1;37m╭───────────────────────────────────────────────── Device n°""\e[1;31m%lu\e[0m ""\e[1;37m─────────────────────────────────────────────────╮\e[0m\n"
         "│ VendorID  \e[1;31m(Unknown : %s\e[0m)   │   ProductID \e[1;31m(Unknown : %s\e[0m)\n"
         "│\n"
         "│ \e[1;36mFrom System\e[0m:\n"
@@ -203,7 +211,7 @@ static void display_vendor_unknown_product_unknown_device(con_data_usb_t *con_da
         "│\n"
         "│ Path : %s\n"
         "\e[1;37m╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯\e[0m\n\n",
-        device_count,
+        usb_risk->seen_count,
         con_data_usb->vendor_id,
         con_data_usb->product_id,
         con_data_usb->vendor_name,
@@ -211,6 +219,7 @@ static void display_vendor_unknown_product_unknown_device(con_data_usb_t *con_da
         temp_data_usb->vendor_name,
         temp_data_usb->product_name,
         con_data_usb->path_usb);
+    ++usb_risk->major;
 }
 
 static void add_to_seen(con_data_usb_t *con_data_usb, size_t *seen_count)
@@ -225,7 +234,7 @@ static void add_to_seen(con_data_usb_t *con_data_usb, size_t *seen_count)
 }
 
 static void check_usb_exist(usb_db_t *usb_db, temp_data_usb_t *temp_data_usb,
-    con_data_usb_t *con_data_usb, size_t *seen_count)
+    con_data_usb_t *con_data_usb, usb_risk_t *usb_risk)
 {
     bool match_vendor_and_product = false;
     bool match_vendor_only = false;
@@ -246,15 +255,15 @@ static void check_usb_exist(usb_db_t *usb_db, temp_data_usb_t *temp_data_usb,
         }
     }
     if (match_vendor_and_product == true) {
-        display_couple_vendor_product_device(con_data_usb, matching_entry, *seen_count);
+        display_couple_vendor_product_device(con_data_usb, matching_entry, usb_risk);
     } else if (match_vendor_only == true) {
-        display_vendor_found_product_unknown_device(con_data_usb, matching_entry, *seen_count);
+        display_vendor_found_product_unknown_device(con_data_usb, matching_entry, usb_risk);
     } else {
         init_struct_unknown_temp_data_usb(&unknown);
-        display_vendor_unknown_product_unknown_device(con_data_usb, &unknown, *seen_count);
+        display_vendor_unknown_product_unknown_device(con_data_usb, &unknown, usb_risk);
         free_unknown_temp_data_usb(&unknown);
     }
-    add_to_seen(con_data_usb, seen_count);
+    add_to_seen(con_data_usb, &usb_risk->seen_count);
 }
 
 static void free_usb_db(usb_db_t *usb_db)
@@ -268,11 +277,26 @@ static void free_usb_db(usb_db_t *usb_db)
     free(usb_db->entries);
 }
 
+static void display_risk_table(usb_risk_t *usb_risk)
+{
+     printf(
+        "\e[1;37m╭───────── Risk table ─────────╮\e[0m\n"
+        "│ Number Low Risk    :  \e[1;32m%lu\e[0m \n"
+        "│\n"
+        "│ Number Medium Risk :  \e[1;33m%lu\e[0m \n"
+        "│\n"
+        "│ Number Major Risk  :  \e[1;31m%lu\e[0m \n"
+        "│\n"
+        "\e[1;37m╰─────────────────────────────╯\e[0m\n\n",
+    usb_risk->low, usb_risk->medium, usb_risk->major);
+
+}
+
 int comparator(usb_tools_t *usb_tools, con_data_usb_t *con_data_usb,
     temp_data_usb_t *temp_data_usb)
 {
     usb_db_t usb_db = {0};
-    size_t seen_count = 0;
+    usb_risk_t usb_risk = {0};
     bool already_seen = false;
 
     if (fill_struct_db_temp(&usb_db, temp_data_usb) == MAJOR_ERROR)
@@ -282,12 +306,13 @@ int comparator(usb_tools_t *usb_tools, con_data_usb_t *con_data_usb,
     while (usb_tools->device != NULL) {
         already_seen = false;
         get_vendor_product_device(usb_tools, con_data_usb);
-        if (check_already_seen(usb_tools, con_data_usb, seen_count, already_seen) == SUCCESS)
+        if (check_already_seen(usb_tools, con_data_usb, usb_risk.seen_count, already_seen) == SUCCESS)
             continue;
-        check_usb_exist(&usb_db, temp_data_usb, con_data_usb, &seen_count);
+        check_usb_exist(&usb_db, temp_data_usb, con_data_usb, &usb_risk);
         usb_tools->device = sd_device_enumerator_get_device_next(
             usb_tools->enumerator);
     }
     free_usb_db(&usb_db);
+    display_risk_table(&usb_risk);
     return EXIT_SUCCESS;
 }
