@@ -103,7 +103,6 @@ static int check_update_file(param_t *param, usb_db_t *usb_db,
                 printf("Error: Make sure it is a csv file.\n");
                 return MAJOR_ERROR;
             } else {
-                printf("test n°1\n");
                 if (add_new_data(param, usb_db,
                     temp_data_usb, mem_allocated) == MAJOR_ERROR)
                     return MAJOR_ERROR;
