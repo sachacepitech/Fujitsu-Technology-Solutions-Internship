@@ -65,8 +65,26 @@ static void fill_struct_temp_data(temp_data_usb_t *temp_data_usb, char *line)
     temp_data_usb->product_name = product_name ? strdup(product_name) : NULL;
 }
 
+int check_update_file(param_t *param)
+{
+    if (param->ac == 3 &&
+        (strcmp(param->av[1], "-u") == SUCCESS
+        || strcmp(param->av[1], "--update") == SUCCESS)) {
+            strtok(param->av[2], ".");
+            if (strcmp(strtok(NULL, "."), FILE_TYPE) != SUCCESS) {
+                printf("Error: Make sure it is a csv file.\n");
+                return MAJOR_ERROR;
+            } else {
+                // add_new_data();
+                return EXIT_SUCCESS;
+            }
+    } else
+        return EXIT_SUCCESS;
+    return EXIT_SUCCESS;
+}
+
 static int fill_struct_db_temp(usb_db_t *usb_db,
-    temp_data_usb_t *temp_data_usb)
+    temp_data_usb_t *temp_data_usb, param_t *param)
 {
     FILE *data_file = fopen(DATA_FILE_PATH, READ_MODE);
     char *line = NULL;
@@ -74,7 +92,9 @@ static int fill_struct_db_temp(usb_db_t *usb_db,
     size_t mem_allocated = DEFAULT_SIZE;
 
     if (data_file == NULL)
-        return MAJOR_ERROR;    
+        return MAJOR_ERROR;
+    if (check_update_file(param) == MAJOR_ERROR)
+        return MAJOR_ERROR;
     if (init_struct_usb_db(usb_db, mem_allocated) == MAJOR_ERROR)
         return MAJOR_ERROR;
     while (getline(&line, &n, data_file) != EOF) {
@@ -293,13 +313,13 @@ static void display_risk_table(usb_risk_t *usb_risk)
 }
 
 int comparator(usb_tools_t *usb_tools, con_data_usb_t *con_data_usb,
-    temp_data_usb_t *temp_data_usb)
+    temp_data_usb_t *temp_data_usb, param_t *param)
 {
     usb_db_t usb_db = {0};
     usb_risk_t usb_risk = {0};
     bool already_seen = false;
 
-    if (fill_struct_db_temp(&usb_db, temp_data_usb) == MAJOR_ERROR)
+    if (fill_struct_db_temp(&usb_db, temp_data_usb, param) == MAJOR_ERROR)
         return MAJOR_ERROR;
     usb_tools->device = sd_device_enumerator_get_device_first(
         usb_tools->enumerator);

@@ -22,6 +22,7 @@
     #define MAJOR_ERROR 84
 
     #define FILE_SEPARATOR ";"
+    #define FILE_TYPE "csv"
     #define DATA_FILE_PATH "data-files/vendor_id_product_id_and_name.csv"
     #define HELP_FILE "src/INFO_FILE/HELP"
     #define FORMAT_FILE "src/INFO_FILE/FORMAT"
@@ -66,11 +67,16 @@ typedef struct usb_risk_s {
     size_t seen_count;
 } usb_risk_t;
 
+typedef struct param_s {
+    int ac;
+    char **av;
+} param_t;
+
 int flags_files(int ac, char **av);
 int display_file(int ac, char **av, const char *flag,
     const char *optional_flag, const char *path_file);
 int create_enumerator(usb_tools_t *usb_tools, con_data_usb_t *con_data_usb);
 int comparator(usb_tools_t *usb_tools, con_data_usb_t *con_data_usb,
-    temp_data_usb_t *temp_data_usb);
+    temp_data_usb_t *temp_data_usb, param_t *param);
 
 #endif /* DEPENDENCIES_H */

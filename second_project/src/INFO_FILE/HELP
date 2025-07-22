@@ -27,7 +27,8 @@ If no argument is passed, the program automatically detects and scans connected 
 =======================================
               Description:
 =======================================
-The program analyzes connected USB devices and compares them with a CSV database. Based on the matches, it classifies the devices into three risk levels:
+The program analyzes connected USB devices and compares them with a CSV database.
+Based on the matches, it classifies the devices into three risk levels:
 
 - Low: Complete match (couple VendorID and ProductID).
 - Medium: VendorID match, but no ProductID.
