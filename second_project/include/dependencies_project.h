@@ -22,12 +22,24 @@
     #define MAJOR_ERROR 84
 
     #define FILE_SEPARATOR ";"
+    #define FILE_TYPE_SEPARATOR "."
     #define FILE_TYPE "csv"
+    #define FILE_TYPE_PLUS_SEPARATOR ".csv"
     #define DATA_FILE_PATH "data-files/vendor_id_product_id_and_name.csv"
     #define HELP_FILE "src/INFO_FILE/HELP"
     #define FORMAT_FILE "src/INFO_FILE/FORMAT"
     #define LICENSE_FILE "src/INFO_FILE/LICENSE"
     #define READ_MODE "r"
+
+    #define HELP_FLAG "-h"
+    #define FORMAT_FLAG "-f"
+    #define LICENSE_FLAG "-l"
+    #define UPDATE_FLAG "-u"
+
+    #define HELP_FLAG_OPTION "--help"
+    #define FORMAT_FLAG_OPTION "--format"
+    #define LICENSE_FLAG_OPTION "--license"
+    #define UPDATE_FLAG_OPTION "--update"
 
     #include <stddef.h>
     #include <systemd/sd-device.h>

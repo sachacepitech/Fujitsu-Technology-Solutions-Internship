@@ -25,9 +25,12 @@
 
 int flags_files(int ac, char **av)
 {
-    size_t help_file_return_value = display_file(ac, av, "-h", "--help", HELP_FILE);
-    size_t format_file_return_value = display_file(ac, av, "-f", "--format", FORMAT_FILE);
-    size_t license_file_return_value = display_file(ac, av, "-l", "--license", LICENSE_FILE);
+    size_t help_file_return_value = display_file(ac, av,
+        HELP_FLAG, HELP_FLAG_OPTION, HELP_FILE);
+    size_t format_file_return_value = display_file(ac, av,
+        FORMAT_FLAG, FORMAT_FLAG_OPTION, FORMAT_FILE);
+    size_t license_file_return_value = display_file(ac, av,
+        LICENSE_FLAG, LICENSE_FLAG_OPTION, LICENSE_FILE);
     
     if (help_file_return_value == SUCCESS)
         return EXIT_SUCCESS;
