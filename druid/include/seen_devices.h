@@ -3,7 +3,7 @@
  * @version 1.0
  * @author Sacha Lemée
  * @author Fujitsu Technology Solutions
- * @file already_seen.h
+ * @file seen_devices.h
  * @date 17 July 2025
  * @copyright Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
  * 
@@ -14,8 +14,8 @@
  * See the full license at: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
  */
 
-#ifndef SEEN_H
-    #define SEEN_H
+#ifndef SEEN_DEVICES_H
+    #define SEEN_DEVICES_H
 
     #define FILE_SEPARATOR ";"
 
@@ -31,4 +31,4 @@ typedef struct seen_device_s {
 
 seen_device_t seen_devices[MAX_SEEN_DEVICES];
 
-#endif /* SEEN_H */
+#endif /* SEEN_DEVICES_H */

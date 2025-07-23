@@ -3,7 +3,7 @@
  * @version 1.0
  * @author Sacha Lemée
  * @author Fujitsu Technology Solutions
- * @file display_risk_case.c
+ * @file display_risk_stats_and_unknown_device.c
  * @date 17 July 2025
  * @copyright Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
  * 

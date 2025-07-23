@@ -22,7 +22,7 @@
 #include <stddef.h>
 #include <systemd/sd-device.h>
 #include "druid.h"
-#include "already_seen.h"
+#include "seen_devices.h"
 
 static void get_vendor_product_device(usb_tools_t *usb_tools,
     usb_device_info_t *usb_device_info)

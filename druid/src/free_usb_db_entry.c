@@ -3,7 +3,7 @@
  * @version 1.0
  * @author Sacha Lemée
  * @author Fujitsu Technology Solutions
- * @file free_all.c
+ * @file free_usb_db_entry.c
  * @date 17 July 2025
  * @copyright Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
  * 
