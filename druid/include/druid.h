@@ -21,6 +21,8 @@
     #define UNSEEN -1
     #define EXIT_ERROR 84
 
+    #define SEARCH_DEVICE_TYPE "usb"
+
     #define FILE_SEPARATOR ";"
     #define FILE_TYPE_SEPARATOR "."
     #define FILE_TYPE "csv"

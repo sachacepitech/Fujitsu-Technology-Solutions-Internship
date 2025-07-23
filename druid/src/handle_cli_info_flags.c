@@ -29,12 +29,12 @@
  * and displays the corresponding file content if matched
  * 
  * @details int handle_cli_info_flags(int ac, char **av)
- * @param ac Argument count.
- * @param av Argument values.
+ * @param ac Argument count
+ * @param av Argument values
  * @return Exit code:
- *         - 0 (EXIT_SUCCESS) if a file was successfully displayed
- *         - 84 (EXIT_ERROR) if there was a critical failure while displaying
- *         - -1 (UNSEEN) if no relevant CLI flag was found
+ *         - 0      (EXIT_SUCCESS) if a file was successfully displayed
+ *         - 84     (EXIT_ERROR) if there was a critical failure while displaying
+ *         - -1     (UNSEEN) if no relevant CLI flag was found
  */
 int handle_cli_info_flags(int ac, char **av)
 {

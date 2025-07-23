@@ -29,11 +29,11 @@
  * and handles cases where parameters are set as cli (user input)
  * 
  * @details int main(int ac, char **av)
- * @param ac Argument count.
- * @param av Argument values.
+ * @param ac Argument count
+ * @param av Argument values
  * @return Exit code:
- *         - 0 (EXIT_SUCCESS) on success
- *         - 84 (EXIT_ERROR) on critical failure
+ *         - 0      (EXIT_SUCCESS) on success
+ *         - 84     (EXIT_ERROR) on critical failure
  */
 int main(int ac, char **av)
 {

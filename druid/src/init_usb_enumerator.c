@@ -29,11 +29,11 @@
  * and prepares the systemd enumerator to target the USB subsystem
  * 
  * @details int init_usb_enumerator(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info)
- * @param usb_tools Pointer to the usb_tools_t structure used for enumeration.
- * @param usb_device_info Pointer to the usb_device_info_t structure to be initialized.
+ * @param usb_tools Pointer to the usb_tools_t structure used for enumeration
+ * @param usb_device_info Pointer to the usb_device_info_t structure to be initialized
  * @return Exit code:
- *         - 0 (EXIT_SUCCESS) on successful initialization
- *         - 84 (EXIT_ERROR) if the enumerator could not be created
+ *         - 0      (EXIT_SUCCESS) on successful initialization
+ *         - 84     (EXIT_ERROR) if the enumerator could not be created
  */
 int init_usb_enumerator(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info)
 {
@@ -41,7 +41,7 @@ int init_usb_enumerator(usb_tools_t *usb_tools, usb_device_info_t *usb_device_in
     init_usb_device_info_struct(usb_device_info);
     if (sd_device_enumerator_new(&usb_tools->enumerator) < 0)
         return EXIT_ERROR;
-    sd_device_enumerator_add_match_subsystem(usb_tools->enumerator, "usb", 1);
+    sd_device_enumerator_add_match_subsystem(usb_tools->enumerator, SEARCH_DEVICE_TYPE, 1);
     usb_tools->device = sd_device_enumerator_get_device_first(
         usb_tools->enumerator);
     return EXIT_SUCCESS;
