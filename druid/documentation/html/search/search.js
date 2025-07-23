@@ -77,14 +77,14 @@ var searchResults = new SearchResults("searchResults");
 
 /* A class handling everything associated with the search panel.
 
-   Parameters:
+   cli_argseters:
    name - The name of the global variable that will be
           storing this instance.  Is needed to be able to set timeouts.
    resultPath - path to use for external files
 */
 function SearchBox(name, resultsPath, extension)
 {
-  if (!name || !resultsPath) {  alert("Missing parameters to SearchBox."); }
+  if (!name || !resultsPath) {  alert("Missing cli_argseters to SearchBox."); }
   if (!extension || extension == "") { extension = ".html"; }
 
   // ---------- Instance variables
@@ -481,7 +481,7 @@ function SearchResults(name)
       }
     }
 
-    // Searches for the passed string.  If there is no parameter,
+    // Searches for the passed string.  If there is no cli_argseter,
     // it takes it from the URL query.
     //
     // Always returns true, since other documents may try to call it

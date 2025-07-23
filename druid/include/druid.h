@@ -51,19 +51,19 @@
     #define UNKNOWN_DEVICE_MESSAGE "Unknown"
     #define NONE_CSV_FILE_MESSAGE "Error: Make sure it is a csv file.\n"
 
-    #define PARAM_FLAG 1
-    #define PARAM_FILE 2
+    #define cli_args_FLAG 1
+    #define cli_args_FILE 2
     #define BIN_FLAG_FILE 3
 
     #include <stddef.h>
     #include <systemd/sd-device.h>
 
-typedef struct temp_data_usb_s {
+typedef struct usb_db_entry_s {
     char *vendor_id;
     char *vendor_name;
     char *product_id;
     char *product_name;
-} temp_data_usb_t;
+} usb_db_entry_t;
 
 typedef struct data_usb_con_s {
     const char *vendor_id;
@@ -71,7 +71,7 @@ typedef struct data_usb_con_s {
     const char *product_id;
     const char *product_name;
     const char *path_usb;
-} con_data_usb_t;
+} usb_device_info_t;
 
 typedef struct usb_tools_s {
     sd_device *device;
@@ -82,52 +82,52 @@ typedef struct usb_tools_s {
     #define INCREASED_SIZE 2
 
 typedef struct usb_db_s {
-    temp_data_usb_t *entries;
+    usb_db_entry_t *entries;
     size_t count;
 } usb_db_t;
 
-typedef struct usb_risk_s {
+typedef struct usb_risk_stats_s {
     size_t low;
     size_t medium;
     size_t major;
     size_t seen_count;
-} usb_risk_t;
+} usb_risk_stats_stats_t;
 
-typedef struct param_s {
+typedef struct cli_args_s {
     int ac;
     char **av;
-} param_t;
+} cli_args_t;
 
 /* init all struct */
 void init_usb_tools_struct(usb_tools_t *usb_tools);
-void init_con_data_usb_struct(con_data_usb_t *con_data_usb);
-int init_struct_usb_db(usb_db_t *usb_db, size_t mem_allocated);
-void init_struct_temp_data(temp_data_usb_t *temp_data_usb);
-void init_struct_unknown_temp_data_usb(temp_data_usb_t *unknown);
+void init_usb_device_info_struct(usb_device_info_t *usb_device_info);
+int init_struct_usb_db(usb_db_t *usb_db, size_t allocated_capacity);
+void init_struct_temp_data(usb_db_entry_t *usb_db_entry);
+void init_struct_unknown_usb_db_entry(usb_db_entry_t *unknown);
 
 /* fill database struct */
-int fill_struct_db_temp(usb_db_t *usb_db, temp_data_usb_t *temp_data_usb, param_t *param);
+int load_usb_db_from_file(usb_db_t *usb_db, usb_db_entry_t *usb_db_entry, cli_args_t *cli_args);
 
 /* free all */
-void free_unknown_temp_data_usb(temp_data_usb_t *unknown);
+void free_unknown_usb_db_entry(usb_db_entry_t *unknown);
 void free_usb_db(usb_db_t *usb_db);
 
 /* display risk case*/
-void display_couple_vendor_product_device(con_data_usb_t *con_data_usb,
-    temp_data_usb_t *temp_data_usb, usb_risk_t *usb_risk);
-void display_vendor_found_product_unknown_device(con_data_usb_t *con_data_usb,
-    temp_data_usb_t *temp_data_usb, usb_risk_t *usb_risk);
-void display_vendor_unknown_product_unknown_device(con_data_usb_t *con_data_usb,
-    temp_data_usb_t *temp_data_usb, usb_risk_t *usb_risk);
-void display_risk_table(usb_risk_t *usb_risk);
+void display_known_usb_device(usb_device_info_t *usb_device_info,
+    usb_db_entry_t *usb_db_entry, usb_risk_stats_stats_t *usb_risk_stats);
+void display_partially_known_usb_device(usb_device_info_t *usb_device_info,
+    usb_db_entry_t *usb_db_entry, usb_risk_stats_stats_t *usb_risk_stats);
+void display_unknown_usb_device(usb_device_info_t *usb_device_info,
+    usb_db_entry_t *usb_db_entry, usb_risk_stats_stats_t *usb_risk_stats);
+void display_risk_table(usb_risk_stats_stats_t *usb_risk_stats);
 
 /* option */
-int flags_files(int ac, char **av);
+int handle_cli_info_flags(int ac, char **av);
 int display_file(int ac, char **av, const char *flag,
     const char *optional_flag, const char *path_file);
 
-int create_enumerator(usb_tools_t *usb_tools, con_data_usb_t *con_data_usb);
-int comparator(usb_tools_t *usb_tools, con_data_usb_t *con_data_usb,
-    temp_data_usb_t *temp_data_usb, param_t *param);
+int init_usb_enumerator(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info);
+int scan_connected_usb_and_check_risks(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info,
+    usb_db_entry_t *usb_db_entry, cli_args_t *cli_args);
 
 #endif /* druid_H */

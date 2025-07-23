@@ -3,7 +3,7 @@
  * @version 1.0
  * @author Sacha Lemée
  * @author Fujitsu Technology Solutions
- * @file create_enumerator.c
+ * @file init_usb_enumerator.c
  * @date 17 July 2025
  * @copyright Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
  * 
@@ -18,15 +18,13 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stddef.h>
-
 #include <systemd/sd-device.h>
-
 #include "druid.h"
 
-int create_enumerator(usb_tools_t *usb_tools, con_data_usb_t *con_data_usb)
+int init_usb_enumerator(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info)
 {
     init_usb_tools_struct(usb_tools);
-    init_con_data_usb_struct(con_data_usb);
+    init_usb_device_info_struct(usb_device_info);
     if (sd_device_enumerator_new(&usb_tools->enumerator) < 0)
         return MAJOR_ERROR;
     sd_device_enumerator_add_match_subsystem(usb_tools->enumerator, "usb", 1);

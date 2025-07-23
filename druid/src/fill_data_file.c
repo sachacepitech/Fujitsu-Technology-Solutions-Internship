@@ -31,7 +31,7 @@ static void remove_newline(char *str)
         str[len - 1] = '\0';
 }
 
-static void fill_struct_temp_data(temp_data_usb_t *temp_data_usb, char *line)
+static void fill_struct_temp_data(usb_db_entry_t *usb_db_entry, char *line)
 {
     char *vendor_id = strtok(line, FILE_SEPARATOR);
     char *vendor_name = strtok(NULL, FILE_SEPARATOR);
@@ -39,39 +39,39 @@ static void fill_struct_temp_data(temp_data_usb_t *temp_data_usb, char *line)
     char *product_name = strtok(NULL, FILE_SEPARATOR);
 
     remove_newline(product_name);
-    temp_data_usb->vendor_id = strdup(vendor_id);
-    temp_data_usb->vendor_name = strdup(vendor_name);
-    temp_data_usb->product_id = strdup(product_id);
-    temp_data_usb->product_name = strdup(product_name);
+    usb_db_entry->vendor_id = strdup(vendor_id);
+    usb_db_entry->vendor_name = strdup(vendor_name);
+    usb_db_entry->product_id = strdup(product_id);
+    usb_db_entry->product_name = strdup(product_name);
 }
 
-static int add_entry_to_usb_db(usb_db_t *usb_db, temp_data_usb_t **temp_data_usb,
-    char *line, size_t *mem_allocated)
+static int append_usb_entry_from_line(usb_db_t *usb_db, usb_db_entry_t **usb_db_entry,
+    char *line, size_t *allocated_capacity)
 {
-    if (usb_db->count >= *mem_allocated) {
-        *mem_allocated *= INCREASED_SIZE;
-        usb_db->entries = realloc(usb_db->entries, sizeof(temp_data_usb_t) * (*mem_allocated));
+    if (usb_db->count >= *allocated_capacity) {
+        *allocated_capacity *= INCREASED_SIZE;
+        usb_db->entries = realloc(usb_db->entries, sizeof(usb_db_entry_t) * (*allocated_capacity));
         if (usb_db->entries == NULL)
             return MAJOR_ERROR;
     }
-    *temp_data_usb = &usb_db->entries[usb_db->count];
-    init_struct_temp_data(*temp_data_usb);
-    fill_struct_temp_data(*temp_data_usb, line);
+    *usb_db_entry = &usb_db->entries[usb_db->count];
+    init_struct_temp_data(*usb_db_entry);
+    fill_struct_temp_data(*usb_db_entry, line);
     ++usb_db->count;
     return EXIT_SUCCESS;
 }
 
-static int add_new_data(param_t *param, usb_db_t *usb_db,
-    temp_data_usb_t *temp_data_usb, size_t mem_allocated)
+static int add_new_data(cli_args_t *cli_args, usb_db_t *usb_db,
+    usb_db_entry_t *usb_db_entry, size_t allocated_capacity)
 {
     char *line = NULL;
     size_t n = 0;
-    FILE *update_data_file = fopen(strcat(param->av[PARAM_FILE], FILE_TYPE_PLUS_SEPARATOR), READ_MODE);
+    FILE *update_data_file = fopen(strcat(cli_args->av[cli_args_FILE], FILE_TYPE_PLUS_SEPARATOR), READ_MODE);
 
     if (update_data_file == NULL)
         return MAJOR_ERROR;
     while (getline(&line, &n, update_data_file) != EOF) {
-        if (add_entry_to_usb_db(usb_db, &temp_data_usb, line, &mem_allocated) == MAJOR_ERROR)
+        if (append_usb_entry_from_line(usb_db, &usb_db_entry, line, &allocated_capacity) == MAJOR_ERROR)
             return MAJOR_ERROR;
     }
     fclose(update_data_file);
@@ -79,19 +79,19 @@ static int add_new_data(param_t *param, usb_db_t *usb_db,
     return EXIT_SUCCESS;
 }
 
-static int check_update_file(param_t *param, usb_db_t *usb_db,
-    temp_data_usb_t *temp_data_usb, size_t mem_allocated)
+static int check_for_update_file_and_load(cli_args_t *cli_args, usb_db_t *usb_db,
+    usb_db_entry_t *usb_db_entry, size_t allocated_capacity)
 {
-    if (param->ac == BIN_FLAG_FILE &&
-        (strcmp(param->av[PARAM_FLAG], UPDATE_FLAG) == SUCCESS
-        || strcmp(param->av[PARAM_FLAG], UPDATE_FLAG_OPTION) == SUCCESS)) {
-            strtok(param->av[PARAM_FILE], FILE_TYPE_SEPARATOR);
+    if (cli_args->ac == BIN_FLAG_FILE &&
+        (strcmp(cli_args->av[cli_args_FLAG], UPDATE_FLAG) == SUCCESS
+        || strcmp(cli_args->av[cli_args_FLAG], UPDATE_FLAG_OPTION) == SUCCESS)) {
+            strtok(cli_args->av[cli_args_FILE], FILE_TYPE_SEPARATOR);
             if (strcmp(strtok(NULL, FILE_TYPE_SEPARATOR), FILE_TYPE) != SUCCESS) {
                 printf(NONE_CSV_FILE_MESSAGE);
                 return MAJOR_ERROR;
             } else {
-                if (add_new_data(param, usb_db,
-                    temp_data_usb, mem_allocated) == MAJOR_ERROR)
+                if (add_new_data(cli_args, usb_db,
+                    usb_db_entry, allocated_capacity) == MAJOR_ERROR)
                     return MAJOR_ERROR;
             }
     } else
@@ -99,21 +99,21 @@ static int check_update_file(param_t *param, usb_db_t *usb_db,
     return EXIT_SUCCESS;
 }
 
-int fill_struct_db_temp(usb_db_t *usb_db, temp_data_usb_t *temp_data_usb, param_t *param)
+int load_usb_db_from_file(usb_db_t *usb_db, usb_db_entry_t *usb_db_entry, cli_args_t *cli_args)
 {
     FILE *data_file = fopen(DATA_FILE_PATH, READ_MODE);
     char *line = NULL;
     size_t n = 0;
-    size_t mem_allocated = DEFAULT_SIZE;
+    size_t allocated_capacity = DEFAULT_SIZE;
 
     if (data_file == NULL)
         return MAJOR_ERROR;
-    if (init_struct_usb_db(usb_db, mem_allocated) == MAJOR_ERROR)
+    if (init_struct_usb_db(usb_db, allocated_capacity) == MAJOR_ERROR)
         return MAJOR_ERROR;
-    if (check_update_file(param, usb_db, temp_data_usb, mem_allocated) == MAJOR_ERROR)
+    if (check_for_update_file_and_load(cli_args, usb_db, usb_db_entry, allocated_capacity) == MAJOR_ERROR)
         return MAJOR_ERROR;
     while (getline(&line, &n, data_file) != EOF) {
-        if (add_entry_to_usb_db(usb_db, &temp_data_usb, line, &mem_allocated) == MAJOR_ERROR)
+        if (append_usb_entry_from_line(usb_db, &usb_db_entry, line, &allocated_capacity) == MAJOR_ERROR)
             return MAJOR_ERROR;
     }
     free(line);

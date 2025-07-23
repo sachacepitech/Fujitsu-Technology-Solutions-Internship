@@ -475,8 +475,8 @@
     \tabu@thick \maxdimen  \tabu@on \maxdimen   \tabu@off \maxdimen
     \let\tabu@c@lon \@undefined  \let\tabu@c@loff \@undefined
     \ifodd 1\ifcat .#1\else\ifcat\relax #1\else 0\fi\fi % catcode 12 or non expandable cs
-            \def\tabu@temp{\tabu@getparam{thick}}%
-    \else   \def\tabu@temp{\tabu@getparam{thick}\maxdimen}%
+            \def\tabu@temp{\tabu@getcli_args{thick}}%
+    \else   \def\tabu@temp{\tabu@getcli_args{thick}\maxdimen}%
     \fi
     {%
         \let\tabu@ \relax
@@ -532,7 +532,7 @@
              \ifcat.\noexpand#2\z@  \else
              \ifx \tabu@spxiii#2\@ne\else
              \tw@               \fi\fi\fi
-          \tabu@getparam{on}#2\expandafter\@gobble
+          \tabu@getcli_args{on}#2\expandafter\@gobble
     \or   \expandafter\tabu@onxiii    % (space is active)
     \else o\expandafter\@firstofone
     \fi{#1#2}}%
@@ -545,20 +545,20 @@
             \ifcat.\noexpand#2\z@   \else
             \ifx\tabu@spxiii#2\@ne  \else
             \tw@                \fi\fi\fi
-          \tabu@getparam{off}#2\expandafter\@gobble
+          \tabu@getcli_args{off}#2\expandafter\@gobble
     \or   \expandafter\tabu@offxiii   % (space is active)
     \else o\expandafter\@firstofone
     \fi{#1#2}}
-\def\tabu@getparam #1{\tabu@ \csname tabu@#1\endcsname=}
+\def\tabu@getcli_args #1{\tabu@ \csname tabu@#1\endcsname=}
 \def\tabu@getcolor #1{% \tabu@ <- \tabu@getcolor after \edef
     \ifx \tabu@#1\else   % no more spec
-        \let\tabu@theparam=#1\afterassignment \tabu@getc@l@r #1\fi
+        \let\tabu@thecli_args=#1\afterassignment \tabu@getc@l@r #1\fi
 }% \tabu@getcolor
 \def\tabu@getc@l@r #1\tabu@ {%
     \def\tabu@temp{#1}\tabu@strtrim \tabu@temp
     \ifx \tabu@temp\@empty
     \else%\ifcsname \string\color@\tabu@temp \endcsname  % if the color exists
-        \ifx \tabu@theparam \tabu@off   \let\tabu@c@loff \tabu@c@l@r
+        \ifx \tabu@thecli_args \tabu@off   \let\tabu@c@loff \tabu@c@l@r
         \else                           \let\tabu@c@lon  \tabu@c@l@r
         \fi
     %\else \tabu@warncolour{\tabu@temp}%
@@ -805,7 +805,7 @@
 }% \tabu@cleanup
 \let\tabu@afterendpar \relax
 \def\tabu@setreset {%
-    \edef\tabu@savedparams {%         \relax for \tabu@message@save
+    \edef\tabu@savedcli_argss {%         \relax for \tabu@message@save
         \ifmmode \col@sep \the\arraycolsep
         \else    \col@sep \the\tabcolsep \fi    \relax
         \arrayrulewidth   \the\arrayrulewidth   \relax
@@ -818,7 +818,7 @@
         \def\noexpand\arraystretch{\arraystretch}%
         \ifdefined\minrowclearance \minrowclearance\the\minrowclearance\relax\fi}%
     \begingroup
-        \@temptokena\expandafter{\tabu@savedparams}% => only for \savetabu / \usetabu
+        \@temptokena\expandafter{\tabu@savedcli_argss}% => only for \savetabu / \usetabu
         \ifx \tabu@arc@L\relax  \else \tabu@setsave \tabu@arc@L \fi
         \ifx \tabu@drsc@L\relax \else \tabu@setsave \tabu@drsc@L \fi
         \tabu@setsave \tabu@ls@L      \tabu@setsave \tabu@evr@L
@@ -829,7 +829,7 @@
                 \let\tabu@ls@G   \tabu@ls@L
                 \let\tabu@rc@G   \tabu@rc@L
                 \let\tabu@evr@G  \tabu@evr@L}%
-    \def\tabu@reset{\tabu@savedparams
+    \def\tabu@reset{\tabu@savedcli_argss
         \tabu@everyrowtrue  \c@taburow \z@
         \let\CT@arc@        \tabu@arc@L
         \let\CT@drsc@       \tabu@drsc@L
@@ -1589,7 +1589,7 @@
         \let\color \relax \def\tabu@rulesstyle ####1####2{\detokenize{####1}}%
         \let\CT@arc@ \relax \let\@preamble \@gobble
         \let\tabu@savedpream  \@firstofone
-        \let\tabu@savedparams \@firstofone
+        \let\tabu@savedcli_argss \@firstofone
         \def\tabu@target ####1\relax   {(tabu) target #1 #1 #1 #1 #1 = \x{####1}^^J}%
         \def\tabucolX ####1\relax      {(tabu) X columns width#1 = \x{####1}^^J}%
         \def\tabu@nbcols ####1\relax   {(tabu) Number of columns: \z{####1}^^J}%
@@ -2058,10 +2058,10 @@
     \toks1\expandafter{\tabu@savedpream}%
     \toks2\expandafter{\tabu@savedpreamble}%
     \let\@preamble \relax
-    \let\tabu@savedpream \relax \let\tabu@savedparams \relax
+    \let\tabu@savedpream \relax \let\tabu@savedcli_argss \relax
     \edef\tabu@preamble{%
         \def\noexpand\tabu@aligndefault{\tabu@align}%
-        \def\tabu@savedparams {\noexpand\the\toks0}%
+        \def\tabu@savedcli_argss {\noexpand\the\toks0}%
         \def\tabu@savedpream  {\noexpand\the\toks1}}%
     \edef\tabu@usetabu{%
         \def\@preamble {\noexpand\the\toks2}%
@@ -2069,7 +2069,7 @@
         \tabucolX    \the\tabucolX    \relax
         \tabu@nbcols \the\tabu@nbcols \relax
         \def\noexpand\tabu@aligndefault{\tabu@align}%
-        \def\tabu@savedparams {\noexpand\the\toks0}%
+        \def\tabu@savedcli_argss {\noexpand\the\toks0}%
         \def\tabu@savedpream  {\noexpand\the\toks1}}%
     \let\tabu@aligndefault \relax \let\@sharp \relax
     \edef\@tempa{\noexpand\tabu@s@ved

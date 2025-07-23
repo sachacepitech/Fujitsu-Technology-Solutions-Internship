@@ -15,12 +15,12 @@
 # ==============================================================================
 
 SRC =	$(addprefix src/, \
-			comparator.c \
-			create_enumerator.c \
+			scan_connected_usb_and_check_risks.c \
+			init_usb_enumerator.c \
 			display_file.c \
 			display_risk_case.c \
 			fill_data_file.c \
-			flags_files.c \
+			handle_cli_info_flags.c \
 			free_all.c \
 			init_all_struct.c \
 			main.c \

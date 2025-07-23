@@ -57,7 +57,7 @@ html {
 --memdef-proto-text-color: #253555;
 --memdef-proto-text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.9);
 --memdef-doc-background-color: white;
---memdef-param-name-color: #602020;
+--memdef-cli_args-name-color: #602020;
 --memdef-template-color: #4665A2;
 
 /* tables */
@@ -230,7 +230,7 @@ html {
 --memdef-proto-text-color: #9DB0D4;
 --memdef-proto-text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.9);
 --memdef-doc-background-color: black;
---memdef-param-name-color: #D28757;
+--memdef-cli_args-name-color: #D28757;
 --memdef-template-color: #7C95C6;
 
 /* tables */
@@ -808,7 +808,7 @@ img.footer {
 	width: var(--footer-logo-width);
 }
 
-.compoundTemplParams {
+.compoundTemplcli_argss {
 	color: var(--memdecl-template-color);
 	font-size: 80%;
 	line-height: 120%;
@@ -926,7 +926,7 @@ table.memberdecls {
 
 .mdescLeft, .mdescRight,
 .memItemLeft, .memItemRight,
-.memTemplItemLeft, .memTemplItemRight, .memTemplParams {
+.memTemplItemLeft, .memTemplItemRight, .memTemplcli_argss {
 	background-color: var(--memdecl-background-color);
 	border: none;
 	margin: 4px;
@@ -953,7 +953,7 @@ table.memberdecls {
 	width: 100%;
 }
 
-.memTemplParams {
+.memTemplcli_argss {
 	color: var(--memdecl-template-color);
         white-space: nowrap;
 	font-size: 80%;
@@ -1075,41 +1075,41 @@ dl.reflist dd {
         padding: 5px;
 }
 
-.paramkey {
+.cli_argskey {
 	text-align: right;
 }
 
-.paramtype {
+.cli_argstype {
 	white-space: nowrap;
 }
 
-.paramname {
-	color: var(--memdef-param-name-color);
+.cli_argsname {
+	color: var(--memdef-cli_args-name-color);
 	white-space: nowrap;
 }
-.paramname em {
+.cli_argsname em {
 	font-style: normal;
 }
-.paramname code {
+.cli_argsname code {
         line-height: 14px;
 }
 
-.params, .retval, .exception, .tparams {
+.cli_argss, .retval, .exception, .tcli_argss {
         margin-left: 0px;
         padding-left: 0px;
 }
 
-.params .paramname, .retval .paramname, .tparams .paramname, .exception .paramname {
+.cli_argss .cli_argsname, .retval .cli_argsname, .tcli_argss .cli_argsname, .exception .cli_argsname {
         font-weight: bold;
         vertical-align: top;
 }
 
-.params .paramtype, .tparams .paramtype {
+.cli_argss .cli_argstype, .tcli_argss .cli_argstype {
         font-style: italic;
         vertical-align: top;
 }
 
-.params .paramdir, .tparams .paramdir {
+.cli_argss .cli_argsdir, .tcli_argss .cli_argsdir {
         font-family: var(--font-family-monospace);
         vertical-align: top;
 }

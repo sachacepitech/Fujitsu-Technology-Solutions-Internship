@@ -21,7 +21,7 @@
 #include <systemd/sd-device.h>
 #include "druid.h"
 
-void free_unknown_temp_data_usb(temp_data_usb_t *unknown)
+void free_unknown_usb_db_entry(usb_db_entry_t *unknown)
 {
     free(unknown->vendor_name);
     free(unknown->product_name);

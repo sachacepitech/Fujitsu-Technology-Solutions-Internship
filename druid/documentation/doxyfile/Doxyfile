@@ -569,12 +569,12 @@ EXTRACT_LOCAL_METHODS  = NO
 
 EXTRACT_ANON_NSPACES   = NO
 
-# If this flag is set to YES, the name of an unnamed parameter in a declaration
+# If this flag is set to YES, the name of an unnamed cli_argseter in a declaration
 # will be determined by the corresponding definition. By default unnamed
-# parameters remain unnamed in the output.
+# cli_argseters remain unnamed in the output.
 # The default value is: YES.
 
-RESOLVE_UNNAMED_PARAMS = YES
+RESOLVE_UNNAMED_cli_argsS = YES
 
 # If the HIDE_UNDOC_MEMBERS tag is set to YES, doxygen will hide all
 # undocumented members inside documented classes or files. If set to NO these
@@ -721,7 +721,7 @@ SORT_GROUP_NAMES       = NO
 SORT_BY_SCOPE_NAME     = NO
 
 # If the STRICT_PROTO_MATCHING option is enabled and doxygen fails to do proper
-# type resolution of all parameters of a function it will reject a match between
+# type resolution of all cli_argseters of a function it will reject a match between
 # the prototype and the implementation of a member function even if there is
 # only one candidate or it is obvious which candidate to choose by doing a
 # simple string match. By disabling STRICT_PROTO_MATCHING doxygen will still
@@ -855,29 +855,29 @@ WARNINGS               = YES
 WARN_IF_UNDOCUMENTED   = YES
 
 # If the WARN_IF_DOC_ERROR tag is set to YES, doxygen will generate warnings for
-# potential errors in the documentation, such as documenting some parameters in
-# a documented function twice, or documenting parameters that don't exist or
+# potential errors in the documentation, such as documenting some cli_argseters in
+# a documented function twice, or documenting cli_argseters that don't exist or
 # using markup commands wrongly.
 # The default value is: YES.
 
 WARN_IF_DOC_ERROR      = YES
 
 # If WARN_IF_INCOMPLETE_DOC is set to YES, doxygen will warn about incomplete
-# function parameter documentation. If set to NO, doxygen will accept that some
-# parameters have no documentation without warning.
+# function cli_argseter documentation. If set to NO, doxygen will accept that some
+# cli_argseters have no documentation without warning.
 # The default value is: YES.
 
 WARN_IF_INCOMPLETE_DOC = YES
 
-# This WARN_NO_PARAMDOC option can be enabled to get warnings for functions that
-# are documented, but have no documentation for their parameters or return
-# value. If set to NO, doxygen will only warn about wrong parameter
+# This WARN_NO_cli_argsDOC option can be enabled to get warnings for functions that
+# are documented, but have no documentation for their cli_argseters or return
+# value. If set to NO, doxygen will only warn about wrong cli_argseter
 # documentation, but not about the absence of documentation. If EXTRACT_ALL is
 # set to YES then this flag will automatically be disabled. See also
 # WARN_IF_INCOMPLETE_DOC
 # The default value is: NO.
 
-WARN_NO_PARAMDOC       = NO
+WARN_NO_cli_argsDOC       = NO
 
 # If WARN_IF_UNDOC_ENUM_VAL option is set to YES, doxygen will warn about
 # undocumented enumeration values. If set to NO, doxygen will accept

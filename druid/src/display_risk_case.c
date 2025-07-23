@@ -23,8 +23,8 @@
 #include <systemd/sd-device.h>
 #include "druid.h"
 
-void display_couple_vendor_product_device(con_data_usb_t *con_data_usb,
-    temp_data_usb_t *temp_data_usb, usb_risk_t *usb_risk)
+void display_known_usb_device(usb_device_info_t *usb_device_info,
+    usb_db_entry_t *usb_db_entry, usb_risk_stats_stats_t *usb_risk_stats)
 {
     printf(
         "\e[1;37m╭───────────────────────────────────────────────── Device n°""\e[1;32m%lu\e[0m ""\e[1;37m─────────────────────────────────────────────────╮\e[0m\n"
@@ -37,18 +37,18 @@ void display_couple_vendor_product_device(con_data_usb_t *con_data_usb,
         "│     Vendor Name (\e[1;34m%s\e[0m)   │   Product Name (\e[1;34m%s\e[0m)\n"
         "│\n"
         "\e[1;37m╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯\e[0m\n\n",
-        usb_risk->seen_count,
-        con_data_usb->vendor_id,
-        con_data_usb->product_id,
-        con_data_usb->vendor_name,
-        con_data_usb->product_name,
-        temp_data_usb->vendor_name,
-        temp_data_usb->product_name);
-    ++usb_risk->low;
+        usb_risk_stats->seen_count,
+        usb_device_info->vendor_id,
+        usb_device_info->product_id,
+        usb_device_info->vendor_name,
+        usb_device_info->product_name,
+        usb_db_entry->vendor_name,
+        usb_db_entry->product_name);
+    ++usb_risk_stats->low;
 }
 
-void display_vendor_found_product_unknown_device(con_data_usb_t *con_data_usb,
-    temp_data_usb_t *temp_data_usb, usb_risk_t *usb_risk)
+void display_partially_known_usb_device(usb_device_info_t *usb_device_info,
+    usb_db_entry_t *usb_db_entry, usb_risk_stats_stats_t *usb_risk_stats)
 {
     
     printf(
@@ -62,18 +62,18 @@ void display_vendor_found_product_unknown_device(con_data_usb_t *con_data_usb,
         "│     Vendor Name (\e[1;31m%s\e[0m)   │   Product Name (\e[1;31m%s\e[0m)\n"
         "│\n"
         "\e[1;37m╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯\e[0m\n\n",
-        usb_risk->seen_count,
-        con_data_usb->vendor_id,
-        con_data_usb->product_id,
-        con_data_usb->vendor_name,
-        con_data_usb->product_name,
-        temp_data_usb->vendor_name,
-        temp_data_usb->product_name);
-    ++usb_risk->medium;
+        usb_risk_stats->seen_count,
+        usb_device_info->vendor_id,
+        usb_device_info->product_id,
+        usb_device_info->vendor_name,
+        usb_device_info->product_name,
+        usb_db_entry->vendor_name,
+        usb_db_entry->product_name);
+    ++usb_risk_stats->medium;
 }
 
-void display_vendor_unknown_product_unknown_device(con_data_usb_t *con_data_usb,
-    temp_data_usb_t *temp_data_usb, usb_risk_t *usb_risk)
+void display_unknown_usb_device(usb_device_info_t *usb_device_info,
+    usb_db_entry_t *usb_db_entry, usb_risk_stats_stats_t *usb_risk_stats)
 {
     
     printf(
@@ -87,17 +87,17 @@ void display_vendor_unknown_product_unknown_device(con_data_usb_t *con_data_usb,
         "│     Vendor Name (\e[1;31m%s\e[0m)   │   Product Name (\e[1;31m%s\e[0m)\n"
         "│\n"
         "\e[1;37m╰────────────────────────────────────────────────────────────────────────────────────────────────────────────╯\e[0m\n\n",
-        usb_risk->seen_count,
-        con_data_usb->vendor_id,
-        con_data_usb->product_id,
-        con_data_usb->vendor_name,
-        con_data_usb->product_name,
-        temp_data_usb->vendor_name,
-        temp_data_usb->product_name);
-    ++usb_risk->major;
+        usb_risk_stats->seen_count,
+        usb_device_info->vendor_id,
+        usb_device_info->product_id,
+        usb_device_info->vendor_name,
+        usb_device_info->product_name,
+        usb_db_entry->vendor_name,
+        usb_db_entry->product_name);
+    ++usb_risk_stats->major;
 }
 
-void display_risk_table(usb_risk_t *usb_risk)
+void display_risk_table(usb_risk_stats_stats_t *usb_risk_stats)
 {
      printf(
         "\e[1;37m╭───────── Risk table ─────────╮\e[0m\n"
@@ -107,6 +107,6 @@ void display_risk_table(usb_risk_t *usb_risk)
         "│\n"
         "│ Number Major Risk  :  \e[1;31m%lu\e[0m \n"
         "\e[1;37m╰─────────────────────────────╯\e[0m\n\n",
-    usb_risk->low, usb_risk->medium, usb_risk->major);
+    usb_risk_stats->low, usb_risk_stats->medium, usb_risk_stats->major);
 
 }

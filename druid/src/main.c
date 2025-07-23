@@ -23,19 +23,19 @@
 
 int main(int ac, char **av)
 {
-    con_data_usb_t con_data_usb = {0};
+    usb_device_info_t usb_device_info = {0};
     usb_tools_t usb_tools = {0};
-    temp_data_usb_t temp_data_usb = {0};
-    param_t param = {ac, av};
-    int return_value_flags_file = flags_files(ac, av);
+    usb_db_entry_t usb_db_entry = {0};
+    cli_args_t cli_args = {ac, av};
+    int cli_flags_result = handle_cli_info_flags(ac, av);
 
-    if (return_value_flags_file == SUCCESS)
+    if (cli_flags_result == SUCCESS)
         return SUCCESS;
-    else if (return_value_flags_file == MAJOR_ERROR)
+    else if (cli_flags_result == MAJOR_ERROR)
         return MAJOR_ERROR;
-    if (create_enumerator(&usb_tools, &con_data_usb) == MAJOR_ERROR)
+    if (init_usb_enumerator(&usb_tools, &usb_device_info) == MAJOR_ERROR)
         return MAJOR_ERROR;
-    if (comparator(&usb_tools, &con_data_usb, &temp_data_usb, &param) == MAJOR_ERROR) {
+    if (scan_connected_usb_and_check_risks(&usb_tools, &usb_device_info, &usb_db_entry, &cli_args) == MAJOR_ERROR) {
         sd_device_enumerator_unref(usb_tools.enumerator);
         return MAJOR_ERROR;
     }

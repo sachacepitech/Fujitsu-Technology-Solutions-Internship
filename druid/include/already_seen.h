@@ -29,6 +29,6 @@ typedef struct seen_device_s {
 
     #define MAX_SEEN_DEVICES 128
 
-seen_device_t seen[MAX_SEEN_DEVICES];
+seen_device_t seen_devices[MAX_SEEN_DEVICES];
 
 #endif /* SEEN_H */

@@ -3,7 +3,7 @@
  * @version 1.0
  * @author Sacha Lemée
  * @author Fujitsu Technology Solutions
- * @file flags_files.c
+ * @file handle_cli_info_flags.c
  * @date 17 July 2025
  * @copyright Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
  * 
@@ -21,7 +21,7 @@
 #include <systemd/sd-device.h>
 #include "druid.h"
 
-int flags_files(int ac, char **av)
+int handle_cli_info_flags(int ac, char **av)
 {
     size_t help_file_return_value = display_file(ac, av,
         HELP_FLAG, HELP_FLAG_OPTION, HELP_FILE);
