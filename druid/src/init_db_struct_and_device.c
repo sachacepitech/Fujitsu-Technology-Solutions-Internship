@@ -39,7 +39,7 @@ int init_struct_usb_db(usb_db_t *usb_db, size_t allocated_capacity)
 {
     usb_db->entries = malloc(sizeof(usb_db_entry_t) * allocated_capacity);
     if (usb_db->entries == NULL)
-        return MAJOR_ERROR;    
+        return EXIT_ERROR;    
     usb_db->count = 0;
     return EXIT_SUCCESS;
 }

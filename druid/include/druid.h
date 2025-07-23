@@ -19,7 +19,7 @@
 
     #define SUCCESS 0
     #define UNSEEN -1
-    #define MAJOR_ERROR 84
+    #define EXIT_ERROR 84
 
     #define FILE_SEPARATOR ";"
     #define FILE_TYPE_SEPARATOR "."

@@ -52,7 +52,7 @@ static int append_usb_entry_from_line(usb_db_t *usb_db, usb_db_entry_t **usb_db_
         *allocated_capacity *= INCREASED_SIZE;
         usb_db->entries = realloc(usb_db->entries, sizeof(usb_db_entry_t) * (*allocated_capacity));
         if (usb_db->entries == NULL)
-            return MAJOR_ERROR;
+            return EXIT_ERROR;
     }
     *usb_db_entry = &usb_db->entries[usb_db->count];
     init_struct_temp_data(*usb_db_entry);
@@ -69,10 +69,10 @@ static int add_new_data(cli_args_t *cli_args, usb_db_t *usb_db,
     FILE *update_data_file = fopen(strcat(cli_args->av[cli_args_FILE], FILE_TYPE_PLUS_SEPARATOR), READ_MODE);
 
     if (update_data_file == NULL)
-        return MAJOR_ERROR;
+        return EXIT_ERROR;
     while (getline(&line, &n, update_data_file) != EOF) {
-        if (append_usb_entry_from_line(usb_db, &usb_db_entry, line, &allocated_capacity) == MAJOR_ERROR)
-            return MAJOR_ERROR;
+        if (append_usb_entry_from_line(usb_db, &usb_db_entry, line, &allocated_capacity) == EXIT_ERROR)
+            return EXIT_ERROR;
     }
     fclose(update_data_file);
     free(line);
@@ -88,11 +88,11 @@ static int check_for_update_file_and_load(cli_args_t *cli_args, usb_db_t *usb_db
             strtok(cli_args->av[cli_args_FILE], FILE_TYPE_SEPARATOR);
             if (strcmp(strtok(NULL, FILE_TYPE_SEPARATOR), FILE_TYPE) != SUCCESS) {
                 printf(NONE_CSV_FILE_MESSAGE);
-                return MAJOR_ERROR;
+                return EXIT_ERROR;
             } else {
                 if (add_new_data(cli_args, usb_db,
-                    usb_db_entry, allocated_capacity) == MAJOR_ERROR)
-                    return MAJOR_ERROR;
+                    usb_db_entry, allocated_capacity) == EXIT_ERROR)
+                    return EXIT_ERROR;
             }
     } else
         return EXIT_SUCCESS;
@@ -107,14 +107,14 @@ int load_usb_db_from_file(usb_db_t *usb_db, usb_db_entry_t *usb_db_entry, cli_ar
     size_t allocated_capacity = DEFAULT_SIZE;
 
     if (data_file == NULL)
-        return MAJOR_ERROR;
-    if (init_struct_usb_db(usb_db, allocated_capacity) == MAJOR_ERROR)
-        return MAJOR_ERROR;
-    if (check_for_update_file_and_load(cli_args, usb_db, usb_db_entry, allocated_capacity) == MAJOR_ERROR)
-        return MAJOR_ERROR;
+        return EXIT_ERROR;
+    if (init_struct_usb_db(usb_db, allocated_capacity) == EXIT_ERROR)
+        return EXIT_ERROR;
+    if (check_for_update_file_and_load(cli_args, usb_db, usb_db_entry, allocated_capacity) == EXIT_ERROR)
+        return EXIT_ERROR;
     while (getline(&line, &n, data_file) != EOF) {
-        if (append_usb_entry_from_line(usb_db, &usb_db_entry, line, &allocated_capacity) == MAJOR_ERROR)
-            return MAJOR_ERROR;
+        if (append_usb_entry_from_line(usb_db, &usb_db_entry, line, &allocated_capacity) == EXIT_ERROR)
+            return EXIT_ERROR;
     }
     free(line);
     fclose(data_file);

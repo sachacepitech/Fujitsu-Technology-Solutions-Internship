@@ -4,6 +4,7 @@
  * @author Sacha Lemée
  * @author Fujitsu Technology Solutions
  * @file init_usb_enumerator.c
+ * @brief Initializes the USB enumerator
  * @date 17 July 2025
  * @copyright Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
  * 
@@ -21,12 +22,25 @@
 #include <systemd/sd-device.h>
 #include "druid.h"
 
+/**
+ * @brief Initializes the USB enumerator
+ *
+ * sets up internal USB tool structures, initializes the USB device info,
+ * and prepares the systemd enumerator to target the USB subsystem
+ * 
+ * @details int init_usb_enumerator(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info)
+ * @param usb_tools Pointer to the usb_tools_t structure used for enumeration.
+ * @param usb_device_info Pointer to the usb_device_info_t structure to be initialized.
+ * @return Exit code:
+ *         - 0 (EXIT_SUCCESS) on successful initialization
+ *         - 84 (EXIT_ERROR) if the enumerator could not be created
+ */
 int init_usb_enumerator(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info)
 {
     init_usb_tools_struct(usb_tools);
     init_usb_device_info_struct(usb_device_info);
     if (sd_device_enumerator_new(&usb_tools->enumerator) < 0)
-        return MAJOR_ERROR;
+        return EXIT_ERROR;
     sd_device_enumerator_add_match_subsystem(usb_tools->enumerator, "usb", 1);
     usb_tools->device = sd_device_enumerator_get_device_first(
         usb_tools->enumerator);

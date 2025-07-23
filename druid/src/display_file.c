@@ -32,7 +32,7 @@ int display_file(int ac, char **av, const char *flag,
         || strcmp(av[cli_args_FLAG], optional_flag) == SUCCESS)) {
         fd = fopen(path_file, READ_MODE);
         if (fd == NULL)
-            return MAJOR_ERROR;
+            return EXIT_ERROR;
         return_value = 0;
         while (getline(&line, &n, fd) != EOF)
             printf("%s", line);

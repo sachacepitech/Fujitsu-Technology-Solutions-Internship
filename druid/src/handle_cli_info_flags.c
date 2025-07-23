@@ -4,6 +4,7 @@
  * @author Sacha Lemée
  * @author Fujitsu Technology Solutions
  * @file handle_cli_info_flags.c
+ * @brief Handles CLI flags related to help, format and license display
  * @date 17 July 2025
  * @copyright Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
  * 
@@ -21,6 +22,20 @@
 #include <systemd/sd-device.h>
 #include "druid.h"
 
+/**
+ * @brief Handles CLI flags related to help, format and license display
+ *
+ * checks if specific CLI parameters are passed (help, format, license)
+ * and displays the corresponding file content if matched
+ * 
+ * @details int handle_cli_info_flags(int ac, char **av)
+ * @param ac Argument count.
+ * @param av Argument values.
+ * @return Exit code:
+ *         - 0 (EXIT_SUCCESS) if a file was successfully displayed
+ *         - 84 (EXIT_ERROR) if there was a critical failure while displaying
+ *         - -1 (UNSEEN) if no relevant CLI flag was found
+ */
 int handle_cli_info_flags(int ac, char **av)
 {
     size_t help_file_return_value = display_file(ac, av,
@@ -32,15 +47,15 @@ int handle_cli_info_flags(int ac, char **av)
     
     if (help_file_return_value == SUCCESS)
         return EXIT_SUCCESS;
-    else if (help_file_return_value == MAJOR_ERROR)
-        return MAJOR_ERROR;
+    else if (help_file_return_value == EXIT_ERROR)
+        return EXIT_ERROR;
     if (format_file_return_value == SUCCESS)
         return EXIT_SUCCESS;
-    else if (format_file_return_value == MAJOR_ERROR)
-        return MAJOR_ERROR;
+    else if (format_file_return_value == EXIT_ERROR)
+        return EXIT_ERROR;
     if (license_file_return_value == SUCCESS)
         return EXIT_SUCCESS;
-    else if (license_file_return_value == MAJOR_ERROR)
-        return MAJOR_ERROR;
-    return EXIT_FAILURE;
+    else if (license_file_return_value == EXIT_ERROR)
+        return EXIT_ERROR;
+    return UNSEEN;
 }

@@ -106,9 +106,9 @@ int scan_connected_usb_and_check_risks(usb_tools_t *usb_tools, usb_device_info_t
     usb_risk_stats_stats_t usb_risk_stats = {0};
     bool already_seen = false;
 
-    if (load_usb_db_from_file(&usb_db, usb_db_entry, cli_args) == MAJOR_ERROR) {
+    if (load_usb_db_from_file(&usb_db, usb_db_entry, cli_args) == EXIT_ERROR) {
         free_usb_db(&usb_db);
-        return MAJOR_ERROR;
+        return EXIT_ERROR;
     }
     usb_tools->device = sd_device_enumerator_get_device_first(
         usb_tools->enumerator);
