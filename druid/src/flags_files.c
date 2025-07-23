@@ -1,5 +1,5 @@
 /**
- * @name DRUID
+ * @name druid
  * @version 1.0
  * @author Sacha Lemée
  * @author Fujitsu Technology Solutions
@@ -7,7 +7,7 @@
  * @date 17 July 2025
  * @copyright Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
  * 
- * This file is part of the "DRUID" repository.
+ * This file is part of the "druid" repository.
  * 
  * You can use, modify, and distribute this code under the terms of the
  * Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
@@ -18,9 +18,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stddef.h>
-
 #include <systemd/sd-device.h>
-
 #include "druid.h"
 
 int flags_files(int ac, char **av)

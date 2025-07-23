@@ -3,7 +3,7 @@
  * @version 1.0
  * @author Sacha Lemée
  * @author Fujitsu Technology Solutions
- * @file display_file.c
+ * @file free_all.c
  * @date 17 July 2025
  * @copyright Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
  * 
@@ -18,26 +18,22 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stddef.h>
+#include <systemd/sd-device.h>
 #include "druid.h"
 
-int display_file(int ac, char **av, const char *flag,
-    const char *optional_flag, const char *path_file)
+void free_unknown_temp_data_usb(temp_data_usb_t *unknown)
 {
-    FILE *fd = 0;
-    char *line = NULL;
-    size_t n = 0;
-    int return_value = 1;
+    free(unknown->vendor_name);
+    free(unknown->product_name);
+}
 
-    if (ac == 2 && (strcmp(av[PARAM_FLAG], flag) == SUCCESS
-        || strcmp(av[PARAM_FLAG], optional_flag) == SUCCESS)) {
-        fd = fopen(path_file, READ_MODE);
-        if (fd == NULL)
-            return MAJOR_ERROR;
-        return_value = 0;
-        while (getline(&line, &n, fd) != EOF)
-            printf("%s", line);
-        free(line);
-        fclose(fd);
+void free_usb_db(usb_db_t *usb_db)
+{
+    for (size_t i = 0; i < usb_db->count; i++) {
+        free(usb_db->entries[i].vendor_id);
+        free(usb_db->entries[i].vendor_name);
+        free(usb_db->entries[i].product_id);
+        free(usb_db->entries[i].product_name);
     }
-    return return_value;
+    free(usb_db->entries);
 }

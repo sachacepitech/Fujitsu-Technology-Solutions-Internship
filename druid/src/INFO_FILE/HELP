@@ -17,7 +17,7 @@ druid [options]
     Adds data to the existing database (CSV format required: VendorID, VendorName, ProductID, ProductName).
 
 -l, --license
-    Displays the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0) and its conditions.
+    Displays the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0 DEED) and its conditions.
 
 =======================================
           Default behavior:
@@ -81,7 +81,7 @@ For Arch Linux:
 =======================================
               License:
 =======================================
-Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
+Fujitsu Technology Solutions SAS and Sacha Lemée – Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0 DEED)
 
 You are free to:
     - Copy, modify, distribute, and perform the work, even for commercial purposes, provided that you give proper attribution, provide a link to the license, and indicate whether any modifications have been made.
@@ -90,10 +90,10 @@ You must comply with the following conditions:
     - Attribution: You must give proper credit, provide a link to the license, and indicate whether any modifications have been made. You may do this in a reasonable manner, but not in a way that suggests that the licensor approves of you or your use.
     - Share under the same conditions: If you modify or transform this material, you must distribute your contributions under the same license as the original.
 
-You can view the full license here: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+You can view the full license here: [CC BY-SA 4.0 DEED](https://creativecommons.org/licenses/by-sa/4.0/deed.en)
 
 =======================================
-              Author:
+              Authors:
 =======================================
-Project developed by Sacha Lemée as a Junior Cybersecurity Consultant during an internship at FUJITSU TECHNOLOGY SOLUTIONS.
+Project developed by Sacha Lemée as a Junior Cybersecurity Consultant, student at EPITECH Paris, during an internship at FUJITSU TECHNOLOGY SOLUTIONS.
 =======================================
