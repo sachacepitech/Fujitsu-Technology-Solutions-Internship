@@ -53,7 +53,7 @@
 
     #define PARAM_FLAG 1
     #define PARAM_FILE 2
-    #define BIN_FLAG_FILE 3 
+    #define BIN_FLAG_FILE 3
 
     #include <stddef.h>
     #include <systemd/sd-device.h>

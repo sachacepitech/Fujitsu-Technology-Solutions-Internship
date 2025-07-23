@@ -18,7 +18,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stddef.h>
+
 #include <systemd/sd-device.h>
+
 #include "druid.h"
 
 int create_enumerator(usb_tools_t *usb_tools, con_data_usb_t *con_data_usb)
