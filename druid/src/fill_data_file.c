@@ -45,6 +45,22 @@ static void fill_struct_temp_data(temp_data_usb_t *temp_data_usb, char *line)
     temp_data_usb->product_name = strdup(product_name);
 }
 
+static int add_entry_to_usb_db(usb_db_t *usb_db, temp_data_usb_t **temp_data_usb,
+    char *line, size_t *mem_allocated)
+{
+    if (usb_db->count >= *mem_allocated) {
+        *mem_allocated *= INCREASED_SIZE;
+        usb_db->entries = realloc(usb_db->entries, sizeof(temp_data_usb_t) * (*mem_allocated));
+        if (usb_db->entries == NULL)
+            return MAJOR_ERROR;
+    }
+    *temp_data_usb = &usb_db->entries[usb_db->count];
+    init_struct_temp_data(*temp_data_usb);
+    fill_struct_temp_data(*temp_data_usb, line);
+    ++usb_db->count;
+    return EXIT_SUCCESS;
+}
+
 static int add_new_data(param_t *param, usb_db_t *usb_db,
     temp_data_usb_t *temp_data_usb, size_t mem_allocated)
 {
@@ -55,17 +71,8 @@ static int add_new_data(param_t *param, usb_db_t *usb_db,
     if (update_data_file == NULL)
         return MAJOR_ERROR;
     while (getline(&line, &n, update_data_file) != EOF) {
-        if (usb_db->count >= mem_allocated) {
-            mem_allocated *= INCREASED_SIZE;
-            usb_db->entries = realloc(usb_db->entries, sizeof(temp_data_usb_t)
-                * mem_allocated);
-            if (usb_db->entries == NULL)
-                return MAJOR_ERROR;
-        }
-        temp_data_usb = &usb_db->entries[usb_db->count];
-        init_struct_temp_data(temp_data_usb);
-        fill_struct_temp_data(temp_data_usb, line);
-        ++usb_db->count;
+        if (add_entry_to_usb_db(usb_db, &temp_data_usb, line, &mem_allocated) == MAJOR_ERROR)
+            return MAJOR_ERROR;
     }
     fclose(update_data_file);
     free(line);
@@ -106,17 +113,8 @@ int fill_struct_db_temp(usb_db_t *usb_db, temp_data_usb_t *temp_data_usb, param_
     if (check_update_file(param, usb_db, temp_data_usb, mem_allocated) == MAJOR_ERROR)
         return MAJOR_ERROR;
     while (getline(&line, &n, data_file) != EOF) {
-        if (usb_db->count >= mem_allocated) {
-            mem_allocated *= INCREASED_SIZE;
-            usb_db->entries = realloc(usb_db->entries, sizeof(temp_data_usb_t)
-                * mem_allocated);
-            if (usb_db->entries == NULL)
-                return MAJOR_ERROR;
-        }
-        temp_data_usb = &usb_db->entries[usb_db->count];
-        init_struct_temp_data(temp_data_usb);
-        fill_struct_temp_data(temp_data_usb, line);
-        ++usb_db->count;
+        if (add_entry_to_usb_db(usb_db, &temp_data_usb, line, &mem_allocated) == MAJOR_ERROR)
+            return MAJOR_ERROR;
     }
     free(line);
     fclose(data_file);
