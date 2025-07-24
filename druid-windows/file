@@ -1,0 +1,20 @@
+USB Device: VID=04C5 PID=1668
+  Manufacturer: (Standard USB Host Controller)
+  Description: USB Composite Device
+
+USB Device: VID=13D3 PID=3563
+  Manufacturer: (Standard USB Host Controller)
+  Description: USB Composite Device
+
+USB Device: VID=04B4 PID=5217
+  Manufacturer: (Standard USB Host Controller)
+  Description: USB Composite Device
+
+USB Device: VID=0BDA PID=8153
+  Manufacturer: Realtek
+  Description: Realtek USB GbE Family Controller
+
+USB Device: VID=322E PID=202C
+  Manufacturer: (Standard USB Host Controller)
+  Description: USB Composite Device
+
