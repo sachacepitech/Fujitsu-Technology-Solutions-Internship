@@ -14,8 +14,6 @@
 # See the full license at: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
 # ==============================================================================
 
-CC = gcc
-
 SRC =	$(addprefix src/, \
 			display_risk_stats_and_unknown_device.c \
 			display_file.c \
@@ -27,6 +25,8 @@ SRC =	$(addprefix src/, \
 			main.c \
 			scan_connected_usb_and_check_risks.c \
 		)
+
+CC ?= gcc
 
 OBJ =	$(SRC:.c=.o)
 
