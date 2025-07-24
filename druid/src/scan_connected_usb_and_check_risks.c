@@ -6,12 +6,12 @@
  * @file scan_connected_usb_and_check_risks.c
  * @details Scans connected usb devices and evaluates potential security risks
  * @date 17 July 2025
- * @copyright Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
+ * @copyright Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0 DEED)
  * 
  * This file is part of the "druid" repository.
  * 
  * You can use, modify, and distribute this code under the terms of the
- * Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+ * Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0 DEED).
  * See the full license at: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
  */
 

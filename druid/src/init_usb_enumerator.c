@@ -6,12 +6,12 @@
  * @file init_usb_enumerator.c
  * @brief Initializes the USB enumerator
  * @date 17 July 2025
- * @copyright Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
+ * @copyright Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0 DEED)
  * 
  * This file is part of the "druid" repository.
  * 
  * You can use, modify, and distribute this code under the terms of the
- * Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+ * Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0 DEED).
  * See the full license at: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
  */
 
@@ -37,8 +37,8 @@
  */
 int init_usb_enumerator(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info)
 {
-    init_usb_tools_struct(usb_tools);
-    init_usb_device_info_struct(usb_device_info);
+    init_struct_usb_tools(usb_tools);
+    init_struct_usb_device_info(usb_device_info);
     if (sd_device_enumerator_new(&usb_tools->enumerator) < 0)
         return EXIT_ERROR;
     sd_device_enumerator_add_match_subsystem(usb_tools->enumerator, SEARCH_DEVICE_TYPE, 1);

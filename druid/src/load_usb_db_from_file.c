@@ -4,14 +4,15 @@
  * @author Sacha Lemée
  * @author Fujitsu Technology Solutions
  * @file load_usb_db_from_file.c
+ * @brief Load usb database from file(s)
  * @details Load and parse usb db from file(s)
  * @date 17 July 2025
- * @copyright Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
+ * @copyright Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0 DEED)
  * 
  * This file is part of the "druid" repository.
  * 
  * You can use, modify, and distribute this code under the terms of the
- * Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+ * Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0 DEED).
  * See the full license at: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
  */
 
@@ -100,7 +101,7 @@ static int append_usb_entry_from_line(usb_db_t *usb_db, usb_db_entry_t **usb_db_
             return EXIT_ERROR;
     }
     *usb_db_entry = &usb_db->entries[usb_db->count];
-    init_struct_temp_data(*usb_db_entry);
+    init_struct_usb_db_entry(*usb_db_entry);
     fill_struct_temp_data(*usb_db_entry, line);
     ++usb_db->count;
     return EXIT_SUCCESS;
