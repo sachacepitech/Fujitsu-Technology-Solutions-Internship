@@ -161,4 +161,6 @@ int display_file(int ac, char **av, const char *flag,
 int scan_connected_usb_and_check_risks(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info,
     usb_db_entry_t *usb_db_entry, cli_args_t *cli_args);
 
+usb_tools_t* usb_tools_init(void);
+
 #endif /* DRUID_H */

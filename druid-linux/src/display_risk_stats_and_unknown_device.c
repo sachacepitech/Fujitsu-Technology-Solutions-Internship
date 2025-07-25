@@ -124,7 +124,7 @@ void display_unknown_usb_device(usb_device_info_t *usb_device_info,
     
     printf(
         "\e[1;37m╭───────────────────────────────────────────────── Device n°""\e[1;31m%lu\e[0m ""\e[1;37m─────────────────────────────────────────────────╮\e[0m\n"
-        "│ VendorID  \e[1;31m(Unknown : %s\e[0m)   │   ProductID \e[1;31m(Unknown : %s\e[0m)\n"
+        "│ VendorID  (\e[1;31mUnknown : %s\e[0m)   │   ProductID (\e[1;31mUnknown : %s\e[0m)\n"
         "│\n"
         "│ \e[1;36mFrom System\e[0m:\n"
         "│     Vendor Name (\e[1;31m%s\e[0m)   │   Product Name (\e[1;31m%s\e[0m)\n"
