@@ -6,14 +6,14 @@
 
 static const GUID USB_IF_GUID = { 0xA5DCBF10, 0x6530, 0x11D2, {0x90, 0x1F, 0x00, 0xC0, 0x4F, 0xB9, 0x51, 0xED} };
 
-/// Initialise la liste des périphériques USB présents.
-/// Retourne un handle valide ou INVALID_HANDLE_VALUE en cas d'échec.
-HDEVINFO getUsbDeviceInfoList(void)
+/// Initialise la liste des pï¿½riphï¿½riques USB prï¿½sents.
+/// Retourne un handle valide ou INVALID_HANDLE_VALUE en cas d'ï¿½chec.
+HDEVINFO get_usb_device_info_list(void)
 {
     return SetupDiGetClassDevsA(&USB_IF_GUID, NULL, NULL, DIGCF_PRESENT | DIGCF_DEVICEINTERFACE);
 }
 
-/// Alloue et remplit les détails d'interface pour un périphérique USB donné.
+/// Alloue et remplit les dï¿½tails d'interface pour un pï¿½riphï¿½rique USB donnï¿½.
 PSP_DEVICE_INTERFACE_DETAIL_DATA_A get_device_interface_detail(HDEVINFO hDevInfo, SP_DEVICE_INTERFACE_DATA* ifData, SP_DEVINFO_DATA* devInfo)
 {
     DWORD requiredSize = 0;
@@ -21,7 +21,7 @@ PSP_DEVICE_INTERFACE_DETAIL_DATA_A get_device_interface_detail(HDEVINFO hDevInfo
 
     PSP_DEVICE_INTERFACE_DETAIL_DATA_A pDetail = (PSP_DEVICE_INTERFACE_DETAIL_DATA_A)malloc(requiredSize);
     if (!pDetail) {
-        fprintf(stderr, "Erreur : allocation mémoire échouée.\n");
+        fprintf(stderr, "Erreur : allocation mï¿½moire ï¿½chouï¿½e.\n");
         return NULL;
     }
     pDetail->cbSize = sizeof(SP_DEVICE_INTERFACE_DETAIL_DATA_A);
@@ -35,8 +35,8 @@ PSP_DEVICE_INTERFACE_DETAIL_DATA_A get_device_interface_detail(HDEVINFO hDevInfo
     return pDetail;
 }
 
-/// Extrait les VID et PID à partir du champ Hardware ID.
-void extractVidPid(const char* hardware_id, char* vendor_id, char* product_id)
+/// Extrait les VID et PID ï¿½ partir du champ Hardware ID.
+void extract_vendor_and_product_ids(const char* hardware_id, char* vendor_id, char* product_id)
 {
     char* vendor = strstr(hardware_id, "VID_");
     char* product = strstr(hardware_id, "PID_");
@@ -51,44 +51,45 @@ void extractVidPid(const char* hardware_id, char* vendor_id, char* product_id)
         strncpy(product_id,product + 4, 4);
 }
 
-/// Récupère une propriété de registre du périphérique.
-void getDeviceProperty(HDEVINFO hDevInfo, SP_DEVINFO_DATA* devInfo, DWORD property, char* buffer, DWORD size)
+/// Rï¿½cupï¿½re une propriï¿½tï¿½ de registre du pï¿½riphï¿½rique.
+void get_device_property(HDEVINFO hDevInfo, SP_DEVINFO_DATA* devInfo, DWORD property, char* buffer, DWORD size)
 {
     memset(buffer, 0, size);
     SetupDiGetDeviceRegistryPropertyA(hDevInfo, devInfo, property, NULL, (BYTE*)buffer, size, NULL);
 }
 
-/// Affiche les informations du périphérique USB.
-void printDeviceInfo(HDEVINFO hDevInfo, SP_DEVINFO_DATA* devInfo)
+/// Affiche les informations du pï¿½riphï¿½rique USB.
+void display_device_info(HDEVINFO hDevInfo, SP_DEVINFO_DATA* devInfo)
 {
     char hardware_id[512];
     char vendor_id[5], product_id[5];
     char manufacturer[256];
     char description[256];
 
-    getDeviceProperty(hDevInfo, devInfo, SPDRP_HARDWAREID, hardware_id, sizeof(hardware_id));
-    extractVidPid(hardware_id, vendor_id, product_id);
-    getDeviceProperty(hDevInfo, devInfo, SPDRP_MFG, manufacturer, sizeof(manufacturer));
-    getDeviceProperty(hDevInfo, devInfo, SPDRP_DEVICEDESC, description, sizeof(description));
+    get_device_property(hDevInfo, devInfo, SPDRP_HARDWAREID, hardware_id, sizeof(hardware_id));
+    extract_vendor_and_product_ids(hardware_id, vendor_id, product_id);
+    get_device_property(hDevInfo, devInfo, SPDRP_MFG, manufacturer, sizeof(manufacturer));
+    get_device_property(hDevInfo, devInfo, SPDRP_DEVICEDESC, description, sizeof(description));
     printf("USB Device: VID=%s PID=%s\n  Manufacturer: %s\n  Description: %s\n\n", vendor_id, product_id, manufacturer, description);
 }
 
-/// Parcourt et affiche tous les périphériques USB connectés.
+/// Parcourt et affiche tous les pï¿½riphï¿½riques USB connectï¿½s.
 void enumerate_usb_devices(void)
 {
-    HDEVINFO hDevInfo = getUsbDeviceInfoList();
+    HDEVINFO hDevInfo = get_usb_device_info_list();
+    SP_DEVICE_INTERFACE_DATA ifData = {0};
+
     if (hDevInfo == INVALID_HANDLE_VALUE) {
-        fprintf(stderr, "Erreur : SetupDiGetClassDevsA a échoué.\n");
+        fprintf(stderr, "Erreur : SetupDiGetClassDevsA a ï¿½chouï¿½.\n");
         return;
     }
-    SP_DEVICE_INTERFACE_DATA ifData;
     ifData.cbSize = sizeof(SP_DEVICE_INTERFACE_DATA);
     for (DWORD idx = 0; SetupDiEnumDeviceInterfaces(hDevInfo, NULL, &USB_IF_GUID, idx, &ifData); idx++) {
         SP_DEVINFO_DATA devInfo;
         PSP_DEVICE_INTERFACE_DETAIL_DATA_A pDetail = get_device_interface_detail(hDevInfo, &ifData, &devInfo);
         if (!pDetail)
             continue;
-        printDeviceInfo(hDevInfo, &devInfo);
+        display_device_info(hDevInfo, &devInfo);
         free(pDetail);
     }
     SetupDiDestroyDeviceInfoList(hDevInfo);
