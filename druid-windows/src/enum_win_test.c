@@ -23,9 +23,8 @@ PSP_DEVICE_INTERFACE_DETAIL_DATA_A get_device_interface_detail(void* device_info
 
     SetupDiGetDeviceInterfaceDetailA(device_info_set, interface_data, NULL, 0, &memory_allocated, NULL);
     interface_detail = (PSP_DEVICE_INTERFACE_DETAIL_DATA_A)malloc(memory_allocated);
-    if (interface_detail == NULL) {
+    if (interface_detail == NULL)
         return NULL;
-    }
     interface_detail->cbSize = sizeof(SP_DEVICE_INTERFACE_DETAIL_DATA_A);
     device_info_data->cbSize = sizeof(SP_DEVINFO_DATA);
     if (SetupDiGetDeviceInterfaceDetailA(device_info_set, interface_data, interface_detail, memory_allocated, NULL, device_info_data) == false) {
