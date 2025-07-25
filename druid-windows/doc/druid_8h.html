@@ -201,7 +201,7 @@ Fujitsu Technology Solutions </dd></dl>
 <tr class="memitem:a1339e6d096dc5cf017c5250baa0dd151" id="r_a1339e6d096dc5cf017c5250baa0dd151"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="druid_8h.html#a1339e6d096dc5cf017c5250baa0dd151">init_struct_usb_device_info</a> (<a class="el" href="druid_8h.html#ac1a64cd8089f89f3fdd6716e16d71de2">usb_device_info_t</a> *usb_device_info)</td></tr>
 <tr class="memdesc:a1339e6d096dc5cf017c5250baa0dd151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the usb_device_info_t structure to default values.  <br /></td></tr>
 <tr class="separator:a1339e6d096dc5cf017c5250baa0dd151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7ceaafda871f4625ef67e7b9659b224" id="r_ae7ceaafda871f4625ef67e7b9659b224"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="druid_8h.html#ae7ceaafda871f4625ef67e7b9659b224">init_struct_usb_db</a> (<a class="el" href="druid_8h.html#aa88d7fd7b78c93ccbc4bfff6fc5aefe3">usb_db_t</a> *usb_db, size_t allocated_capacity)</td></tr>
+<tr class="memitem:ae7ceaafda871f4625ef67e7b9659b224" id="r_ae7ceaafda871f4625ef67e7b9659b224"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="druid_8h.html#ae7ceaafda871f4625ef67e7b9659b224">init_struct_usb_db</a> (<a class="el" href="druid_8h.html#aa88d7fd7b78c93ccbc4bfff6fc5aefe3">usb_db_t</a> *usb_db, long unsigned int allocated_capacity)</td></tr>
 <tr class="memdesc:ae7ceaafda871f4625ef67e7b9659b224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the usb_db_t structure with allocated capacity.  <br /></td></tr>
 <tr class="separator:ae7ceaafda871f4625ef67e7b9659b224"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0c8041b1177e101510b77bb8bdb08b7" id="r_af0c8041b1177e101510b77bb8bdb08b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="druid_8h.html#af0c8041b1177e101510b77bb8bdb08b7">init_struct_usb_db_entry</a> (<a class="el" href="druid_8h.html#af83220175b2757637d040a7ee2953b29">usb_db_entry_t</a> *usb_db_entry)</td></tr>
@@ -1160,7 +1160,7 @@ Fujitsu Technology Solutions </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype">long unsigned int&#160;</td>
           <td class="paramname"><em>allocated_capacity</em>&#160;</td>
         </tr>
         <tr>
@@ -1173,7 +1173,7 @@ Fujitsu Technology Solutions </dd></dl>
 
 <p>Initializes the usb_db_t structure with allocated capacity. </p>
 <p>allocates memory for storing USB database entries and initializes the entry count to zero</p>
-<p>int <a class="el" href="init__struct__db__and__device_8c.html#ae7ceaafda871f4625ef67e7b9659b224" title="Initializes the usb_db_t structure with allocated capacity.">init_struct_usb_db(usb_db_t *usb_db, size_t allocated_capacity)</a> </p><dl class="params"><dt>Parameters</dt><dd>
+<p>int <a class="el" href="init__struct__db__and__device_8c.html#ae7ceaafda871f4625ef67e7b9659b224" title="Initializes the usb_db_t structure with allocated capacity.">init_struct_usb_db(usb_db_t *usb_db, long unsigned int allocated_capacity)</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">usb_db</td><td>Pointer to the usb_db_t structure to initialize </td></tr>
     <tr><td class="paramname">allocated_capacity</td><td>Number of usb_db_entry_t elements to allocate </td></tr>

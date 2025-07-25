@@ -17,26 +17,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <stddef.h>
-#include <systemd/sd-device.h>
 #include "druid.h"
-
-/**
- * @brief Initializes the usb_tools_t structure to default values
- *
- * sets the internal pointers of the usb_tools_t structure
- * to NULL in preparation for USB enumeration setup
- * 
- * @details void init_struct_usb_tools(usb_tools_t *usb_tools)
- * @param usb_tools Pointer to the usb_tools_t structure to be initialized
- * @return None (void)
- */
-void init_struct_usb_tools(usb_tools_t *usb_tools)
-{
-    usb_tools->device = NULL;
-    usb_tools->enumerator = NULL;
-}
 
 /**
  * @brief Initializes the usb_device_info_t structure to default values
@@ -62,14 +44,14 @@ void init_struct_usb_device_info(usb_device_info_t *usb_device_info)
  * allocates memory for storing USB database entries and
  * initializes the entry count to zero
  * 
- * @details int init_struct_usb_db(usb_db_t *usb_db, size_t allocated_capacity)
+ * @details int init_struct_usb_db(usb_db_t *usb_db, long unsigned int allocated_capacity)
  * @param usb_db Pointer to the usb_db_t structure to initialize
  * @param allocated_capacity Number of usb_db_entry_t elements to allocate
  * @return Exit code:
  *         - 0      (EXIT_SUCCESS) on successful memory allocation
  *         - 84     (EXIT_ERROR) if memory allocation fails
  */
-int init_struct_usb_db(usb_db_t *usb_db, size_t allocated_capacity)
+int init_struct_usb_db(usb_db_t *usb_db, long unsigned int allocated_capacity)
 {
     usb_db->entries = malloc(sizeof(usb_db_entry_t) * allocated_capacity);
     if (usb_db->entries == NULL)

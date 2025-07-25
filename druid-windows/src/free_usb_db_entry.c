@@ -17,9 +17,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <stddef.h>
-#include <systemd/sd-device.h>
 #include "druid.h"
 
 /**
@@ -50,7 +48,7 @@ void free_unknown_usb_db_entry(usb_db_entry_t *unknown)
  */
 void free_usb_db(usb_db_t *usb_db)
 {
-    for (size_t i = 0; i < usb_db->count; i++) {
+    for (long unsigned int i = 0; i < usb_db->count; i++) {
         free(usb_db->entries[i].vendor_id);
         free(usb_db->entries[i].vendor_name);
         free(usb_db->entries[i].product_id);

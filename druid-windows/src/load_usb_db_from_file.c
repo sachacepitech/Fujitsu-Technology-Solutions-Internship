@@ -17,11 +17,11 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
+
 #include <string.h>
 #include <stdbool.h>
 #include <stddef.h>
-#include <systemd/sd-device.h>
+
 #include "druid.h"
 
 /**
@@ -36,7 +36,7 @@
  */
 static void remove_newline(char *str)
 {
-    size_t len = strlen(str);
+    long unsigned int len = strlen(str);
 
     if (len > 0 && str[len - 1] == '\n')
         str[len - 1] = '\0';
@@ -81,7 +81,7 @@ static void fill_struct_temp_data(usb_db_entry_t *usb_db_entry, char *line)
  *             usb_db_t *usb_db,
  *             usb_db_entry_t **usb_db_entry,
  *             char *line,
- *             size_t *allocated_capacity)
+ *             long unsigned int *allocated_capacity)
  * @param usb_db Pointer to the usb_db_t structure holding the database entries
  * @param usb_db_entry Double pointer to a usb_db_entry_t structure to update with new entry
  * @param line String containing the raw database entry line to parse
@@ -91,7 +91,7 @@ static void fill_struct_temp_data(usb_db_entry_t *usb_db_entry, char *line)
  *         - 84     (EXIT_ERROR) if memory reallocation fails
  */
 static int append_usb_entry_from_line(usb_db_t *usb_db, usb_db_entry_t **usb_db_entry,
-    char *line, size_t *allocated_capacity)
+    char *line, long unsigned int *allocated_capacity)
 {
     if (usb_db->count >= *allocated_capacity) {
         *allocated_capacity *= INCREASED_SIZE;
@@ -116,7 +116,7 @@ static int append_usb_entry_from_line(usb_db_t *usb_db, usb_db_entry_t **usb_db_
  *             cli_args_t *cli_args,
  *             usb_db_t *usb_db,
  *             usb_db_entry_t *usb_db_entry,
- *             size_t allocated_capacity)
+ *             long unsigned int allocated_capacity)
  * @param cli_args Pointer to the cli_args_t structure containing CLI arguments
  * @param usb_db Pointer to the usb_db_t structure to append new entries
  * @param usb_db_entry Pointer to the usb_db_entry_t structure used during parsing
@@ -126,7 +126,7 @@ static int append_usb_entry_from_line(usb_db_t *usb_db, usb_db_entry_t **usb_db_
  *         - 84     (EXIT_ERROR) if the file cannot be opened or reading fails
  */
 static int add_new_data(cli_args_t *cli_args, usb_db_t *usb_db,
-    usb_db_entry_t *usb_db_entry, size_t allocated_capacity)
+    usb_db_entry_t *usb_db_entry, long unsigned int allocated_capacity)
 {
     char *line = NULL;
     size_t n = 0;
@@ -153,7 +153,7 @@ static int add_new_data(cli_args_t *cli_args, usb_db_t *usb_db,
  *             cli_args_t *cli_args,
  *             usb_db_t *usb_db,
  *             usb_db_entry_t *usb_db_entry,
- *             size_t allocated_capacity)
+ *             long unsigned int allocated_capacity)
  * @param cli_args Pointer to the cli_args_t structure containing CLI arguments
  * @param usb_db Pointer to the usb_db_t structure to append new entries
  * @param usb_db_entry Pointer to the usb_db_entry_t structure used during parsing
@@ -163,7 +163,7 @@ static int add_new_data(cli_args_t *cli_args, usb_db_t *usb_db,
  *         - 84     (EXIT_ERROR) if the file is invalid or loading fails
  */
 static int check_for_update_file_and_load(cli_args_t *cli_args, usb_db_t *usb_db,
-    usb_db_entry_t *usb_db_entry, size_t allocated_capacity)
+    usb_db_entry_t *usb_db_entry, long unsigned int allocated_capacity)
 {
     if (cli_args->ac == BIN_FLAG_FILE &&
         (strcmp(cli_args->av[cli_args_FLAG], UPDATE_FLAG) == SUCCESS
@@ -204,7 +204,7 @@ int load_usb_db_from_file(usb_db_t *usb_db, usb_db_entry_t *usb_db_entry, cli_ar
     FILE *data_file = fopen(DATA_FILE_PATH, READ_MODE);
     char *line = NULL;
     size_t n = 0;
-    size_t allocated_capacity = DEFAULT_SIZE;
+    long unsigned int allocated_capacity = DEFAULT_SIZE;
 
     if (data_file == NULL)
         return EXIT_ERROR;

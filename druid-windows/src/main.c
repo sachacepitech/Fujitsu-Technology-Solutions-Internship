@@ -17,9 +17,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
+
 #include <stddef.h>
-#include <systemd/sd-device.h>
+
 #include "druid.h"
 
 /**
@@ -42,6 +42,7 @@ int main(int ac, char **av)
     usb_db_entry_t usb_db_entry = {0};
     cli_args_t cli_args = {ac, av};
     int cli_flags_result = handle_cli_info_flags(ac, av);
+    int scan_result = 0;
 
     if (cli_flags_result == EXIT_SUCCESS)
         return EXIT_SUCCESS;
@@ -49,10 +50,10 @@ int main(int ac, char **av)
         return EXIT_ERROR;
     if (init_usb_enumerator(&usb_tools, &usb_device_info) == EXIT_ERROR)
         return EXIT_ERROR;
-    if (scan_connected_usb_and_check_risks(&usb_tools, &usb_device_info, &usb_db_entry, &cli_args) == EXIT_ERROR) {
-        sd_device_enumerator_unref(usb_tools.enumerator);
-        return EXIT_ERROR;
+    scan_result = scan_connected_usb_and_check_risks(&usb_tools, &usb_device_info, &usb_db_entry, &cli_args);
+    if (usb_tools.device_info_set) {
+        SetupDiDestroyDeviceInfoList(usb_tools.device_info_set);
     }
-    sd_device_enumerator_unref(usb_tools.enumerator);
-    return EXIT_SUCCESS;
+    return scan_result == EXIT_SUCCESS ? EXIT_SUCCESS : EXIT_ERROR;
 }
+

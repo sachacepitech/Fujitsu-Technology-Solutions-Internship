@@ -18,7 +18,7 @@
 #ifndef SEEN_DEVICES_H
     #define SEEN_DEVICES_H
     #include <stddef.h>
-    #include <systemd/sd-device.h>
+    
 
 /**
  * @brief represents a minimal usb device with vendor and product ID's

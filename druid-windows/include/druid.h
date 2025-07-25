@@ -67,7 +67,8 @@
     #define BIN_FLAG_FILE 3
 
     #include <stddef.h>
-    #include <systemd/sd-device.h>
+    #include <windows.h>
+    #include <setupapi.h>
 
 /**
  * @brief represents a single entry in the usb device database
@@ -83,19 +84,20 @@ typedef struct usb_db_entry_s {
  * @brief stores information about a connected usb device
 */
 typedef struct data_usb_con_s {
-    const char *vendor_id;
-    const char *vendor_name;
-    const char *product_id;
-    const char *product_name;
-    const char *path_usb;
+    char *vendor_id;
+    char *vendor_name;
+    char *product_id;
+    char *product_name;
+    char *path_usb;
 } usb_device_info_t;
 
 /**
  * @brief holds systemd usb device enumeration tools
 */
 typedef struct usb_tools_s {
-    sd_device *device;
-    sd_device_enumerator *enumerator;
+    HDEVINFO device_info_set;
+    SP_DEVICE_INTERFACE_DATA interface_data;
+    unsigned long index;
 } usb_tools_t;
 
     /* initial allocation size for database entries */
@@ -107,17 +109,17 @@ typedef struct usb_tools_s {
 */
 typedef struct usb_db_s {
     usb_db_entry_t *entries;
-    size_t count;
+    long unsigned int count;
 } usb_db_t;
 
 /**
  * @brief stores statistics about usb risk levels
 */
 typedef struct usb_risk_stats_s {
-    size_t low;
-    size_t medium;
-    size_t major;
-    size_t seen_count;
+    long unsigned int low;
+    long unsigned int medium;
+    long unsigned int major;
+    long unsigned int seen_count;
 } usb_risk_stats_stats_t;
 
 /**
@@ -129,9 +131,8 @@ typedef struct cli_args_s {
 } cli_args_t;
 
 /* init all */
-void init_struct_usb_tools(usb_tools_t *usb_tools);
 void init_struct_usb_device_info(usb_device_info_t *usb_device_info);
-int init_struct_usb_db(usb_db_t *usb_db, size_t allocated_capacity);
+int init_struct_usb_db(usb_db_t *usb_db, long unsigned int allocated_capacity);
 void init_struct_usb_db_entry(usb_db_entry_t *usb_db_entry);
 void init_struct_unknown_usb_db_entry(usb_db_entry_t *unknown);
 int init_usb_enumerator(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info);
@@ -160,5 +161,15 @@ int display_file(int ac, char **av, const char *flag,
 /* core comparison function */
 int scan_connected_usb_and_check_risks(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info,
     usb_db_entry_t *usb_db_entry, cli_args_t *cli_args);
+void extract_vendor_and_product_ids_from_hardware_id(const char* hardware_id,
+    char* vendor_id, char* product_id);
+void get_device_property(void* device_info_set, SP_DEVINFO_DATA* device_info_data,
+    unsigned long property, char* buffer, unsigned long size);
+PSP_DEVICE_INTERFACE_DETAIL_DATA_A get_device_interface_detail(void* device_info_set,
+    SP_DEVICE_INTERFACE_DATA* interface_data, SP_DEVINFO_DATA* device_info_data);
+
+// This is a static definition of a class identifier (GUID) for USB device interfaces in Windows.
+// It allows you to ask Windows “Give me all the devices that expose this interface” via the SetupDiGetClassDevs API.
+static const GUID USB_IF_GUID = { 0xA5DCBF10, 0x6530, 0x11D2, {0x90, 0x1F, 0x00, 0xC0, 0x4F, 0xB9, 0x51, 0xED} };
 
 #endif /* DRUID_H */
