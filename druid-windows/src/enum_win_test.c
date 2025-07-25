@@ -14,19 +14,17 @@ HDEVINFO get_usb_device_info_list(void)
 }
 
 /// Alloue et remplit les d�tails d'interface pour un p�riph�rique USB donn�.
-PSP_DEVICE_INTERFACE_DETAIL_DATA_A get_device_interface_detail(HDEVINFO hDevInfo, SP_DEVICE_INTERFACE_DATA *ifData, SP_DEVINFO_DATA *devInfo)
+PSP_DEVICE_INTERFACE_DETAIL_DATA_A get_device_interface_detail(HDEVINFO hDevInfo, SP_DEVICE_INTERFACE_DATA* ifData, SP_DEVINFO_DATA* devInfo)
 {
-    unsigned long requiredSize = 0;
-    SetupDiGetDeviceInterfaceDetailA(hDevInfo, ifData, NULL, 0, &requiredSize, NULL);
+    unsigned long memory_allocated = 0;
+    SetupDiGetDeviceInterfaceDetailA(hDevInfo, ifData, NULL, 0, &memory_allocated, NULL);
 
-    PSP_DEVICE_INTERFACE_DETAIL_DATA_A pDetail = (PSP_DEVICE_INTERFACE_DETAIL_DATA_A)malloc(requiredSize);
+    PSP_DEVICE_INTERFACE_DETAIL_DATA_A pDetail = (PSP_DEVICE_INTERFACE_DETAIL_DATA_A)malloc(memory_allocated);
     if (!pDetail) {
-        fprintf(stderr, "Erreur : allocation m�moire �chou�e.\n");
-        return NULL;
     }
     pDetail->cbSize = sizeof(SP_DEVICE_INTERFACE_DETAIL_DATA_A);
     devInfo->cbSize = sizeof(SP_DEVINFO_DATA);
-    if (!SetupDiGetDeviceInterfaceDetailA(hDevInfo, ifData, pDetail, requiredSize, NULL, devInfo)) {
+    if (!SetupDiGetDeviceInterfaceDetailA(hDevInfo, ifData, pDetail, memory_allocated, NULL, devInfo)) {
         free(pDetail);
         return NULL;
     }
@@ -34,10 +32,10 @@ PSP_DEVICE_INTERFACE_DETAIL_DATA_A get_device_interface_detail(HDEVINFO hDevInfo
 }
 
 /// Extrait les VID et PID � partir du champ Hardware ID.
-void extract_vendor_and_product_ids(const char *hardware_id, char *vendor_id, char *product_id)
+void extract_vendor_and_product_ids(const char* hardware_id, char* vendor_id, char* product_id)
 {
-    char *vendor = strstr(hardware_id, "VID_");
-    char *product = strstr(hardware_id, "PID_");
+    char* vendor = strstr(hardware_id, "VID_");
+    char* product = strstr(hardware_id, "PID_");
 
     memset(vendor_id, '?', 4);
     vendor_id[4] = '\0';
@@ -46,18 +44,18 @@ void extract_vendor_and_product_ids(const char *hardware_id, char *vendor_id, ch
     if (vendor)
         strncpy(vendor_id, vendor + 4, 4);
     if (product)
-        strncpy(product_id,product + 4, 4);
+        strncpy(product_id, product + 4, 4);
 }
 
 /// R�cup�re une propri�t� de registre du p�riph�rique.
-void get_device_property(HDEVINFO hDevInfo, SP_DEVINFO_DATA *devInfo, unsigned long property, char *buffer, unsigned long size)
+void get_device_property(HDEVINFO hDevInfo, SP_DEVINFO_DATA* devInfo, unsigned long property, char* buffer, unsigned long size)
 {
     memset(buffer, 0, size);
     SetupDiGetDeviceRegistryPropertyA(hDevInfo, devInfo, property, NULL, (BYTE*)buffer, size, NULL);
 }
 
 /// Affiche les informations du p�riph�rique USB.
-void display_device_info(HDEVINFO hDevInfo, SP_DEVINFO_DATA *devInfo)
+void display_device_info(HDEVINFO hDevInfo, SP_DEVINFO_DATA* devInfo)
 {
     char hardware_id[512];
     char vendor_id[5], product_id[5];
@@ -75,7 +73,9 @@ void display_device_info(HDEVINFO hDevInfo, SP_DEVINFO_DATA *devInfo)
 void enumerate_usb_devices(void)
 {
     HDEVINFO hDevInfo = get_usb_device_info_list();
-    SP_DEVICE_INTERFACE_DATA ifData = {0};
+    SP_DEVICE_INTERFACE_DATA ifData = { 0 };
+    SP_DEVINFO_DATA devInfo = { 0 };
+    PSP_DEVICE_INTERFACE_DETAIL_DATA_A pDetail = { 0 };
 
     if (hDevInfo == INVALID_HANDLE_VALUE) {
         fprintf(stderr, "Erreur : SetupDiGetClassDevsA.\n");
@@ -83,9 +83,8 @@ void enumerate_usb_devices(void)
     }
     ifData.cbSize = sizeof(SP_DEVICE_INTERFACE_DATA);
     for (unsigned long i = 0; SetupDiEnumDeviceInterfaces(hDevInfo, NULL, &USB_IF_GUID, i, &ifData); ++i) {
-        SP_DEVINFO_DATA devInfo;
-        PSP_DEVICE_INTERFACE_DETAIL_DATA_A pDetail = get_device_interface_detail(hDevInfo, &ifData, &devInfo);
-        if (!pDetail)
+        pDetail = get_device_interface_detail(hDevInfo, &ifData, &devInfo);
+        if (pDetail == NULL)
             continue;
         display_device_info(hDevInfo, &devInfo);
         free(pDetail);
