@@ -68,7 +68,7 @@ void display_device_info(HDEVINFO hDevInfo, SP_DEVINFO_DATA *devInfo)
     extract_vendor_and_product_ids(hardware_id, vendor_id, product_id);
     get_device_property(hDevInfo, devInfo, SPDRP_MFG, vendor_name, sizeof(vendor_name));
     get_device_property(hDevInfo, devInfo, SPDRP_DEVICEDESC, product_name, sizeof(product_name));
-    printf("USB Device: VID=%s PID=%s\n  Manufacturer: %s\n  product_name: %s\n\n", vendor_id, product_id, vendor_name, product_name);
+    printf("USB Device: VID=%s PID=%s\n  vendor_name: %s\n  product_name: %s\n\n", vendor_id, product_id, vendor_name, product_name);
 }
 
 /// Parcourt et affiche tous les p�riph�riques USB connect�s.
@@ -78,7 +78,7 @@ void enumerate_usb_devices(void)
     SP_DEVICE_INTERFACE_DATA ifData = {0};
 
     if (hDevInfo == INVALID_HANDLE_VALUE) {
-        fprintf(stderr, "Erreur : SetupDiGetClassDevsA a �chou�.\n");
+        fprintf(stderr, "Erreur : SetupDiGetClassDevsA.\n");
         return;
     }
     ifData.cbSize = sizeof(SP_DEVICE_INTERFACE_DATA);
