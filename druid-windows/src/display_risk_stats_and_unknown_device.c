@@ -123,7 +123,7 @@ void display_partially_known_usb_device(usb_device_info_t *usb_device_info,
      if (output_file != NULL) {
         fprintf(output_file, 
         "+-------------------------------------------- Partially Known USB Device n°%lu ----------------------------------/\n"
-        "│ VendorID  (%s)   │   ProductID (%s)\n"
+        "│ VendorID  (%s)   │   ProductID (Unknown : %s)\n"
         "│\n"
         "│ From System:\n"
         "│     Vendor Name (%s)   │   Product Name (%s)\n"
@@ -183,7 +183,7 @@ void display_unknown_usb_device(usb_device_info_t *usb_device_info,
     if (output_file != NULL) {
         fprintf(output_file, 
         "+-------------------------------------------- Unknown USB Device n°%lu ------------------------------------------/\n"
-        "│ VendorID  (%s)   │   ProductID (%s)\n"
+        "│ VendorID  (Unknown : %s)   │   ProductID (Unknown : %s)\n"
         "│\n"
         "│ From System:\n"
         "│     Vendor Name (%s)   │   Product Name (%s)\n"
