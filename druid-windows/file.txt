@@ -1,0 +1,63 @@
++-------------------------------------------- Partially Known USB Device n°0 ----------------------------------/
+│ VendorID  (04c5)   │   ProductID (1668)
+│
+│ From System:
+│     Vendor Name ((Standard USB Host Controller))   │   Product Name (USB Composite Device)
+│
+│ From Database:
+│     Vendor Name (Fujitsu, Ltd)   │   Product Name (Unknown)
+│
++------------------------------------------------------------------------------------------------------------/
+
++-------------------------------------------- Partially Known USB Device n°1 ----------------------------------/
+│ VendorID  (13d3)   │   ProductID (3563)
+│
+│ From System:
+│     Vendor Name ((Standard USB Host Controller))   │   Product Name (USB Composite Device)
+│
+│ From Database:
+│     Vendor Name (IMC Networks)   │   Product Name (Unknown)
+│
++------------------------------------------------------------------------------------------------------------/
+
++-------------------------------------------- Partially Known USB Device n°2 ----------------------------------/
+│ VendorID  (04b4)   │   ProductID (5217)
+│
+│ From System:
+│     Vendor Name ((Standard USB Host Controller))   │   Product Name (USB Composite Device)
+│
+│ From Database:
+│     Vendor Name (Cypress Semiconductor Corp.)   │   Product Name (Unknown)
+│
++------------------------------------------------------------------------------------------------------------/
+
++-------------------------------------------- Known USB Device n°3 --------------------------------------------/
+│ VendorID  (0bda)   │   ProductID (8153)
+│
+│ From System:
+│     Vendor Name (Realtek)   │   Product Name (Realtek USB GbE Family Controller)
+│
+│ From Database:
+│     Vendor Name (Realtek Semiconductor Corp.)   │   Product Name (RTL8153 Gigabit Ethernet Adapter)
+│
++------------------------------------------------------------------------------------------------------------/
+
++-------------------------------------------- Unknown USB Device n°4 ------------------------------------------/
+│ VendorID  (322e)   │   ProductID (202c)
+│
+│ From System:
+│     Vendor Name ((Standard USB Host Controller))   │   Product Name (USB Composite Device)
+│
+│ From Database:
+│     Vendor Name (Unknown)   │   Product Name (Unknown)
+│
++------------------------------------------------------------------------------------------------------------/
+
++--------- Risk table ---------/
+│ Number Low Risk    :  1 
+│
+│ Number Medium Risk :  3 
+│
+│ Number Major Risk  :  1 
++-----------------------------/
+
