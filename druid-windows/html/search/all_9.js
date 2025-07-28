@@ -1,12 +1,8 @@
 var searchData=
 [
-  ['usb_5fdb_5fentry_5fs_0',['usb_db_entry_s',['../structusb__db__entry__s.html',1,'']]],
-  ['usb_5fdb_5fentry_5ft_1',['usb_db_entry_t',['../druid_8h.html#af83220175b2757637d040a7ee2953b29',1,'druid.h']]],
-  ['usb_5fdb_5fs_2',['usb_db_s',['../structusb__db__s.html',1,'']]],
-  ['usb_5fdb_5ft_3',['usb_db_t',['../druid_8h.html#aa88d7fd7b78c93ccbc4bfff6fc5aefe3',1,'druid.h']]],
-  ['usb_5fdevice_5finfo_5ft_4',['usb_device_info_t',['../druid_8h.html#ac1a64cd8089f89f3fdd6716e16d71de2',1,'druid.h']]],
-  ['usb_5frisk_5fstats_5fs_5',['usb_risk_stats_s',['../structusb__risk__stats__s.html',1,'']]],
-  ['usb_5frisk_5fstats_5fstats_5ft_6',['usb_risk_stats_stats_t',['../druid_8h.html#a1b8fedd5b01229998ffba453d44ba308',1,'druid.h']]],
-  ['usb_5ftools_5fs_7',['usb_tools_s',['../structusb__tools__s.html',1,'']]],
-  ['usb_5ftools_5ft_8',['usb_tools_t',['../druid_8h.html#a5479ff93751aaa7ddc1451bf62e9e3f6',1,'druid.h']]]
+  ['scan_5fconnected_5fusb_5fand_5fcheck_5frisks_0',['scan_connected_usb_and_check_risks',['../druid_8h.html#a7ead81cba041d6ec565cc01a7a959760',1,'scan_connected_usb_and_check_risks(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info, usb_db_entry_t *usb_db_entry, cli_args_t *cli_args):&#160;scan_connected_usb_and_check_risks.c'],['../scan__connected__usb__and__check__risks_8c.html#a7ead81cba041d6ec565cc01a7a959760',1,'scan_connected_usb_and_check_risks(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info, usb_db_entry_t *usb_db_entry, cli_args_t *cli_args):&#160;scan_connected_usb_and_check_risks.c']]],
+  ['scan_5fconnected_5fusb_5fand_5fcheck_5frisks_2ec_1',['scan_connected_usb_and_check_risks.c',['../scan__connected__usb__and__check__risks_8c.html',1,'']]],
+  ['seen_5fdevice_5fs_2',['seen_device_s',['../structseen__device__s.html',1,'']]],
+  ['seen_5fdevice_5ft_3',['seen_device_t',['../seen__devices_8h.html#a0fbc1e9a29ac161dee592f47617c1d45',1,'seen_devices.h']]],
+  ['seen_5fdevices_2eh_4',['seen_devices.h',['../seen__devices_8h.html',1,'']]]
 ];

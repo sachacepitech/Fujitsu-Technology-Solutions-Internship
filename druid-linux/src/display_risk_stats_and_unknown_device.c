@@ -236,7 +236,7 @@ void display_risk_table(usb_risk_stats_stats_t *usb_risk_stats, FILE *output_fil
         "\e[1;37m╰─────────────────────────────╯\e[0m\n\n",
     usb_risk_stats->low, usb_risk_stats->medium, usb_risk_stats->major);
     if (output_file != NULL) {
-        fprintf(output_file, 
+        fprintf(output_file,
         "╭───────── Risk table ─────────╮\n"
         "│ Number Low Risk    :  %lu \n"
         "│\n"

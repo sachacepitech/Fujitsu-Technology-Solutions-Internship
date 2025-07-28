@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['handle_5fcli_5finfo_5fflags_0',['handle_cli_info_flags',['../druid_8h.html#a519c75482eb2c6f7af800ba3a1409113',1,'handle_cli_info_flags(int ac, char **av):&#160;handle_cli_info_flags.c'],['../handle__cli__info__flags_8c.html#a519c75482eb2c6f7af800ba3a1409113',1,'handle_cli_info_flags(int ac, char **av):&#160;handle_cli_info_flags.c']]],
-  ['handle_5fcli_5finfo_5fflags_2ec_1',['handle_cli_info_flags.c',['../handle__cli__info__flags_8c.html',1,'']]]
+  ['get_5fvendor_5fproduct_5fdevice_0',['get_vendor_product_device',['../scan__connected__usb__and__check__risks_8c.html#ac4a19ef3db6e652916048b7f3808e8ab',1,'scan_connected_usb_and_check_risks.c']]]
 ];

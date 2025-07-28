@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['free_5fusb_5fdb_5fentry_2ec_0',['free_usb_db_entry.c',['../free__usb__db__entry_8c.html',1,'']]]
+  ['enum_5fwindows_5fdevice_5fdetails_2ec_0',['enum_windows_device_details.c',['../enum__windows__device__details_8c.html',1,'']]]
 ];

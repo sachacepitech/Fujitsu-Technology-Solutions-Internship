@@ -17,7 +17,7 @@
 CC = gcc
 
 SRC =	$(addprefix src/, \
-			enum_win_test.c \
+			enum_windows_device_details.c \
 			display_risk_stats_and_unknown_device.c \
 			display_file.c \
 			load_usb_db_from_file.c \

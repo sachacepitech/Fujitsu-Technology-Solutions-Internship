@@ -1,3 +1,20 @@
+/**
+ * @name druid (Detection Rogue USB and Illegitimate Devices)
+ * @version 1.0
+ * @author Sacha Lemée
+ * @author Fujitsu Technology Solutions
+ * @file enum_windows_device_details.c
+ * @brief enumerate and extract window detected device details 
+ * @date 17 July 2025
+ * @copyright Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0 DEED)
+ * 
+ * This file is part of the "druid" repository.
+ * 
+ * You can use, modify, and distribute this code under the terms of the
+ * Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0 DEED).
+ * See the full license at: https://creativecommons.org/licenses/by-sa/4.0/deed.fr
+ */
+
 #include <windows.h>
 #include <setupapi.h>
 #include <stdio.h>
