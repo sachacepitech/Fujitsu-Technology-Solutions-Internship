@@ -60,6 +60,7 @@ Display expected CSV format:
     ./druid --format
 
 Display license:  
+    ./druid -l
     ./druid --license
 
 =======================================
