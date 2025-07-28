@@ -32,6 +32,7 @@
     #define FILE_TYPE "csv"
     #define FILE_TYPE_PLUS_SEPARATOR ".csv"
     #define READ_MODE "r"
+    #define OPEN_READ_WRITE_MODE "w+"
     
     /* default database file path */
     #define DATA_FILE_PATH "data-files/vendor_id_product_id_and_name.csv"
@@ -52,10 +53,12 @@
     #define FORMAT_FLAG "-f"
     #define LICENSE_FLAG "-l"
     #define UPDATE_FLAG "-u"
+    #define OUTPUT_FLAG "-o"
     #define HELP_FLAG_OPTION "--help"
     #define FORMAT_FLAG_OPTION "--format"
     #define LICENSE_FLAG_OPTION "--license"
     #define UPDATE_FLAG_OPTION "--update"
+    #define OUTPUT_FLAG_OPTION "--output"
 
     /* default messages */
     #define UNKNOWN_DEVICE_MESSAGE "Unknown"
@@ -138,7 +141,8 @@ void init_struct_unknown_usb_db_entry(usb_db_entry_t *unknown);
 int init_usb_enumerator(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info);
 
 /* fill database struct */
-int load_usb_db_from_file(usb_db_t *usb_db, usb_db_entry_t *usb_db_entry, cli_args_t *cli_args);
+int load_usb_db_from_file(usb_db_t *usb_db, usb_db_entry_t *usb_db_entry,
+    cli_args_t *cli_args);
 
 /* free all */
 void free_unknown_usb_db_entry(usb_db_entry_t *unknown);
@@ -146,12 +150,15 @@ void free_usb_db(usb_db_t *usb_db);
 
 /* display risk case */
 void display_known_usb_device(usb_device_info_t *usb_device_info,
-    usb_db_entry_t *usb_db_entry, usb_risk_stats_stats_t *usb_risk_stats);
+    usb_db_entry_t *usb_db_entry, usb_risk_stats_stats_t *usb_risk_stats,
+    FILE *output_file);
 void display_partially_known_usb_device(usb_device_info_t *usb_device_info,
-    usb_db_entry_t *usb_db_entry, usb_risk_stats_stats_t *usb_risk_stats);
+    usb_db_entry_t *usb_db_entry, usb_risk_stats_stats_t *usb_risk_stats,
+    FILE *output_file);
 void display_unknown_usb_device(usb_device_info_t *usb_device_info,
-    usb_db_entry_t *usb_db_entry, usb_risk_stats_stats_t *usb_risk_stats);
-void display_risk_table(usb_risk_stats_stats_t *usb_risk_stats);
+    usb_db_entry_t *usb_db_entry, usb_risk_stats_stats_t *usb_risk_stats,
+    FILE *output_file);
+void display_risk_table(usb_risk_stats_stats_t *usb_risk_stats, FILE *output_file);
 
 /* option */
 int handle_cli_info_flags(int ac, char **av);

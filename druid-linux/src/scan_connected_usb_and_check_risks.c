@@ -25,6 +25,17 @@
 #include "druid.h"
 #include "seen_devices.h"
 
+static int check_for_output_file(cli_args_t *cli_args)
+{
+    if (cli_args->ac == 3 &&
+        (strcmp(cli_args->av[1], OUTPUT_FLAG) == SUCCESS ||
+        strcmp(cli_args->av[1], OUTPUT_FLAG_OPTION) == SUCCESS)
+        && cli_args->av[2] != NULL) {
+        return SUCCESS;
+    }
+    return UNSEEN;
+}
+
 /**
  * @brief Retrieves vendor and product information from a USB device
  *
@@ -131,7 +142,8 @@ static void add_to_seen(usb_device_info_t *usb_device_info, size_t *seen_count)
  * @return None (void)
  */
 static void check_usb_exist(usb_db_t *usb_db, usb_db_entry_t *usb_db_entry,
-    usb_device_info_t *usb_device_info, usb_risk_stats_stats_t *usb_risk_stats)
+    usb_device_info_t *usb_device_info, usb_risk_stats_stats_t *usb_risk_stats,
+    FILE *output_file)
 {
     bool match_vendor_and_product = false;
     bool match_vendor_only = false;
@@ -152,12 +164,12 @@ static void check_usb_exist(usb_db_t *usb_db, usb_db_entry_t *usb_db_entry,
         }
     }
     if (match_vendor_and_product == true) {
-        display_known_usb_device(usb_device_info, matching_entry, usb_risk_stats);
+        display_known_usb_device(usb_device_info, matching_entry, usb_risk_stats, output_file);
     } else if (match_vendor_only == true) {
-        display_partially_known_usb_device(usb_device_info, matching_entry, usb_risk_stats);
+        display_partially_known_usb_device(usb_device_info, matching_entry, usb_risk_stats, output_file);
     } else {
         init_struct_unknown_usb_db_entry(&unknown);
-        display_unknown_usb_device(usb_device_info, &unknown, usb_risk_stats);
+        display_unknown_usb_device(usb_device_info, &unknown, usb_risk_stats, output_file);
         free_unknown_usb_db_entry(&unknown);
     }
     add_to_seen(usb_device_info, &usb_risk_stats->seen_count);
@@ -188,9 +200,17 @@ int scan_connected_usb_and_check_risks(usb_tools_t *usb_tools, usb_device_info_t
     usb_db_t usb_db = {0};
     usb_risk_stats_stats_t usb_risk_stats = {0};
     bool already_seen = false;
+    FILE *output_file = NULL;
 
+    if (check_for_output_file(cli_args) == SUCCESS) {
+        output_file = fopen(cli_args->av[2], OPEN_READ_WRITE_MODE);
+        if (output_file == NULL)
+            return EXIT_ERROR;
+    }
     if (load_usb_db_from_file(&usb_db, usb_db_entry, cli_args) == EXIT_ERROR) {
         free_usb_db(&usb_db);
+        if (output_file != NULL)
+            fclose(output_file);
         return EXIT_ERROR;
     }
     usb_tools->device = sd_device_enumerator_get_device_first(
@@ -200,11 +220,13 @@ int scan_connected_usb_and_check_risks(usb_tools_t *usb_tools, usb_device_info_t
         get_vendor_product_device(usb_tools, usb_device_info);
         if (check_already_seen(usb_tools, usb_device_info, usb_risk_stats.seen_count, already_seen) == SUCCESS)
             continue;
-        check_usb_exist(&usb_db, usb_db_entry, usb_device_info, &usb_risk_stats);
+        check_usb_exist(&usb_db, usb_db_entry, usb_device_info, &usb_risk_stats, output_file);
         usb_tools->device = sd_device_enumerator_get_device_next(
             usb_tools->enumerator);
     }
     free_usb_db(&usb_db);
-    display_risk_table(&usb_risk_stats);
+    display_risk_table(&usb_risk_stats, output_file);
+    if (output_file != NULL)
+        fclose(output_file);
     return EXIT_SUCCESS;
 }

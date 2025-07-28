@@ -199,7 +199,8 @@ static int check_for_update_file_and_load(cli_args_t *cli_args, usb_db_t *usb_db
  *         - 0      (EXIT_SUCCESS) if the file was successfully loaded
  *         - 84     (EXIT_ERROR) on failure (file missing, allocation error, etc.)
  */
-int load_usb_db_from_file(usb_db_t *usb_db, usb_db_entry_t *usb_db_entry, cli_args_t *cli_args)
+int load_usb_db_from_file(usb_db_t *usb_db, usb_db_entry_t *usb_db_entry,
+    cli_args_t *cli_args)
 {
     FILE *data_file = fopen(DATA_FILE_PATH, READ_MODE);
     char *line = NULL;
