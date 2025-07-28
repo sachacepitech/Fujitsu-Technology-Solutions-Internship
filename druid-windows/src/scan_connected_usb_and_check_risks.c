@@ -21,10 +21,9 @@
 #include <string.h>
 #include <stdbool.h>
 #include <stddef.h>
+#include <ctype.h>
 #include "druid.h"
 #include "seen_devices.h"
-
-//#include <ctype.h>
 
 /**
  * @brief Checks if the CLI arguments specify an output file

@@ -1,5 +1,5 @@
 +-------------------------------------------- Partially Known USB Device n°0 ----------------------------------/
-│ VendorID  (04c5)   │   ProductID (1668)
+│ VendorID  (04c5)   │   ProductID (Unknown : 1668)
 │
 │ From System:
 │     Vendor Name ((Standard USB Host Controller))   │   Product Name (USB Composite Device)
@@ -10,7 +10,7 @@
 +------------------------------------------------------------------------------------------------------------/
 
 +-------------------------------------------- Partially Known USB Device n°1 ----------------------------------/
-│ VendorID  (13d3)   │   ProductID (3563)
+│ VendorID  (13d3)   │   ProductID (Unknown : 3563)
 │
 │ From System:
 │     Vendor Name ((Standard USB Host Controller))   │   Product Name (USB Composite Device)
@@ -21,7 +21,7 @@
 +------------------------------------------------------------------------------------------------------------/
 
 +-------------------------------------------- Partially Known USB Device n°2 ----------------------------------/
-│ VendorID  (04b4)   │   ProductID (5217)
+│ VendorID  (04b4)   │   ProductID (Unknown : 5217)
 │
 │ From System:
 │     Vendor Name ((Standard USB Host Controller))   │   Product Name (USB Composite Device)
@@ -43,7 +43,7 @@
 +------------------------------------------------------------------------------------------------------------/
 
 +-------------------------------------------- Unknown USB Device n°4 ------------------------------------------/
-│ VendorID  (322e)   │   ProductID (202c)
+│ VendorID  (Unknown : 322e)   │   ProductID (Unknown : 202c)
 │
 │ From System:
 │     Vendor Name ((Standard USB Host Controller))   │   Product Name (USB Composite Device)
