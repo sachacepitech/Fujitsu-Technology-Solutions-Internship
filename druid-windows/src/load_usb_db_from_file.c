@@ -130,7 +130,7 @@ static int add_new_data(cli_args_t *cli_args, usb_db_t *usb_db,
 {
     char *line = NULL;
     size_t n = 0;
-    FILE *update_data_file = fopen(strcat(cli_args->av[cli_args_FILE], FILE_TYPE_PLUS_SEPARATOR), READ_MODE);
+    FILE *update_data_file = fopen(strcat(cli_args->av[2], FILE_TYPE_PLUS_SEPARATOR), READ_MODE);
 
     if (update_data_file == NULL)
         return EXIT_ERROR;
@@ -165,10 +165,11 @@ static int add_new_data(cli_args_t *cli_args, usb_db_t *usb_db,
 static int check_for_update_file_and_load(cli_args_t *cli_args, usb_db_t *usb_db,
     usb_db_entry_t *usb_db_entry, long unsigned int allocated_capacity)
 {
-    if (cli_args->ac == BIN_FLAG_FILE &&
-        (strcmp(cli_args->av[cli_args_FLAG], UPDATE_FLAG) == SUCCESS
-        || strcmp(cli_args->av[cli_args_FLAG], UPDATE_FLAG_OPTION) == SUCCESS)) {
-            strtok(cli_args->av[cli_args_FILE], FILE_TYPE_SEPARATOR);
+    if (cli_args->ac == 3 &&
+        (strcmp(cli_args->av[1], UPDATE_FLAG) == SUCCESS ||
+        strcmp(cli_args->av[1], UPDATE_FLAG_OPTION) == SUCCESS)
+        && cli_args->av[2] != NULL) {
+            strtok(cli_args->av[2], FILE_TYPE_SEPARATOR);
             if (strcmp(strtok(NULL, FILE_TYPE_SEPARATOR), FILE_TYPE) != SUCCESS) {
                 printf(NONE_CSV_FILE_MESSAGE);
                 return EXIT_ERROR;

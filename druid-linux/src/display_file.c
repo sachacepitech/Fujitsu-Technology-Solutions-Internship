@@ -29,8 +29,8 @@ int display_file(int ac, char **av, const char *flag,
     size_t n = 0;
     int return_value = 1;
 
-    if (ac == 2 && (strcmp(av[cli_args_FLAG], flag) == SUCCESS
-        || strcmp(av[cli_args_FLAG], optional_flag) == SUCCESS)) {
+    if (ac == 2 && (strcmp(av[1], flag) == SUCCESS
+        || strcmp(av[1], optional_flag) == SUCCESS)) {
         fd = fopen(path_file, READ_MODE);
         if (fd == NULL)
             return EXIT_ERROR;

@@ -64,11 +64,6 @@
     #define UNKNOWN_DEVICE_MESSAGE "Unknown"
     #define NONE_CSV_FILE_MESSAGE "Error: Make sure it is a csv file.\n"
 
-    /* cli argument position macros */
-    #define cli_args_FLAG 1
-    #define cli_args_FILE 2
-    #define BIN_FLAG_FILE 3
-
     #include <stddef.h>
     #include <systemd/sd-device.h>
 

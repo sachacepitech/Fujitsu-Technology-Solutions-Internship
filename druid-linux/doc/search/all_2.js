@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['cli_5fargs_5ffile_0',['cli_args_FILE',['../druid_8h.html#a8b8d8e5d53819bc1b9fc04ef2309f081',1,'druid.h']]],
-  ['cli_5fargs_5fflag_1',['cli_args_FLAG',['../druid_8h.html#a7bd227e0d29777acf121f309d5b3a01b',1,'druid.h']]],
-  ['cli_5fargs_5fs_2',['cli_args_s',['../structcli__args__s.html',1,'']]],
-  ['cli_5fargs_5ft_3',['cli_args_t',['../druid_8h.html#a7018b2e489fe2f9d53befe4f3d3e73cf',1,'druid.h']]],
-  ['count_4',['count',['../structusb__db__s.html#a76d971a3c552bc58ba9f0d5fceae9806',1,'usb_db_s']]]
+  ['free_5funknown_5fusb_5fdb_5fentry_0',['free_unknown_usb_db_entry',['../druid_8h.html#a6d4800679d14c175f9801e63b08b5063',1,'free_unknown_usb_db_entry(usb_db_entry_t *unknown):&#160;free_usb_db_entry.c'],['../free__usb__db__entry_8c.html#a6d4800679d14c175f9801e63b08b5063',1,'free_unknown_usb_db_entry(usb_db_entry_t *unknown):&#160;free_usb_db_entry.c']]],
+  ['free_5fusb_5fdb_1',['free_usb_db',['../druid_8h.html#a75c16eea8808506b3484a278c2da13b4',1,'free_usb_db(usb_db_t *usb_db):&#160;free_usb_db_entry.c'],['../free__usb__db__entry_8c.html#a75c16eea8808506b3484a278c2da13b4',1,'free_usb_db(usb_db_t *usb_db):&#160;free_usb_db_entry.c']]],
+  ['free_5fusb_5fdb_5fentry_2ec_2',['free_usb_db_entry.c',['../free__usb__db__entry_8c.html',1,'']]]
 ];
