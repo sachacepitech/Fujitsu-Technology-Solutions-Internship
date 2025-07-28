@@ -25,18 +25,20 @@
 #include "druid.h"
 
 /**
- * @brief Displays detailed info of a fully known USB device
+ * @brief Displays detailed information for a fully known USB device
  *
- * Prints vendor and product IDs, names from both system and database,
- * highlighting that the device is fully recognized (couple vendor and product IDs) and counts it as low risk.
- * 
+ * Prints vendor and product IDs, and both system-detected and database-matched names
+ * The device is considered low risk as both IDs fully match an entry in the database
+ *
  * @details void display_known_usb_device(
  *             usb_device_info_t *usb_device_info,
  *             usb_db_entry_t *usb_db_entry,
- *             usb_risk_stats_stats_t *usb_risk_stats)
+ *             usb_risk_stats_stats_t *usb_risk_stats,
+ *             FILE *output_file)
  * @param usb_device_info Pointer to the structure containing current USB device info
- * @param usb_db_entry Pointer to the matching USB database entry
- * @param usb_risk_stats Pointer to the risk statistics structure to update counters
+ * @param usb_db_entry Pointer to the matching USB database entry (vendor and product matched)
+ * @param usb_risk_stats Pointer to the risk statistics structure to update the low risk counter
+ * @param output_file Optional file pointer to write output (if not NULL)
  * @return None (void)
  */
 void display_known_usb_device(usb_device_info_t *usb_device_info,
@@ -85,18 +87,21 @@ void display_known_usb_device(usb_device_info_t *usb_device_info,
 }
 
 /**
- * @brief Displays detailed info of a partially known USB device
+ * @brief Displays detailed information for a partially known USB device
  *
- * Prints vendor ID and notes the product ID as unknown, shows names from the system,
- * and partially matches vendor info from the database, marking the device as medium risk.
- * 
+ * Prints the vendor ID (matched) and product ID (unknown), including vendor/product names
+ * from both the system and partially matching entry in the database
+ * This device is categorized as medium risk
+ *
  * @details void display_partially_known_usb_device(
  *             usb_device_info_t *usb_device_info,
  *             usb_db_entry_t *usb_db_entry,
- *             usb_risk_stats_stats_t *usb_risk_stats)
+ *             usb_risk_stats_stats_t *usb_risk_stats,
+ *             FILE *output_file)
  * @param usb_device_info Pointer to the structure containing current USB device info
  * @param usb_db_entry Pointer to the partially matching USB database entry (vendor matched only)
- * @param usb_risk_stats Pointer to the risk statistics structure to update counters
+ * @param usb_risk_stats Pointer to the risk statistics structure to update the medium risk counter
+ * @param output_file Optional file pointer to write output (if not NULL)
  * @return None (void)
  */
 void display_partially_known_usb_device(usb_device_info_t *usb_device_info,
@@ -145,18 +150,20 @@ void display_partially_known_usb_device(usb_device_info_t *usb_device_info,
 }
 
 /**
- * @brief Displays detailed info of an unknown USB device
+ * @brief Displays detailed information for an unknown USB device
  *
- * Prints vendor ID and product ID as unknown, along with names from the system and database,
- * highlighting the device as a major risk and updating the risk statistics accordingly.
- * 
+ * Prints vendor and product IDs as unknown, and lists the system-detected names
+ * No match is found in the database, so the device is marked as major risk
+ *
  * @details void display_unknown_usb_device(
  *             usb_device_info_t *usb_device_info,
  *             usb_db_entry_t *usb_db_entry,
- *             usb_risk_stats_stats_t *usb_risk_stats)
+ *             usb_risk_stats_stats_t *usb_risk_stats,
+ *             FILE *output_file)
  * @param usb_device_info Pointer to the structure containing current USB device info
- * @param usb_db_entry Pointer to the USB database entry (typically empty or unknown)
- * @param usb_risk_stats Pointer to the risk statistics structure to update counters
+ * @param usb_db_entry Pointer to the database entry (likely empty/placeholder)
+ * @param usb_risk_stats Pointer to the risk statistics structure to update the major risk counter
+ * @param output_file Optional file pointer to write output (if not NULL)
  * @return None (void)
  */
 void display_unknown_usb_device(usb_device_info_t *usb_device_info,
@@ -205,14 +212,17 @@ void display_unknown_usb_device(usb_device_info_t *usb_device_info,
 }
 
 /**
- * @brief Displays a summary risk table for USB devices
+ * @brief Displays a summary table of detected USB risk levels
  *
- * Prints the count of USB devices categorized as low, medium, and major risk,
- * using colored formatting for clear visualization.
- * 
- * @details void display_risk_table(usb_risk_stats_stats_t *usb_risk_stats)
- * @param usb_risk_stats Pointer to the structure containing risk counters
- * @return void
+ * Prints the count of devices categorized as low, medium, and major risk
+ * Output is printed to the console and optionally written to an output file
+ *
+ * @details void display_risk_table(
+ *             usb_risk_stats_stats_t *usb_risk_stats,
+ *             FILE *output_file)
+ * @param usb_risk_stats Pointer to the structure containing aggregated risk counters
+ * @param output_file Optional file pointer to write output (if not NULL)
+ * @return None (void)
  */
 void display_risk_table(usb_risk_stats_stats_t *usb_risk_stats, FILE *output_file)
 {

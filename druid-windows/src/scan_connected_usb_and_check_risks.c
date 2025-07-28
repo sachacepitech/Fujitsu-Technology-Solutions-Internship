@@ -24,8 +24,20 @@
 #include "druid.h"
 #include "seen_devices.h"
 
-#include <ctype.h>
+//#include <ctype.h>
 
+/**
+ * @brief Checks if the CLI arguments specify an output file
+ *
+ * Determines whether the provided arguments contain a valid output flag
+ * (`--output` or `-o`) followed by a filename.
+ * 
+ * @details static int check_for_output_file(cli_args_t *cli_args)
+ * @param cli_args Pointer to the cli_args_t structure containing CLI arguments
+ * @return Exit code:
+ *         - 0      (SUCCESS) if a valid output file is specified
+ *         - -1     (UNSEEN) otherwise
+ */
 static int check_for_output_file(cli_args_t *cli_args)
 {
     if (cli_args->ac == 3 &&

@@ -25,6 +25,18 @@
 #include "druid.h"
 #include "seen_devices.h"
 
+/**
+ * @brief Checks if the CLI arguments specify an output file
+ *
+ * Determines whether the provided arguments contain a valid output flag
+ * (`--output` or `-o`) followed by a filename.
+ * 
+ * @details static int check_for_output_file(cli_args_t *cli_args)
+ * @param cli_args Pointer to the cli_args_t structure containing CLI arguments
+ * @return Exit code:
+ *         - 0      (SUCCESS) if a valid output file is specified
+ *         - -1     (UNSEEN) otherwise
+ */
 static int check_for_output_file(cli_args_t *cli_args)
 {
     if (cli_args->ac == 3 &&
@@ -115,10 +127,8 @@ static int check_already_seen(usb_tools_t *usb_tools,
 static void add_to_seen(usb_device_info_t *usb_device_info, size_t *seen_count)
 {
     if (*seen_count < MAX_SEEN_DEVICES) {
-        seen_devices[*seen_count].vendor_id = usb_device_info->vendor_id
-            ? usb_device_info->vendor_id : strdup(usb_device_info->vendor_id);
-        seen_devices[*seen_count].product_id = usb_device_info->product_id
-            ? usb_device_info->product_id : strdup(usb_device_info->product_id);
+        seen_devices[*seen_count].vendor_id = strdup(usb_device_info->vendor_id);
+        seen_devices[*seen_count].product_id = strdup(usb_device_info->product_id);
         ++(*seen_count);
     }
 }

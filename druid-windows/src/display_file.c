@@ -20,6 +20,28 @@
 #include <stddef.h>
 #include "druid.h"
 
+/**
+ * @brief Displays the contents of a file if the correct flag is passed via CLI
+ *
+ * Opens the specified file and prints its contents line by line to stdout
+ * if the provided arguments contain the matching flag or optional flag
+ * 
+ * @details int display_file(
+ *             int ac,
+ *             char **av,
+ *             const char *flag,
+ *             const char *optional_flag,
+ *             const char *path_file)
+ * @param ac Argument count from CLI
+ * @param av Argument vector from CLI
+ * @param flag Primary flag to trigger file display (e.g., "-h")
+ * @param optional_flag Alternate flag to trigger file display (e.g., "--help")
+ * @param path_file Path to the file to be displayed
+ * @return Exit code:
+ *         - 0      (SUCCESS) if file was displayed successfully
+ *         - 1      if conditions weren't met (flag missing or incorrect argc)
+ *         - 84     (EXIT_ERROR) if the file failed to open
+ */
 int display_file(int ac, char **av, const char *flag,
     const char *optional_flag, const char *path_file)
 {
