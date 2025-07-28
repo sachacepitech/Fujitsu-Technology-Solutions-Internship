@@ -68,8 +68,8 @@ Display license:
 =======================================
 
 VendorID;VendorName;ProductID;ProductName  
-1234;Vendor A;5678;Product X  
-2345;Vendor B;6789;Product Y
+1234;VendorA;5678;ProductX  
+2345;VendorB;6789;ProductY
 
 =======================================
                Notes:
