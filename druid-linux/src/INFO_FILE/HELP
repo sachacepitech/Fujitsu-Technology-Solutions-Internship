@@ -7,16 +7,19 @@ druid [options]
         Available options:
 =======================================
 
--h, --help
+-h, --help  
     Displays this help file and terminates the program.
 
--f, --format
+-f, --format  
     Displays the expected format for the input CSV file.
 
--u [file], --update [file]
+-u [file], --update [file]  
     Adds data to the existing database (CSV format required: VendorID, VendorName, ProductID, ProductName).
 
--l, --license
+-o [file], --output [file]  
+    Writes the USB scan results and risk table to the specified output file instead of printing only to standard output.
+
+-l, --license  
     Displays the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0 DEED) and its conditions.
 
 =======================================
@@ -27,12 +30,12 @@ If no argument is passed, the program automatically detects and scans connected 
 =======================================
               Description:
 =======================================
-The program analyzes connected USB devices and compares them with a CSV database.
+The program analyzes connected USB devices and compares them with a CSV database.  
 Based on the matches, it classifies the devices into three risk levels:
 
-- Low: Complete match (couple VendorID and ProductID).
-- Medium: VendorID match, but no ProductID.
-- High: No match.
+- Low: Complete match (VendorID and ProductID).
+- Medium: VendorID match, but ProductID unknown.
+- High: No match at all.
 
 =======================================
          Example of use:
@@ -44,21 +47,27 @@ Display help:
 Analyze USB devices:
     ./druid
 
-Add data to database:
-    ./druid -u newdata.csv
+Analyze and write output to file:  
+    ./druid -o report.txt
+    ./druid --output report.txt
 
-Display expected CSV format:
+Add data to database:  
+    ./druid -u newdata.csv
+    ./druid --update newdata.csv
+
+Display expected CSV format:  
+    ./druid -f
     ./druid --format
 
-Display license:
+Display license:  
     ./druid --license
 
 =======================================
        Example of expected CSV format:
 =======================================
 
-VendorID;VendorName;ProductID;ProductName
-1234;Vendor A;5678;Product X
+VendorID;VendorName;ProductID;ProductName  
+1234;Vendor A;5678;Product X  
 2345;Vendor B;6789;Product Y
 
 =======================================
@@ -69,13 +78,13 @@ Make sure it is installed on your system.
 
 If systemd is not already installed, you can install it using the following command:
 
-For Debian-based distributions (like Ubuntu):
+For Debian-based distributions (like Ubuntu):  
     sudo apt-get install systemd
 
-For Red Hat-based systems:
+For Red Hat-based systems:  
     sudo yum install systemd
 
-For Arch Linux:
+For Arch Linux:  
     sudo pacman -S systemd
 
 =======================================
