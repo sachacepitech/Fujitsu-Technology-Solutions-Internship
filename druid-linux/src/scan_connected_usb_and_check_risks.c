@@ -29,7 +29,7 @@
  * @brief Checks if the CLI arguments specify an output file
  *
  * Determines whether the provided arguments contain a valid output flag
- * (`--output` or `-o`) followed by a filename.
+ * followed by a filename.
  * 
  * @details static int check_for_output_file(cli_args_t *cli_args)
  * @param cli_args Pointer to the cli_args_t structure containing CLI arguments

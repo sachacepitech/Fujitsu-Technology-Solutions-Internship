@@ -279,14 +279,14 @@ typedef struct <a class="el" href="structcli__args__s.html">cli_args_s</a>&#160;
 <tr class="memitem:a7ead81cba041d6ec565cc01a7a959760" id="r_a7ead81cba041d6ec565cc01a7a959760"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="druid_8h.html#a7ead81cba041d6ec565cc01a7a959760">scan_connected_usb_and_check_risks</a> (<a class="el" href="druid_8h.html#a5479ff93751aaa7ddc1451bf62e9e3f6">usb_tools_t</a> *usb_tools, <a class="el" href="druid_8h.html#ac1a64cd8089f89f3fdd6716e16d71de2">usb_device_info_t</a> *usb_device_info, <a class="el" href="druid_8h.html#af83220175b2757637d040a7ee2953b29">usb_db_entry_t</a> *usb_db_entry, <a class="el" href="druid_8h.html#a7018b2e489fe2f9d53befe4f3d3e73cf">cli_args_t</a> *cli_args)</td></tr>
 <tr class="memdesc:a7ead81cba041d6ec565cc01a7a959760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scans connected USB devices and checks for potential risks.  <br /></td></tr>
 <tr class="separator:a7ead81cba041d6ec565cc01a7a959760"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abace7132af780810be48635a307180f2" id="r_abace7132af780810be48635a307180f2"><td class="memItemLeft" align="right" valign="top"><a id="abace7132af780810be48635a307180f2" name="abace7132af780810be48635a307180f2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>extract_vendor_and_product_ids_from_hardware_id</b> (const char *hardware_id, char *vendor_id, char *product_id)</td></tr>
+<tr class="memitem:abace7132af780810be48635a307180f2" id="r_abace7132af780810be48635a307180f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="druid_8h.html#abace7132af780810be48635a307180f2">extract_vendor_and_product_ids_from_hardware_id</a> (const char *hardware_id, char *vendor_id, char *product_id)</td></tr>
+<tr class="memdesc:abace7132af780810be48635a307180f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts vendor and product IDs from a hardware identifier string.  <br /></td></tr>
 <tr class="separator:abace7132af780810be48635a307180f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae243c0b97da982ab99ca08bcbd9b439c" id="r_ae243c0b97da982ab99ca08bcbd9b439c"><td class="memItemLeft" align="right" valign="top"><a id="ae243c0b97da982ab99ca08bcbd9b439c" name="ae243c0b97da982ab99ca08bcbd9b439c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>get_device_property</b> (void *device_info_set, SP_DEVINFO_DATA *device_info_data, unsigned long property, char *buffer, unsigned long size)</td></tr>
+<tr class="memitem:ae243c0b97da982ab99ca08bcbd9b439c" id="r_ae243c0b97da982ab99ca08bcbd9b439c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="druid_8h.html#ae243c0b97da982ab99ca08bcbd9b439c">get_device_property</a> (void *device_info_set, SP_DEVINFO_DATA *device_info_data, unsigned long property, char *buffer, unsigned long size)</td></tr>
+<tr class="memdesc:ae243c0b97da982ab99ca08bcbd9b439c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a device property as a string from the Windows registry.  <br /></td></tr>
 <tr class="separator:ae243c0b97da982ab99ca08bcbd9b439c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70adeb221fd7608c5a6db17b2eaf4e11" id="r_a70adeb221fd7608c5a6db17b2eaf4e11"><td class="memItemLeft" align="right" valign="top"><a id="a70adeb221fd7608c5a6db17b2eaf4e11" name="a70adeb221fd7608c5a6db17b2eaf4e11"></a>
-PSP_DEVICE_INTERFACE_DETAIL_DATA_A&#160;</td><td class="memItemRight" valign="bottom"><b>get_device_interface_detail</b> (void *device_info_set, SP_DEVICE_INTERFACE_DATA *interface_data, SP_DEVINFO_DATA *device_info_data)</td></tr>
+<tr class="memitem:a70adeb221fd7608c5a6db17b2eaf4e11" id="r_a70adeb221fd7608c5a6db17b2eaf4e11"><td class="memItemLeft" align="right" valign="top">PSP_DEVICE_INTERFACE_DETAIL_DATA_A&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="druid_8h.html#a70adeb221fd7608c5a6db17b2eaf4e11">get_device_interface_detail</a> (void *device_info_set, SP_DEVICE_INTERFACE_DATA *interface_data, SP_DEVINFO_DATA *device_info_data)</td></tr>
+<tr class="memdesc:a70adeb221fd7608c5a6db17b2eaf4e11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves detailed interface information for a USB device.  <br /></td></tr>
 <tr class="separator:a70adeb221fd7608c5a6db17b2eaf4e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -578,6 +578,55 @@ PSP_DEVICE_INTERFACE_DETAIL_DATA_A&#160;</td><td class="memItemRight" valign="bo
 
 </div>
 </div>
+<a id="abace7132af780810be48635a307180f2" name="abace7132af780810be48635a307180f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abace7132af780810be48635a307180f2">&#9670;&#160;</a></span>extract_vendor_and_product_ids_from_hardware_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void extract_vendor_and_product_ids_from_hardware_id </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>hardware_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>vendor_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>product_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Extracts vendor and product IDs from a hardware identifier string. </p>
+<p>Searches the hardware ID string for "VID_" and "PID_" substrings and extracts the next four hexadecimal characters following each tag into their respective buffers</p>
+<p>void <a class="el" href="enum__windows__device__details_8c.html#abace7132af780810be48635a307180f2" title="Extracts vendor and product IDs from a hardware identifier string.">extract_vendor_and_product_ids_from_hardware_id(
+             const char* hardware_id,
+             char* vendor_id,
+             char* product_id)</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hardware_id</td><td>Pointer to the null-terminated hardware ID string </td></tr>
+    <tr><td class="paramname">vendor_id</td><td>Pointer to a buffer (at least 5 bytes) to store the extracted vendor ID </td></tr>
+    <tr><td class="paramname">product_id</td><td>Pointer to a buffer (at least 5 bytes) to store the extracted product ID </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>None (void) </dd></dl>
+
+</div>
+</div>
 <a id="a6d4800679d14c175f9801e63b08b5063" name="a6d4800679d14c175f9801e63b08b5063"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6d4800679d14c175f9801e63b08b5063">&#9670;&#160;</a></span>free_unknown_usb_db_entry()</h2>
 
@@ -627,6 +676,120 @@ PSP_DEVICE_INTERFACE_DETAIL_DATA_A&#160;</td><td class="memItemRight" valign="bo
 <p>void <a class="el" href="free__usb__db__entry_8c.html#a75c16eea8808506b3484a278c2da13b4" title="Frees all memory allocated within a usb_db_t structure.">free_usb_db(usb_db_t *usb_db)</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">usb_db</td><td>Pointer to the usb_db_t structure to be freed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>None (void) </dd></dl>
+
+</div>
+</div>
+<a id="a70adeb221fd7608c5a6db17b2eaf4e11" name="a70adeb221fd7608c5a6db17b2eaf4e11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70adeb221fd7608c5a6db17b2eaf4e11">&#9670;&#160;</a></span>get_device_interface_detail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PSP_DEVICE_INTERFACE_DETAIL_DATA_A get_device_interface_detail </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>device_info_set</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SP_DEVICE_INTERFACE_DATA *&#160;</td>
+          <td class="paramname"><em>interface_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SP_DEVINFO_DATA *&#160;</td>
+          <td class="paramname"><em>device_info_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves detailed interface information for a USB device. </p>
+<p>Allocates memory and fills in a structure containing detailed information about the device interface, including the device path</p>
+<p>PSP_DEVICE_INTERFACE_DETAIL_DATA_A <a class="el" href="enum__windows__device__details_8c.html#a70adeb221fd7608c5a6db17b2eaf4e11" title="Retrieves detailed interface information for a USB device.">get_device_interface_detail(
+             void* device_info_set,
+             SP_DEVICE_INTERFACE_DATA* interface_data,
+             SP_DEVINFO_DATA* device_info_data)</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device_info_set</td><td>Handle to the device information set for the current enumeration </td></tr>
+    <tr><td class="paramname">interface_data</td><td>Pointer to the SP_DEVICE_INTERFACE_DATA structure describing the interface </td></tr>
+    <tr><td class="paramname">device_info_data</td><td>Pointer to the SP_DEVINFO_DATA structure to populate with device data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to a dynamically allocated PSP_DEVICE_INTERFACE_DETAIL_DATA_A structure containing device path info, or NULL if allocation or retrieval fails </dd></dl>
+
+</div>
+</div>
+<a id="ae243c0b97da982ab99ca08bcbd9b439c" name="ae243c0b97da982ab99ca08bcbd9b439c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae243c0b97da982ab99ca08bcbd9b439c">&#9670;&#160;</a></span>get_device_property()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void get_device_property </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>device_info_set</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SP_DEVINFO_DATA *&#160;</td>
+          <td class="paramname"><em>device_info_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>property</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves a device property as a string from the Windows registry. </p>
+<p>Uses the SetupDiGetDeviceRegistryPropertyA function to query a property of the given device and stores the result in the provided buffer</p>
+<p>void <a class="el" href="enum__windows__device__details_8c.html#ae243c0b97da982ab99ca08bcbd9b439c" title="Retrieves a device property as a string from the Windows registry.">get_device_property(
+             void* device_info_set,
+             SP_DEVINFO_DATA* device_info_data,
+             unsigned long property,
+             char* buffer,
+             unsigned long size)</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device_info_set</td><td>Handle to the device information set </td></tr>
+    <tr><td class="paramname">device_info_data</td><td>Pointer to the SP_DEVINFO_DATA structure describing the device </td></tr>
+    <tr><td class="paramname">property</td><td>Identifier for the property to retrieve </td></tr>
+    <tr><td class="paramname">buffer</td><td>Pointer to a buffer to store the retrieved property value </td></tr>
+    <tr><td class="paramname">size</td><td>Size of the buffer in bytes </td></tr>
   </table>
   </dd>
 </dl>
@@ -835,7 +998,7 @@ PSP_DEVICE_INTERFACE_DETAIL_DATA_A&#160;</td><td class="memItemRight" valign="bo
 <p>Sets up internal USB tool structures and prepares the Windows device enumeration for targeting the USB subsystem. Also initializes the USB device info structure.</p>
 <p>int <a class="el" href="init__usb__enumerator_8c.html#a61518dffbe6be5bfd80bd9f8bc624e8a" title="Initializes the USB enumerator.">init_usb_enumerator(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info)</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">usb_tools</td><td>Pointer to the usb_tools_t structure used for enumeration </td></tr>
+    <tr><td class="paramname">usb_tools</td><td>Pointer to the usb_tools_t structure used for device enumeration </td></tr>
     <tr><td class="paramname">usb_device_info</td><td>Pointer to the usb_device_info_t structure to be initialized </td></tr>
   </table>
   </dd>

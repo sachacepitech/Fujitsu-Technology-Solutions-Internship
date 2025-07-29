@@ -29,7 +29,7 @@
  * @brief Checks if the CLI arguments specify an output file
  *
  * Determines whether the provided arguments contain a valid output flag
- * (`--output` or `-o`) followed by a filename.
+ * followed by a filename.
  * 
  * @details static int check_for_output_file(cli_args_t *cli_args)
  * @param cli_args Pointer to the cli_args_t structure containing CLI arguments
@@ -48,6 +48,16 @@ static int check_for_output_file(cli_args_t *cli_args)
     return UNSEEN;
 }
 
+/**
+ * @brief Converts a string to lowercase
+ *
+ * Iterates through each character of the input string and converts
+ * all uppercase alphabetical characters to their lowercase equivalents
+ * 
+ * @details void str_to_lower(char *str)
+ * @param str Pointer to a null-terminated string to be modified in-place
+ * @return None (void)
+ */
 void str_to_lower(char *str) {
     for (; *str; ++str) {
         *str = (char)tolower((unsigned char)*str);

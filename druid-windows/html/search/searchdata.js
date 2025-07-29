@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "cdefghilmsu",
   1: "cdsu",
   2: "defhilms",
-  3: "dfghilms",
+  3: "defghilms",
   4: "csu"
 };
 

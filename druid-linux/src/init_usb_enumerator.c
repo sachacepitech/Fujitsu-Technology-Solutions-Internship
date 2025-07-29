@@ -29,7 +29,7 @@
  * and prepares the systemd enumerator to target the USB subsystem
  * 
  * @details int init_usb_enumerator(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info)
- * @param usb_tools Pointer to the usb_tools_t structure used for enumeration
+ * @param usb_tools Pointer to the usb_tools_t structure used for device enumeration
  * @param usb_device_info Pointer to the usb_device_info_t structure to be initialized
  * @return Exit code:
  *         - 0      (EXIT_SUCCESS) on successful initialization

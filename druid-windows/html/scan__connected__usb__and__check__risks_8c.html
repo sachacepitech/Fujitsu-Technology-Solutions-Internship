@@ -86,6 +86,7 @@ $(function() {
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &lt;ctype.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="druid_8h_source.html">druid.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="seen__devices_8h_source.html">seen_devices.h</a>&quot;</code><br />
 </div><table class="memberdecls">
@@ -97,8 +98,8 @@ Functions</h2></td></tr>
 <dd>
 Fujitsu Technology Solutions </dd></dl>
 </div></td></tr>
-<tr class="memitem:a4c297f82b0db37c7e8d07148c30fa42c" id="r_a4c297f82b0db37c7e8d07148c30fa42c"><td class="memItemLeft" align="right" valign="top"><a id="a4c297f82b0db37c7e8d07148c30fa42c" name="a4c297f82b0db37c7e8d07148c30fa42c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>str_to_lower</b> (char *str)</td></tr>
+<tr class="memitem:a4c297f82b0db37c7e8d07148c30fa42c" id="r_a4c297f82b0db37c7e8d07148c30fa42c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scan__connected__usb__and__check__risks_8c.html#a4c297f82b0db37c7e8d07148c30fa42c">str_to_lower</a> (char *str)</td></tr>
+<tr class="memdesc:a4c297f82b0db37c7e8d07148c30fa42c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string to lowercase.  <br /></td></tr>
 <tr class="separator:a4c297f82b0db37c7e8d07148c30fa42c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4a19ef3db6e652916048b7f3808e8ab" id="r_ac4a19ef3db6e652916048b7f3808e8ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scan__connected__usb__and__check__risks_8c.html#ac4a19ef3db6e652916048b7f3808e8ab">get_vendor_product_device</a> (<a class="el" href="druid_8h.html#a5479ff93751aaa7ddc1451bf62e9e3f6">usb_tools_t</a> *usb_tools, <a class="el" href="druid_8h.html#ac1a64cd8089f89f3fdd6716e16d71de2">usb_device_info_t</a> *usb_device_info, SP_DEVINFO_DATA *dev_info_data)</td></tr>
 <tr class="memdesc:ac4a19ef3db6e652916048b7f3808e8ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves vendor and product information from a USB device.  <br /></td></tr>
@@ -262,6 +263,34 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>str_to_lower</b> (cha
 <li>84 (EXIT_ERROR) if database loading fails </li>
 </ul>
 </dd></dl>
+
+</div>
+</div>
+<a id="a4c297f82b0db37c7e8d07148c30fa42c" name="a4c297f82b0db37c7e8d07148c30fa42c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c297f82b0db37c7e8d07148c30fa42c">&#9670;&#160;</a></span>str_to_lower()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void str_to_lower </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts a string to lowercase. </p>
+<p>Iterates through each character of the input string and converts all uppercase alphabetical characters to their lowercase equivalents</p>
+<p>void <a class="el" href="scan__connected__usb__and__check__risks_8c.html#a4c297f82b0db37c7e8d07148c30fa42c" title="Converts a string to lowercase.">str_to_lower(char *str)</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Pointer to a null-terminated string to be modified in-place </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>None (void) </dd></dl>
 
 </div>
 </div>
