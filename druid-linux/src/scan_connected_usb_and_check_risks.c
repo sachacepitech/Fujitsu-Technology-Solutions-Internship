@@ -114,8 +114,9 @@ static int check_already_seen(usb_tools_t *usb_tools,
 /**
  * @brief Adds the current USB device to the list of seen devices
  *
- * stores the vendor and product IDs of the current USB device
+ * Stores the vendor and product IDs of the current USB device
  * into a global list if the maximum device limit has not been reached
+ * (limit has been set to 128 devices).
  * 
  * @details static void add_to_seen(
  *             usb_device_info_t *usb_device_info,
