@@ -79,7 +79,9 @@ $(function() {
 
 <p>initializes the USB enumerator  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;windows.h&gt;</code><br />
+<code>#include &lt;setupapi.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="druid_8h_source.html">druid.h</a>&quot;</code><br />
@@ -133,7 +135,7 @@ Fujitsu Technology Solutions </dd></dl>
 <p>Sets up internal USB tool structures and prepares the Windows device enumeration for targeting the USB subsystem. Also initializes the USB device info structure.</p>
 <p>int <a class="el" href="init__usb__enumerator_8c.html#a61518dffbe6be5bfd80bd9f8bc624e8a" title="Initializes the USB enumerator.">init_usb_enumerator(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info)</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">usb_tools</td><td>Pointer to the usb_tools_t structure used for enumeration </td></tr>
+    <tr><td class="paramname">usb_tools</td><td>Pointer to the usb_tools_t structure used for device enumeration </td></tr>
     <tr><td class="paramname">usb_device_info</td><td>Pointer to the usb_device_info_t structure to be initialized </td></tr>
   </table>
   </dd>

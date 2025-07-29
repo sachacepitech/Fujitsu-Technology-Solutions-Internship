@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['cli_5fargs_5fs_0',['cli_args_s',['../structcli__args__s.html',1,'']]],
-  ['cli_5fargs_5ft_1',['cli_args_t',['../druid_8h.html#a7018b2e489fe2f9d53befe4f3d3e73cf',1,'druid.h']]]
+  ['ac_0',['ac',['../structcli__args__s.html#af08039a580bcbe148c7b7582cda1d655',1,'cli_args_s']]],
+  ['add_5fnew_5fdata_1',['add_new_data',['../load__usb__db__from__file_8c.html#ab06c98c5c590ea62fc00838d34465d3e',1,'load_usb_db_from_file.c']]],
+  ['add_5fto_5fseen_2',['add_to_seen',['../scan__connected__usb__and__check__risks_8c.html#af8ed0fded1bf9983d2d9cc8325183486',1,'scan_connected_usb_and_check_risks.c']]],
+  ['append_5fusb_5fentry_5ffrom_5fline_3',['append_usb_entry_from_line',['../load__usb__db__from__file_8c.html#abec0ee57c909e115d0648599f58d0682',1,'load_usb_db_from_file.c']]],
+  ['av_4',['av',['../structcli__args__s.html#a271795ac490fc55c6509a4099bfa084f',1,'cli_args_s']]]
 ];

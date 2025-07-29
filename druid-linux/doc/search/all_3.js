@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['handle_5fcli_5finfo_5fflags_0',['handle_cli_info_flags',['../druid_8h.html#a519c75482eb2c6f7af800ba3a1409113',1,'handle_cli_info_flags(int ac, char **av):&#160;handle_cli_info_flags.c'],['../handle__cli__info__flags_8c.html#a519c75482eb2c6f7af800ba3a1409113',1,'handle_cli_info_flags(int ac, char **av):&#160;handle_cli_info_flags.c']]],
-  ['handle_5fcli_5finfo_5fflags_2ec_1',['handle_cli_info_flags.c',['../handle__cli__info__flags_8c.html',1,'']]]
+  ['entries_0',['entries',['../structusb__db__s.html#aced193da1a75c1605d6bbb67b5a4e3eb',1,'usb_db_s']]],
+  ['enumerator_1',['enumerator',['../structusb__tools__s.html#a81c985270ed71101eed46321c5923224',1,'usb_tools_s']]],
+  ['exit_5ferror_2',['EXIT_ERROR',['../druid_8h.html#a036a316feca78ed68d2f2a88cbf6fa8c',1,'druid.h']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['handle_5fcli_5finfo_5fflags_0',['handle_cli_info_flags',['../druid_8h.html#a519c75482eb2c6f7af800ba3a1409113',1,'handle_cli_info_flags(int ac, char **av):&#160;handle_cli_info_flags.c'],['../handle__cli__info__flags_8c.html#a519c75482eb2c6f7af800ba3a1409113',1,'handle_cli_info_flags(int ac, char **av):&#160;handle_cli_info_flags.c']]]
+  ['extract_5fvendor_5fand_5fproduct_5fids_5ffrom_5fhardware_5fid_0',['extract_vendor_and_product_ids_from_hardware_id',['../druid_8h.html#abace7132af780810be48635a307180f2',1,'extract_vendor_and_product_ids_from_hardware_id(const char *hardware_id, char *vendor_id, char *product_id):&#160;enum_windows_device_details.c'],['../enum__windows__device__details_8c.html#abace7132af780810be48635a307180f2',1,'extract_vendor_and_product_ids_from_hardware_id(const char *hardware_id, char *vendor_id, char *product_id):&#160;enum_windows_device_details.c']]]
 ];

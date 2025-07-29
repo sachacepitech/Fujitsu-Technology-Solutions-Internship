@@ -93,8 +93,8 @@ Functions</h2></td></tr>
 <dd>
 Fujitsu Technology Solutions </dd></dl>
 </div></td></tr>
-<tr class="memitem:a6ad4a93a1f6cc1040a190d1a7631db45" id="r_a6ad4a93a1f6cc1040a190d1a7631db45"><td class="memItemLeft" align="right" valign="top"><a id="a6ad4a93a1f6cc1040a190d1a7631db45" name="a6ad4a93a1f6cc1040a190d1a7631db45"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>display_file</b> (int ac, char **av, const char *flag, const char *optional_flag, const char *path_file)</td></tr>
+<tr class="memitem:a6ad4a93a1f6cc1040a190d1a7631db45" id="r_a6ad4a93a1f6cc1040a190d1a7631db45"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="display__file_8c.html#a6ad4a93a1f6cc1040a190d1a7631db45">display_file</a> (int ac, char **av, const char *flag, const char *optional_flag, const char *path_file)</td></tr>
+<tr class="memdesc:a6ad4a93a1f6cc1040a190d1a7631db45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the contents of a file if the correct flag is passed via CLI.  <br /></td></tr>
 <tr class="separator:a6ad4a93a1f6cc1040a190d1a7631db45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -103,7 +103,78 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>display_file</b> (int 
 <dl class="section copyright"><dt>Copyright</dt><dd>Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0 DEED)</dd></dl>
 <p>This file is part of the "druid" repository.</p>
 <p>You can use, modify, and distribute this code under the terms of the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0 DEED). See the full license at: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr">https://creativecommons.org/licenses/by-sa/4.0/deed.fr</a> </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a6ad4a93a1f6cc1040a190d1a7631db45" name="a6ad4a93a1f6cc1040a190d1a7631db45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ad4a93a1f6cc1040a190d1a7631db45">&#9670;&#160;</a></span>display_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int display_file </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>av</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>optional_flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>path_file</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Displays the contents of a file if the correct flag is passed via CLI. </p>
+<p>Opens the specified file and prints its contents line by line to stdout if the provided arguments contain the matching flag or optional flag</p>
+<p>int <a class="el" href="display__file_8c.html#a6ad4a93a1f6cc1040a190d1a7631db45" title="Displays the contents of a file if the correct flag is passed via CLI.">display_file(
+            int ac,
+            char **av,
+            const char *flag,
+            const char *optional_flag,
+            const char *path_file)</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ac</td><td>Argument count from CLI </td></tr>
+    <tr><td class="paramname">av</td><td>Argument vector from CLI </td></tr>
+    <tr><td class="paramname">flag</td><td>Primary flag to trigger file display (e.g., "-h") </td></tr>
+    <tr><td class="paramname">optional_flag</td><td>Alternate flag to trigger file display (e.g., "--help") </td></tr>
+    <tr><td class="paramname">path_file</td><td>Path to the file to be displayed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Exit code:<ul>
+<li>0 (SUCCESS) if file was displayed successfully</li>
+<li>1 if conditions weren't met (flag missing or incorrect argc)</li>
+<li>84 (EXIT_ERROR) if the file failed to open </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8

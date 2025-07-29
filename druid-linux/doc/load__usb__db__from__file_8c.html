@@ -96,6 +96,21 @@ Functions</h2></td></tr>
 <dd>
 Fujitsu Technology Solutions </dd></dl>
 </div></td></tr>
+<tr class="memitem:a429655f2ccd8312615d99eae8a30dca4" id="r_a429655f2ccd8312615d99eae8a30dca4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="load__usb__db__from__file_8c.html#a429655f2ccd8312615d99eae8a30dca4">remove_newline</a> (char *str)</td></tr>
+<tr class="memdesc:a429655f2ccd8312615d99eae8a30dca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the trailing newline character from a string.  <br /></td></tr>
+<tr class="separator:a429655f2ccd8312615d99eae8a30dca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3da14dacce13ebb1a7161c95237207b2" id="r_a3da14dacce13ebb1a7161c95237207b2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="load__usb__db__from__file_8c.html#a3da14dacce13ebb1a7161c95237207b2">fill_struct_temp_data</a> (<a class="el" href="druid_8h.html#af83220175b2757637d040a7ee2953b29">usb_db_entry_t</a> *usb_db_entry, char *line)</td></tr>
+<tr class="memdesc:a3da14dacce13ebb1a7161c95237207b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a CSV line and fills a USB database entry structure.  <br /></td></tr>
+<tr class="separator:a3da14dacce13ebb1a7161c95237207b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8103a7afd0401b23ac2df003008a9c55" id="r_a8103a7afd0401b23ac2df003008a9c55"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="load__usb__db__from__file_8c.html#a8103a7afd0401b23ac2df003008a9c55">append_usb_entry_from_line</a> (<a class="el" href="druid_8h.html#aa88d7fd7b78c93ccbc4bfff6fc5aefe3">usb_db_t</a> *usb_db, <a class="el" href="druid_8h.html#af83220175b2757637d040a7ee2953b29">usb_db_entry_t</a> **usb_db_entry, char *line, size_t *allocated_capacity)</td></tr>
+<tr class="memdesc:a8103a7afd0401b23ac2df003008a9c55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a USB database entry parsed from a single line.  <br /></td></tr>
+<tr class="separator:a8103a7afd0401b23ac2df003008a9c55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a914492188633dfc94580aa4a17d9bc1a" id="r_a914492188633dfc94580aa4a17d9bc1a"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="load__usb__db__from__file_8c.html#a914492188633dfc94580aa4a17d9bc1a">add_new_data</a> (<a class="el" href="druid_8h.html#a7018b2e489fe2f9d53befe4f3d3e73cf">cli_args_t</a> *cli_args, <a class="el" href="druid_8h.html#aa88d7fd7b78c93ccbc4bfff6fc5aefe3">usb_db_t</a> *usb_db, <a class="el" href="druid_8h.html#af83220175b2757637d040a7ee2953b29">usb_db_entry_t</a> *usb_db_entry, size_t allocated_capacity)</td></tr>
+<tr class="memdesc:a914492188633dfc94580aa4a17d9bc1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads new USB database entries from an update file.  <br /></td></tr>
+<tr class="separator:a914492188633dfc94580aa4a17d9bc1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace2422dafa9d286b3f6b8bc40855b677" id="r_ace2422dafa9d286b3f6b8bc40855b677"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="load__usb__db__from__file_8c.html#ace2422dafa9d286b3f6b8bc40855b677">check_for_update_file_and_load</a> (<a class="el" href="druid_8h.html#a7018b2e489fe2f9d53befe4f3d3e73cf">cli_args_t</a> *cli_args, <a class="el" href="druid_8h.html#aa88d7fd7b78c93ccbc4bfff6fc5aefe3">usb_db_t</a> *usb_db, <a class="el" href="druid_8h.html#af83220175b2757637d040a7ee2953b29">usb_db_entry_t</a> *usb_db_entry, size_t allocated_capacity)</td></tr>
+<tr class="memdesc:ace2422dafa9d286b3f6b8bc40855b677"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for a file update request via CLI and loads new data if valid.  <br /></td></tr>
+<tr class="separator:ace2422dafa9d286b3f6b8bc40855b677"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7756419bf48e7a406168a3b0c3677c8c" id="r_a7756419bf48e7a406168a3b0c3677c8c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="load__usb__db__from__file_8c.html#a7756419bf48e7a406168a3b0c3677c8c">load_usb_db_from_file</a> (<a class="el" href="druid_8h.html#aa88d7fd7b78c93ccbc4bfff6fc5aefe3">usb_db_t</a> *usb_db, <a class="el" href="druid_8h.html#af83220175b2757637d040a7ee2953b29">usb_db_entry_t</a> *usb_db_entry, <a class="el" href="druid_8h.html#a7018b2e489fe2f9d53befe4f3d3e73cf">cli_args_t</a> *cli_args)</td></tr>
 <tr class="memdesc:a7756419bf48e7a406168a3b0c3677c8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads USB device data from the local database file.  <br /></td></tr>
 <tr class="separator:a7756419bf48e7a406168a3b0c3677c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -107,6 +122,262 @@ Fujitsu Technology Solutions </dd></dl>
 <p>This file is part of the "druid" repository.</p>
 <p>You can use, modify, and distribute this code under the terms of the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0 DEED). See the full license at: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr">https://creativecommons.org/licenses/by-sa/4.0/deed.fr</a> </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a914492188633dfc94580aa4a17d9bc1a" name="a914492188633dfc94580aa4a17d9bc1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a914492188633dfc94580aa4a17d9bc1a">&#9670;&#160;</a></span>add_new_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int add_new_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="druid_8h.html#a7018b2e489fe2f9d53befe4f3d3e73cf">cli_args_t</a> *&#160;</td>
+          <td class="paramname"><em>cli_args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="druid_8h.html#aa88d7fd7b78c93ccbc4bfff6fc5aefe3">usb_db_t</a> *&#160;</td>
+          <td class="paramname"><em>usb_db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="druid_8h.html#af83220175b2757637d040a7ee2953b29">usb_db_entry_t</a> *&#160;</td>
+          <td class="paramname"><em>usb_db_entry</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>allocated_capacity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads new USB database entries from an update file. </p>
+<p>opens the specified update file, reads its content line by line, and appends each entry to the existing USB database</p>
+<p>static int <a class="el" href="load__usb__db__from__file_8c.html#a914492188633dfc94580aa4a17d9bc1a" title="Loads new USB database entries from an update file.">add_new_data(
+            cli_args_t *cli_args,
+            usb_db_t *usb_db,
+            usb_db_entry_t *usb_db_entry,
+            size_t allocated_capacity)</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cli_args</td><td>Pointer to the cli_args_t structure containing CLI arguments </td></tr>
+    <tr><td class="paramname">usb_db</td><td>Pointer to the usb_db_t structure to append new entries </td></tr>
+    <tr><td class="paramname">usb_db_entry</td><td>Pointer to the usb_db_entry_t structure used during parsing </td></tr>
+    <tr><td class="paramname">allocated_capacity</td><td>Initial allocated size for database entries </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Exit code:<ul>
+<li>0 (EXIT_SUCCESS) on successful loading and appending</li>
+<li>84 (EXIT_ERROR) if the file cannot be opened or reading fails </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a8103a7afd0401b23ac2df003008a9c55" name="a8103a7afd0401b23ac2df003008a9c55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8103a7afd0401b23ac2df003008a9c55">&#9670;&#160;</a></span>append_usb_entry_from_line()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int append_usb_entry_from_line </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="druid_8h.html#aa88d7fd7b78c93ccbc4bfff6fc5aefe3">usb_db_t</a> *&#160;</td>
+          <td class="paramname"><em>usb_db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="druid_8h.html#af83220175b2757637d040a7ee2953b29">usb_db_entry_t</a> **&#160;</td>
+          <td class="paramname"><em>usb_db_entry</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>allocated_capacity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Appends a USB database entry parsed from a single line. </p>
+<p>checks if the USB database array needs resizing and reallocates if necessary, then initializes and fills a new database entry with parsed data from the line, and increments the entry count</p>
+<p>static int <a class="el" href="load__usb__db__from__file_8c.html#a8103a7afd0401b23ac2df003008a9c55" title="Appends a USB database entry parsed from a single line.">append_usb_entry_from_line(
+            usb_db_t *usb_db,
+            usb_db_entry_t **usb_db_entry,
+            char *line,
+            size_t *allocated_capacity)</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">usb_db</td><td>Pointer to the usb_db_t structure holding the database entries </td></tr>
+    <tr><td class="paramname">usb_db_entry</td><td>Double pointer to a usb_db_entry_t structure to update with new entry </td></tr>
+    <tr><td class="paramname">line</td><td>String containing the raw database entry line to parse </td></tr>
+    <tr><td class="paramname">allocated_capacity</td><td>Pointer to the current allocated capacity of the database array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Exit code:<ul>
+<li>0 (EXIT_SUCCESS) on successful append</li>
+<li>84 (EXIT_ERROR) if memory reallocation fails </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="ace2422dafa9d286b3f6b8bc40855b677" name="ace2422dafa9d286b3f6b8bc40855b677"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace2422dafa9d286b3f6b8bc40855b677">&#9670;&#160;</a></span>check_for_update_file_and_load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int check_for_update_file_and_load </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="druid_8h.html#a7018b2e489fe2f9d53befe4f3d3e73cf">cli_args_t</a> *&#160;</td>
+          <td class="paramname"><em>cli_args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="druid_8h.html#aa88d7fd7b78c93ccbc4bfff6fc5aefe3">usb_db_t</a> *&#160;</td>
+          <td class="paramname"><em>usb_db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="druid_8h.html#af83220175b2757637d040a7ee2953b29">usb_db_entry_t</a> *&#160;</td>
+          <td class="paramname"><em>usb_db_entry</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>allocated_capacity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks for a file update request via CLI and loads new data if valid. </p>
+<p>verifies if the CLI input requests an update, ensures the file format is correct, and triggers the loading of new USB database entries if applicable</p>
+<p>static int <a class="el" href="load__usb__db__from__file_8c.html#ace2422dafa9d286b3f6b8bc40855b677" title="Checks for a file update request via CLI and loads new data if valid.">check_for_update_file_and_load(
+            cli_args_t *cli_args,
+            usb_db_t *usb_db,
+            usb_db_entry_t *usb_db_entry,
+            size_t allocated_capacity)</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cli_args</td><td>Pointer to the cli_args_t structure containing CLI arguments </td></tr>
+    <tr><td class="paramname">usb_db</td><td>Pointer to the usb_db_t structure to append new entries </td></tr>
+    <tr><td class="paramname">usb_db_entry</td><td>Pointer to the usb_db_entry_t structure used during parsing </td></tr>
+    <tr><td class="paramname">allocated_capacity</td><td>Initial allocated size for database entries </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Exit code:<ul>
+<li>0 (EXIT_SUCCESS) if no update is requested or update is successful</li>
+<li>84 (EXIT_ERROR) if the file is invalid or loading fails </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a3da14dacce13ebb1a7161c95237207b2" name="a3da14dacce13ebb1a7161c95237207b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3da14dacce13ebb1a7161c95237207b2">&#9670;&#160;</a></span>fill_struct_temp_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void fill_struct_temp_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="druid_8h.html#af83220175b2757637d040a7ee2953b29">usb_db_entry_t</a> *&#160;</td>
+          <td class="paramname"><em>usb_db_entry</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>line</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parses a CSV line and fills a USB database entry structure. </p>
+<p>splits the input line using the defined separator to extract vendor ID, vendor name, product ID, and product name, then duplicates and assigns these strings to the corresponding fields in the USB database entry</p>
+<p>static void <a class="el" href="load__usb__db__from__file_8c.html#a3da14dacce13ebb1a7161c95237207b2" title="Parses a CSV line and fills a USB database entry structure.">fill_struct_temp_data(
+            usb_db_entry_t *usb_db_entry,
+            char *line)</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">usb_db_entry</td><td>Pointer to the usb_db_entry_t structure to fill </td></tr>
+    <tr><td class="paramname">line</td><td>Input CSV formatted string containing USB device data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>None (void) </dd></dl>
+
+</div>
+</div>
 <a id="a7756419bf48e7a406168a3b0c3677c8c" name="a7756419bf48e7a406168a3b0c3677c8c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7756419bf48e7a406168a3b0c3677c8c">&#9670;&#160;</a></span>load_usb_db_from_file()</h2>
 
@@ -157,6 +428,43 @@ Fujitsu Technology Solutions </dd></dl>
 <li>84 (EXIT_ERROR) on failure (file missing, allocation error, etc.) </li>
 </ul>
 </dd></dl>
+
+</div>
+</div>
+<a id="a429655f2ccd8312615d99eae8a30dca4" name="a429655f2ccd8312615d99eae8a30dca4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a429655f2ccd8312615d99eae8a30dca4">&#9670;&#160;</a></span>remove_newline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void remove_newline </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes the trailing newline character from a string. </p>
+<p>checks if the last character of the string is a newline ('<br  />
+') and replaces it with a null terminator to clean the string</p>
+<p>static void <a class="el" href="load__usb__db__from__file_8c.html#a429655f2ccd8312615d99eae8a30dca4" title="Removes the trailing newline character from a string.">remove_newline(char *str)</a> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Pointer to the null-terminated string to modify </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>None (void) </dd></dl>
 
 </div>
 </div>
