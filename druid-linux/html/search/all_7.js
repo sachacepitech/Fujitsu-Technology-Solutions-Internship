@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['scan_5fconnected_5fusb_5fand_5fcheck_5frisks_0',['scan_connected_usb_and_check_risks',['../druid_8h.html#a7ead81cba041d6ec565cc01a7a959760',1,'scan_connected_usb_and_check_risks(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info, usb_db_entry_t *usb_db_entry, cli_args_t *cli_args):&#160;scan_connected_usb_and_check_risks.c'],['../scan__connected__usb__and__check__risks_8c.html#a7ead81cba041d6ec565cc01a7a959760',1,'scan_connected_usb_and_check_risks(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info, usb_db_entry_t *usb_db_entry, cli_args_t *cli_args):&#160;scan_connected_usb_and_check_risks.c']]],
-  ['scan_5fconnected_5fusb_5fand_5fcheck_5frisks_2ec_1',['scan_connected_usb_and_check_risks.c',['../scan__connected__usb__and__check__risks_8c.html',1,'']]],
-  ['seen_5fdevice_5fs_2',['seen_device_s',['../structseen__device__s.html',1,'']]],
-  ['seen_5fdevice_5ft_3',['seen_device_t',['../seen__devices_8h.html#a0fbc1e9a29ac161dee592f47617c1d45',1,'seen_devices.h']]],
-  ['seen_5fdevices_2eh_4',['seen_devices.h',['../seen__devices_8h.html',1,'']]]
+  ['license_5ffile_0',['LICENSE_FILE',['../druid_8h.html#a6cc71f8e74ae9358e065105fc6af995e',1,'druid.h']]],
+  ['license_5fflag_1',['LICENSE_FLAG',['../druid_8h.html#a49c96f5ff710aec125759adbe3c8d47c',1,'druid.h']]],
+  ['license_5fflag_5foption_2',['LICENSE_FLAG_OPTION',['../druid_8h.html#ae83340947ef97682cd71a7b4d0622b44',1,'druid.h']]],
+  ['load_5fusb_5fdb_5ffrom_5ffile_3',['load_usb_db_from_file',['../druid_8h.html#a7756419bf48e7a406168a3b0c3677c8c',1,'load_usb_db_from_file(usb_db_t *usb_db, usb_db_entry_t *usb_db_entry, cli_args_t *cli_args):&#160;load_usb_db_from_file.c'],['../load__usb__db__from__file_8c.html#a7756419bf48e7a406168a3b0c3677c8c',1,'load_usb_db_from_file(usb_db_t *usb_db, usb_db_entry_t *usb_db_entry, cli_args_t *cli_args):&#160;load_usb_db_from_file.c']]],
+  ['load_5fusb_5fdb_5ffrom_5ffile_2ec_4',['load_usb_db_from_file.c',['../load__usb__db__from__file_8c.html',1,'']]],
+  ['low_5',['low',['../structusb__risk__stats__s.html#ae33fdbfb6d7f139dc7c25bd1246eb58a',1,'usb_risk_stats_s']]]
 ];

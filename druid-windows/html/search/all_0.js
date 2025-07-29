@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['cli_5fargs_5fs_0',['cli_args_s',['../structcli__args__s.html',1,'']]],
-  ['cli_5fargs_5ft_1',['cli_args_t',['../druid_8h.html#a7018b2e489fe2f9d53befe4f3d3e73cf',1,'druid.h']]]
+  ['ac_0',['ac',['../structcli__args__s.html#af08039a580bcbe148c7b7582cda1d655',1,'cli_args_s']]],
+  ['av_1',['av',['../structcli__args__s.html#a271795ac490fc55c6509a4099bfa084f',1,'cli_args_s']]]
 ];

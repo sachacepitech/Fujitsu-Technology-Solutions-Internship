@@ -1,10 +1,12 @@
 var indexSectionsWithContent =
 {
-  0: "cdefghilmsu",
+  0: "acdefghilmnoprsuv",
   1: "cdsu",
   2: "defhilms",
   3: "defghilms",
-  4: "csu"
+  4: "acdeilmpsv",
+  5: "csu",
+  6: "defhilmnoprsuv"
 };
 
 var indexSectionNames =
@@ -13,7 +15,9 @@ var indexSectionNames =
   1: "classes",
   2: "files",
   3: "functions",
-  4: "typedefs"
+  4: "variables",
+  5: "typedefs",
+  6: "defines"
 };
 
 var indexSectionLabels =
@@ -22,6 +26,8 @@ var indexSectionLabels =
   1: "Data Structures",
   2: "Files",
   3: "Functions",
-  4: "Typedefs"
+  4: "Variables",
+  5: "Typedefs",
+  6: "Macros"
 };
 

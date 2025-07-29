@@ -1,11 +1,13 @@
 var searchData=
 [
-  ['init_5fstruct_5fdb_5fand_5fdevice_2ec_0',['init_struct_db_and_device.c',['../init__struct__db__and__device_8c.html',1,'']]],
-  ['init_5fstruct_5funknown_5fusb_5fdb_5fentry_1',['init_struct_unknown_usb_db_entry',['../druid_8h.html#a1cd4cdc973f7b80bba07e9d6d9058cb5',1,'init_struct_unknown_usb_db_entry(usb_db_entry_t *unknown):&#160;init_struct_db_and_device.c'],['../init__struct__db__and__device_8c.html#a1cd4cdc973f7b80bba07e9d6d9058cb5',1,'init_struct_unknown_usb_db_entry(usb_db_entry_t *unknown):&#160;init_struct_db_and_device.c']]],
-  ['init_5fstruct_5fusb_5fdb_2',['init_struct_usb_db',['../druid_8h.html#ae7ceaafda871f4625ef67e7b9659b224',1,'init_struct_usb_db(usb_db_t *usb_db, size_t allocated_capacity):&#160;init_struct_db_and_device.c'],['../init__struct__db__and__device_8c.html#ae7ceaafda871f4625ef67e7b9659b224',1,'init_struct_usb_db(usb_db_t *usb_db, size_t allocated_capacity):&#160;init_struct_db_and_device.c']]],
-  ['init_5fstruct_5fusb_5fdb_5fentry_3',['init_struct_usb_db_entry',['../druid_8h.html#af0c8041b1177e101510b77bb8bdb08b7',1,'init_struct_usb_db_entry(usb_db_entry_t *usb_db_entry):&#160;init_struct_db_and_device.c'],['../init__struct__db__and__device_8c.html#af0c8041b1177e101510b77bb8bdb08b7',1,'init_struct_usb_db_entry(usb_db_entry_t *usb_db_entry):&#160;init_struct_db_and_device.c']]],
-  ['init_5fstruct_5fusb_5fdevice_5finfo_4',['init_struct_usb_device_info',['../druid_8h.html#a1339e6d096dc5cf017c5250baa0dd151',1,'init_struct_usb_device_info(usb_device_info_t *usb_device_info):&#160;init_struct_db_and_device.c'],['../init__struct__db__and__device_8c.html#a1339e6d096dc5cf017c5250baa0dd151',1,'init_struct_usb_device_info(usb_device_info_t *usb_device_info):&#160;init_struct_db_and_device.c']]],
-  ['init_5fstruct_5fusb_5ftools_5',['init_struct_usb_tools',['../druid_8h.html#aa37ed53f22983a233a804d2f1aae6635',1,'init_struct_usb_tools(usb_tools_t *usb_tools):&#160;init_struct_db_and_device.c'],['../init__struct__db__and__device_8c.html#aa37ed53f22983a233a804d2f1aae6635',1,'init_struct_usb_tools(usb_tools_t *usb_tools):&#160;init_struct_db_and_device.c']]],
-  ['init_5fusb_5fenumerator_6',['init_usb_enumerator',['../druid_8h.html#a61518dffbe6be5bfd80bd9f8bc624e8a',1,'init_usb_enumerator(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info):&#160;init_usb_enumerator.c'],['../init__usb__enumerator_8c.html#a61518dffbe6be5bfd80bd9f8bc624e8a',1,'init_usb_enumerator(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info):&#160;init_usb_enumerator.c']]],
-  ['init_5fusb_5fenumerator_2ec_7',['init_usb_enumerator.c',['../init__usb__enumerator_8c.html',1,'']]]
+  ['file_5fseparator_0',['FILE_SEPARATOR',['../druid_8h.html#a2ff80281d1896ad6e969b11d60c6c19d',1,'druid.h']]],
+  ['file_5ftype_1',['FILE_TYPE',['../druid_8h.html#afe9af64ddff174e1b6e96db45b8f78fb',1,'druid.h']]],
+  ['file_5ftype_5fplus_5fseparator_2',['FILE_TYPE_PLUS_SEPARATOR',['../druid_8h.html#a4c4bd25fd86fafe4dc92616465573963',1,'druid.h']]],
+  ['file_5ftype_5fseparator_3',['FILE_TYPE_SEPARATOR',['../druid_8h.html#a2b9a081c09289752f09d4aeece452b17',1,'druid.h']]],
+  ['format_5ffile_4',['FORMAT_FILE',['../druid_8h.html#ae40413180f8afa97619d64fff086cd17',1,'druid.h']]],
+  ['format_5fflag_5',['FORMAT_FLAG',['../druid_8h.html#abb7a93b551736c900e1341a2d077da78',1,'druid.h']]],
+  ['format_5fflag_5foption_6',['FORMAT_FLAG_OPTION',['../druid_8h.html#a5cfd8b337028da82b7c77e037590f0bf',1,'druid.h']]],
+  ['free_5funknown_5fusb_5fdb_5fentry_7',['free_unknown_usb_db_entry',['../druid_8h.html#a6d4800679d14c175f9801e63b08b5063',1,'free_unknown_usb_db_entry(usb_db_entry_t *unknown):&#160;free_usb_db_entry.c'],['../free__usb__db__entry_8c.html#a6d4800679d14c175f9801e63b08b5063',1,'free_unknown_usb_db_entry(usb_db_entry_t *unknown):&#160;free_usb_db_entry.c']]],
+  ['free_5fusb_5fdb_8',['free_usb_db',['../druid_8h.html#a75c16eea8808506b3484a278c2da13b4',1,'free_usb_db(usb_db_t *usb_db):&#160;free_usb_db_entry.c'],['../free__usb__db__entry_8c.html#a75c16eea8808506b3484a278c2da13b4',1,'free_usb_db(usb_db_t *usb_db):&#160;free_usb_db_entry.c']]],
+  ['free_5fusb_5fdb_5fentry_2ec_9',['free_usb_db_entry.c',['../free__usb__db__entry_8c.html',1,'']]]
 ];
