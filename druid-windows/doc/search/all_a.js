@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['none_5fcsv_5ffile_5fmessage_0',['NONE_CSV_FILE_MESSAGE',['../druid_8h.html#ab9ed4f3fdf3f02eb443f951f2226bbd5',1,'druid.h']]]
+  ['open_5fread_5fwrite_5fmode_0',['OPEN_READ_WRITE_MODE',['../druid_8h.html#a7937dcd1274534ae634b72c9826054f0',1,'druid.h']]],
+  ['output_5fflag_1',['OUTPUT_FLAG',['../druid_8h.html#ab9604cbbff5e552432e74db9a37945f4',1,'druid.h']]],
+  ['output_5fflag_5foption_2',['OUTPUT_FLAG_OPTION',['../druid_8h.html#a9ac0c37ab7e25ee4ecce10eb674a7d67',1,'druid.h']]]
 ];
