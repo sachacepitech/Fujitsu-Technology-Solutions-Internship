@@ -131,7 +131,7 @@ static int add_new_data(cli_args_t *cli_args, usb_db_t *usb_db,
     FILE *update_data_file = fopen(strcat(cli_args->av[2], FILE_TYPE_PLUS_SEPARATOR), READ_MODE);
 
     if (update_data_file == NULL) {
-        dprintf(STDERR_FILENO, UNKNOWN_FILE_MESSAGE);
+        printf(UNKNOWN_FILE_MESSAGE);
         return EXIT_ERROR;
     }
     while (getline(&line, &n, update_data_file) != EOF) {
@@ -172,7 +172,7 @@ static int check_for_update_file_and_load(cli_args_t *cli_args, usb_db_t *usb_db
         && cli_args->av[2] != NULL) {
             strtok(cli_args->av[2], FILE_TYPE_SEPARATOR);
             if (strcmp(strtok(NULL, FILE_TYPE_SEPARATOR), FILE_TYPE) != SUCCESS) {
-                dprintf(STDERR_FILENO, UNKNOWN_FILE_TYPE_MESSAGE);
+                printf(UNKNOWN_FILE_TYPE_MESSAGE);
                 return EXIT_ERROR;
             } else {
                 if (add_new_data(cli_args, usb_db,
