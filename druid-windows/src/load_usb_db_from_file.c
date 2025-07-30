@@ -124,7 +124,7 @@ static int append_usb_entry_from_line(usb_db_t *usb_db, usb_db_entry_t **usb_db_
  *         - 84     (EXIT_ERROR) if the file cannot be opened or reading fails
  */
 static int add_new_data(cli_args_t *cli_args, usb_db_t *usb_db,
-    usb_db_entry_t *usb_db_entry, size_t allocated_capacity)
+    usb_db_entry_t *usb_db_entry, long unsigned int allocated_capacity)
 {
     char *line = NULL;
     size_t n = 0;
