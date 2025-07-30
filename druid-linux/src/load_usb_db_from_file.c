@@ -132,8 +132,10 @@ static int add_new_data(cli_args_t *cli_args, usb_db_t *usb_db,
     size_t n = 0;
     FILE *update_data_file = fopen(strcat(cli_args->av[2], FILE_TYPE_PLUS_SEPARATOR), READ_MODE);
 
-    if (update_data_file == NULL)
+    if (update_data_file == NULL) {
+        dprintf(STDERR_FILENO, UNKNOWN_FILE_MESSAGE);
         return EXIT_ERROR;
+    }
     while (getline(&line, &n, update_data_file) != EOF) {
         if (append_usb_entry_from_line(usb_db, &usb_db_entry, line, &allocated_capacity) == EXIT_ERROR)
             return EXIT_ERROR;
@@ -171,7 +173,7 @@ static int check_for_update_file_and_load(cli_args_t *cli_args, usb_db_t *usb_db
         && cli_args->av[2] != NULL) {
             strtok(cli_args->av[2], FILE_TYPE_SEPARATOR);
             if (strcmp(strtok(NULL, FILE_TYPE_SEPARATOR), FILE_TYPE) != SUCCESS) {
-                printf(NONE_CSV_FILE_MESSAGE);
+                dprintf(STDERR_FILENO, UNKNOWN_FILE_TYPE_MESSAGE);
                 return EXIT_ERROR;
             } else {
                 if (add_new_data(cli_args, usb_db,
@@ -212,11 +214,15 @@ int load_usb_db_from_file(usb_db_t *usb_db, usb_db_entry_t *usb_db_entry,
         return EXIT_ERROR;
     if (init_struct_usb_db(usb_db, allocated_capacity) == EXIT_ERROR)
         return EXIT_ERROR;
-    if (check_for_update_file_and_load(cli_args, usb_db, usb_db_entry, allocated_capacity) == EXIT_ERROR)
+    if (check_for_update_file_and_load(cli_args, usb_db, usb_db_entry, allocated_capacity) == EXIT_ERROR) {
+        fclose(data_file);
         return EXIT_ERROR;
+    }
     while (getline(&line, &n, data_file) != EOF) {
-        if (append_usb_entry_from_line(usb_db, &usb_db_entry, line, &allocated_capacity) == EXIT_ERROR)
+        if (append_usb_entry_from_line(usb_db, &usb_db_entry, line, &allocated_capacity) == EXIT_ERROR) {
+            fclose(data_file);
             return EXIT_ERROR;
+        }
     }
     free(line);
     fclose(data_file);

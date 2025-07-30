@@ -62,7 +62,8 @@
 
     /* default messages */
     #define UNKNOWN_DEVICE_MESSAGE "Unknown"
-    #define NONE_CSV_FILE_MESSAGE "Error: Make sure it is a csv file.\n"
+    #define UNKNOWN_FILE_TYPE_MESSAGE "Error: unknown file type. Should be a csv file.\n"
+    #define UNKNOWN_FILE_MESSAGE "Error: unknown file.\n"
 
     #include <stddef.h>
     #include <windows.h>
