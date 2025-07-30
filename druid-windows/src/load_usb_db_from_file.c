@@ -25,7 +25,7 @@
 /**
  * @brief Removes the trailing newline character from a string
  *
- * checks if the last character of the string is a newline ('\n')
+ * checks if the last character of the string is a newline
  * and replaces it with a null terminator to clean the string
  * 
  * @details static void remove_newline(char *str)
