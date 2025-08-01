@@ -1,13 +1,8 @@
 var searchData=
 [
-  ['increased_5fsize_0',['INCREASED_SIZE',['../druid_8h.html#ac82d93823b651f37126224fa29ff91a9',1,'druid.h']]],
-  ['index_1',['index',['../structusb__tools__s.html#a2a94042027892d5d3ad23bac2d7d8207',1,'usb_tools_s']]],
-  ['init_5fstruct_5fdb_5fand_5fdevice_2ec_2',['init_struct_db_and_device.c',['../init__struct__db__and__device_8c.html',1,'']]],
-  ['init_5fstruct_5funknown_5fusb_5fdb_5fentry_3',['init_struct_unknown_usb_db_entry',['../druid_8h.html#a1cd4cdc973f7b80bba07e9d6d9058cb5',1,'init_struct_unknown_usb_db_entry(usb_db_entry_t *unknown):&#160;init_struct_db_and_device.c'],['../init__struct__db__and__device_8c.html#a1cd4cdc973f7b80bba07e9d6d9058cb5',1,'init_struct_unknown_usb_db_entry(usb_db_entry_t *unknown):&#160;init_struct_db_and_device.c']]],
-  ['init_5fstruct_5fusb_5fdb_4',['init_struct_usb_db',['../druid_8h.html#a55673f20fa48bc1df7662974609ff0c9',1,'init_struct_usb_db(usb_db_t *usb_db, long unsigned int allocated_capacity):&#160;init_struct_db_and_device.c'],['../init__struct__db__and__device_8c.html#a55673f20fa48bc1df7662974609ff0c9',1,'init_struct_usb_db(usb_db_t *usb_db, long unsigned int allocated_capacity):&#160;init_struct_db_and_device.c']]],
-  ['init_5fstruct_5fusb_5fdb_5fentry_5',['init_struct_usb_db_entry',['../druid_8h.html#af0c8041b1177e101510b77bb8bdb08b7',1,'init_struct_usb_db_entry(usb_db_entry_t *usb_db_entry):&#160;init_struct_db_and_device.c'],['../init__struct__db__and__device_8c.html#af0c8041b1177e101510b77bb8bdb08b7',1,'init_struct_usb_db_entry(usb_db_entry_t *usb_db_entry):&#160;init_struct_db_and_device.c']]],
-  ['init_5fstruct_5fusb_5fdevice_5finfo_6',['init_struct_usb_device_info',['../druid_8h.html#a1339e6d096dc5cf017c5250baa0dd151',1,'init_struct_usb_device_info(usb_device_info_t *usb_device_info):&#160;init_struct_db_and_device.c'],['../init__struct__db__and__device_8c.html#a1339e6d096dc5cf017c5250baa0dd151',1,'init_struct_usb_device_info(usb_device_info_t *usb_device_info):&#160;init_struct_db_and_device.c']]],
-  ['init_5fusb_5fenumerator_7',['init_usb_enumerator',['../druid_8h.html#a61518dffbe6be5bfd80bd9f8bc624e8a',1,'init_usb_enumerator(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info):&#160;init_usb_enumerator.c'],['../init__usb__enumerator_8c.html#a61518dffbe6be5bfd80bd9f8bc624e8a',1,'init_usb_enumerator(usb_tools_t *usb_tools, usb_device_info_t *usb_device_info):&#160;init_usb_enumerator.c']]],
-  ['init_5fusb_5fenumerator_2ec_8',['init_usb_enumerator.c',['../init__usb__enumerator_8c.html',1,'']]],
-  ['interface_5fdata_9',['interface_data',['../structusb__tools__s.html#a08654b80550b04115ac3065d791d7f83',1,'usb_tools_s']]]
+  ['handle_5fcli_5finfo_5fflags_0',['handle_cli_info_flags',['../druid_8h.html#a519c75482eb2c6f7af800ba3a1409113',1,'handle_cli_info_flags(int ac, char **av):&#160;handle_cli_info_flags.c'],['../handle__cli__info__flags_8c.html#a519c75482eb2c6f7af800ba3a1409113',1,'handle_cli_info_flags(int ac, char **av):&#160;handle_cli_info_flags.c']]],
+  ['handle_5fcli_5finfo_5fflags_2ec_1',['handle_cli_info_flags.c',['../handle__cli__info__flags_8c.html',1,'']]],
+  ['help_5ffile_2',['HELP_FILE',['../druid_8h.html#a933be0eb91cff53a9172b2519c1f2569',1,'druid.h']]],
+  ['help_5fflag_3',['HELP_FLAG',['../druid_8h.html#a0188a50acb79f6a679d6f0abefdac682',1,'druid.h']]],
+  ['help_5fflag_5foption_4',['HELP_FLAG_OPTION',['../druid_8h.html#a062490fd8c52159de07dfd4c05689df4',1,'druid.h']]]
 ];

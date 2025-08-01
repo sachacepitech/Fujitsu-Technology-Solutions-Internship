@@ -1,15 +1,10 @@
 var searchData=
 [
-  ['data_5ffile_5fpath_0',['DATA_FILE_PATH',['../druid_8h.html#a5d52c8ea5f2ffec1ad2239fc02f3087c',1,'druid.h']]],
-  ['data_5fusb_5fcon_5fs_1',['data_usb_con_s',['../structdata__usb__con__s.html',1,'']]],
-  ['default_5fsize_2',['DEFAULT_SIZE',['../druid_8h.html#a9771cabfd673a8e350f1f8ce0b8f458f',1,'druid.h']]],
-  ['device_3',['device',['../structusb__tools__s.html#abe2ea70e78755038de5ec86eb65ed4c1',1,'usb_tools_s']]],
-  ['display_5ffile_4',['display_file',['../druid_8h.html#a6ad4a93a1f6cc1040a190d1a7631db45',1,'display_file(int ac, char **av, const char *flag, const char *optional_flag, const char *path_file):&#160;display_file.c'],['../display__file_8c.html#a6ad4a93a1f6cc1040a190d1a7631db45',1,'display_file(int ac, char **av, const char *flag, const char *optional_flag, const char *path_file):&#160;display_file.c']]],
-  ['display_5ffile_2ec_5',['display_file.c',['../display__file_8c.html',1,'']]],
-  ['display_5fknown_5fusb_5fdevice_6',['display_known_usb_device',['../druid_8h.html#a0d78286ca3535f95bbcf818709a913bf',1,'display_known_usb_device(usb_device_info_t *usb_device_info, usb_db_entry_t *usb_db_entry, usb_risk_stats_stats_t *usb_risk_stats, FILE *output_file):&#160;display_risk_stats_and_unknown_device.c'],['../display__risk__stats__and__unknown__device_8c.html#a0d78286ca3535f95bbcf818709a913bf',1,'display_known_usb_device(usb_device_info_t *usb_device_info, usb_db_entry_t *usb_db_entry, usb_risk_stats_stats_t *usb_risk_stats, FILE *output_file):&#160;display_risk_stats_and_unknown_device.c']]],
-  ['display_5fpartially_5fknown_5fusb_5fdevice_7',['display_partially_known_usb_device',['../druid_8h.html#afc679de059c2fe4ec5112bc34fac6e27',1,'display_partially_known_usb_device(usb_device_info_t *usb_device_info, usb_db_entry_t *usb_db_entry, usb_risk_stats_stats_t *usb_risk_stats, FILE *output_file):&#160;display_risk_stats_and_unknown_device.c'],['../display__risk__stats__and__unknown__device_8c.html#afc679de059c2fe4ec5112bc34fac6e27',1,'display_partially_known_usb_device(usb_device_info_t *usb_device_info, usb_db_entry_t *usb_db_entry, usb_risk_stats_stats_t *usb_risk_stats, FILE *output_file):&#160;display_risk_stats_and_unknown_device.c']]],
-  ['display_5frisk_5fstats_5fand_5funknown_5fdevice_2ec_8',['display_risk_stats_and_unknown_device.c',['../display__risk__stats__and__unknown__device_8c.html',1,'']]],
-  ['display_5frisk_5ftable_9',['display_risk_table',['../druid_8h.html#ad34f77e3da4ecf9b852f63777b46cb7f',1,'display_risk_table(usb_risk_stats_stats_t *usb_risk_stats, FILE *output_file):&#160;display_risk_stats_and_unknown_device.c'],['../display__risk__stats__and__unknown__device_8c.html#ad34f77e3da4ecf9b852f63777b46cb7f',1,'display_risk_table(usb_risk_stats_stats_t *usb_risk_stats, FILE *output_file):&#160;display_risk_stats_and_unknown_device.c']]],
-  ['display_5funknown_5fusb_5fdevice_10',['display_unknown_usb_device',['../display__risk__stats__and__unknown__device_8c.html#a52387a29286a0880311870e88e4b7cf9',1,'display_unknown_usb_device(usb_device_info_t *usb_device_info, usb_db_entry_t *usb_db_entry, usb_risk_stats_stats_t *usb_risk_stats, FILE *output_file):&#160;display_risk_stats_and_unknown_device.c'],['../druid_8h.html#a52387a29286a0880311870e88e4b7cf9',1,'display_unknown_usb_device(usb_device_info_t *usb_device_info, usb_db_entry_t *usb_db_entry, usb_risk_stats_stats_t *usb_risk_stats, FILE *output_file):&#160;display_risk_stats_and_unknown_device.c']]],
-  ['druid_2eh_11',['druid.h',['../druid_8h.html',1,'']]]
+  ['check_5falready_5fseen_0',['check_already_seen',['../scan__connected__usb__and__check__risks_8c.html#a481faf1055ea6bb3c913b5149b9cbb08',1,'scan_connected_usb_and_check_risks.c']]],
+  ['check_5ffor_5foutput_5ffile_1',['check_for_output_file',['../scan__connected__usb__and__check__risks_8c.html#a0191f27ba3b4b10dfc2bb55f788d5652',1,'scan_connected_usb_and_check_risks.c']]],
+  ['check_5ffor_5fupdate_5ffile_5fand_5fload_2',['check_for_update_file_and_load',['../load__usb__db__from__file_8c.html#ace2422dafa9d286b3f6b8bc40855b677',1,'load_usb_db_from_file.c']]],
+  ['check_5fusb_5fexist_3',['check_usb_exist',['../scan__connected__usb__and__check__risks_8c.html#a5229208340ea8c8b3ab7cd6048c5ef55',1,'scan_connected_usb_and_check_risks.c']]],
+  ['cli_5fargs_5fs_4',['cli_args_s',['../structcli__args__s.html',1,'']]],
+  ['cli_5fargs_5ft_5',['cli_args_t',['../druid_8h.html#a7018b2e489fe2f9d53befe4f3d3e73cf',1,'druid.h']]],
+  ['count_6',['count',['../structusb__db__s.html#a76d971a3c552bc58ba9f0d5fceae9806',1,'usb_db_s']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['read_5fmode_0',['READ_MODE',['../druid_8h.html#a064cc7153fdb5596b2079d865dd9e055',1,'druid.h']]],
-  ['remove_5fnewline_1',['remove_newline',['../load__usb__db__from__file_8c.html#a429655f2ccd8312615d99eae8a30dca4',1,'load_usb_db_from_file.c']]]
+  ['path_5fusb_0',['path_usb',['../structdata__usb__con__s.html#afececf3fbcf011ab6b16bef12fca46e0',1,'data_usb_con_s']]],
+  ['product_5fid_1',['product_id',['../structusb__db__entry__s.html#a41fefe6c9a842e7eb316b03acd42ffdb',1,'usb_db_entry_s::product_id'],['../structdata__usb__con__s.html#a41fefe6c9a842e7eb316b03acd42ffdb',1,'data_usb_con_s::product_id'],['../structseen__device__s.html#a2b5a2a8a014433db1d6143289ed993da',1,'seen_device_s::product_id'],['../druid_8h.html#a6b41096e44c646df97fba9581acb4b4a',1,'PRODUCT_ID:&#160;druid.h']]],
+  ['product_5fname_2',['product_name',['../structusb__db__entry__s.html#a7832afc9ae643a35b619d40ddcad0e94',1,'usb_db_entry_s::product_name'],['../structdata__usb__con__s.html#a7832afc9ae643a35b619d40ddcad0e94',1,'data_usb_con_s::product_name'],['../druid_8h.html#a2fd81ded1b6a151f629441182c358d5b',1,'PRODUCT_NAME:&#160;druid.h']]]
 ];

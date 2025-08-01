@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['check_5falready_5fseen_0',['check_already_seen',['../scan__connected__usb__and__check__risks_8c.html#a8a6db7242803d18d533b9cfffdce9899',1,'scan_connected_usb_and_check_risks.c']]],
-  ['check_5ffor_5foutput_5ffile_1',['check_for_output_file',['../scan__connected__usb__and__check__risks_8c.html#a0191f27ba3b4b10dfc2bb55f788d5652',1,'scan_connected_usb_and_check_risks.c']]],
-  ['check_5ffor_5fupdate_5ffile_5fand_5fload_2',['check_for_update_file_and_load',['../load__usb__db__from__file_8c.html#a09dc583cc2a534b9e5f18b6cb2be313b',1,'load_usb_db_from_file.c']]],
-  ['check_5fusb_5fexist_3',['check_usb_exist',['../scan__connected__usb__and__check__risks_8c.html#a5229208340ea8c8b3ab7cd6048c5ef55',1,'scan_connected_usb_and_check_risks.c']]],
-  ['cli_5fargs_5fs_4',['cli_args_s',['../structcli__args__s.html',1,'']]],
-  ['cli_5fargs_5ft_5',['cli_args_t',['../druid_8h.html#a7018b2e489fe2f9d53befe4f3d3e73cf',1,'druid.h']]],
-  ['count_6',['count',['../structusb__db__s.html#a19a63ad897ba97c3f86b19ff120b8785',1,'usb_db_s']]]
+  ['ac_0',['ac',['../structcli__args__s.html#af08039a580bcbe148c7b7582cda1d655',1,'cli_args_s']]],
+  ['add_5fnew_5fdata_1',['add_new_data',['../load__usb__db__from__file_8c.html#ab06c98c5c590ea62fc00838d34465d3e',1,'load_usb_db_from_file.c']]],
+  ['add_5fto_5fseen_2',['add_to_seen',['../scan__connected__usb__and__check__risks_8c.html#af8ed0fded1bf9983d2d9cc8325183486',1,'scan_connected_usb_and_check_risks.c']]],
+  ['and_20illegitimate_20devices_20em_20windows_20v1_200_3',['DRUID – &lt;em&gt;Detection Rogue USB and Illegitimate Devices&lt;/em&gt; (Windows v1.0)',['../index.html',1,'']]],
+  ['append_5fusb_5fentry_5ffrom_5fline_4',['append_usb_entry_from_line',['../load__usb__db__from__file_8c.html#abec0ee57c909e115d0648599f58d0682',1,'load_usb_db_from_file.c']]],
+  ['av_5',['av',['../structcli__args__s.html#a271795ac490fc55c6509a4099bfa084f',1,'cli_args_s']]]
 ];
