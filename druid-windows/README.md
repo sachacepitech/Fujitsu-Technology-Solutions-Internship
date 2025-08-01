@@ -20,7 +20,7 @@ To view the full list of options and usage examples :
 druid.exe --help
 ```
 
-This will display:
+This will display :
 
  - Available commands
 
@@ -47,7 +47,7 @@ setupapi.h
 ```
 
 📄 License
-This project is licensed under the **Creative Commons Attribution-ShareAlike 4.0 International License** (CC BY-SA 4.0 DEED).
+ - This project is licensed under the **Creative Commons Attribution-ShareAlike 4.0 International License** (CC BY-SA 4.0 DEED).
 
 👤 Author
-Developed by **Sacha Lemée**, Junior Cybersecurity Consultant at **Fujitsu Technology Solutions SAS**, during an internship at **EPITECH Paris**.
+ - Developed by **Sacha Lemée**, Junior Cybersecurity Consultant at **Fujitsu Technology Solutions SAS**, during an internship at **EPITECH Paris**.
