@@ -1,6 +1,6 @@
 # DRUID – *Detection Rogue USB and Illegitimate Devices* (linux v1.0)
 
-![DRUID logo](ressources/DRUID_green_transparent_no_label_40x43.png)
+![DRUID logo](ressources/DRUID_green_transparent_no_label_4470x4470.png)
 
 DRUID is a tool that analyzes connected USB devices and classifies them by risk level based on a reference database.
 
