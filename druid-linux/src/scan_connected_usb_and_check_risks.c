@@ -59,7 +59,6 @@ static int check_for_output_file(cli_args_t *cli_args)
  *             usb_device_info_t *usb_device_info)
  * @param usb_tools Pointer to the usb_tools_t structure containing the current device
  * @param usb_device_info Pointer to the usb_device_info_t structure to store extracted data
- * @return None (void)
  */
 static void get_vendor_product_device(usb_tools_t *usb_tools,
     usb_device_info_t *usb_device_info)
@@ -123,7 +122,6 @@ static int check_already_seen(usb_tools_t *usb_tools,
  *             size_t *seen_count)
  * @param usb_device_info Pointer to the usb_device_info_t structure containing current device info
  * @param seen_count Pointer to the current count of seen devices (incremented if added)
- * @return None (void)
  */
 static void add_to_seen(usb_device_info_t *usb_device_info, size_t *seen_count)
 {
@@ -150,7 +148,7 @@ static void add_to_seen(usb_device_info_t *usb_device_info, size_t *seen_count)
  * @param usb_db_entry Pointer to a reusable usb_db_entry_t structure (for matches)
  * @param usb_device_info Pointer to the usb_device_info_t structure containing current device info
  * @param usb_risk_stats Pointer to the usb_risk_stats_stats_t structure to update statistics
- * @return None (void)
+ * @param output_file Pointer to the FILE object where device information will be logged
  */
 static void check_usb_exist(usb_db_t *usb_db, usb_db_entry_t *usb_db_entry,
     usb_device_info_t *usb_device_info, usb_risk_stats_stats_t *usb_risk_stats,

@@ -30,7 +30,6 @@
  * 
  * @details static void remove_newline(char *str)
  * @param str Pointer to the null-terminated string to modify
- * @return None (void)
  */
 static void remove_newline(char *str)
 {
@@ -52,7 +51,6 @@ static void remove_newline(char *str)
  *             char *line)
  * @param usb_db_entry Pointer to the usb_db_entry_t structure to fill
  * @param line Input CSV formatted string containing USB device data
- * @return None (void)
  */
 static void fill_struct_temp_data(usb_db_entry_t *usb_db_entry, char *line)
 {

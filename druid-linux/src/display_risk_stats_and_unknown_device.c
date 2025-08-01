@@ -39,7 +39,6 @@
  * @param usb_db_entry Pointer to the matching USB database entry (vendor and product matched)
  * @param usb_risk_stats Pointer to the risk statistics structure to update the low risk counter
  * @param output_file Optional file pointer to write output (if not NULL)
- * @return None (void)
  */
 void display_known_usb_device(usb_device_info_t *usb_device_info,
     usb_db_entry_t *usb_db_entry, usb_risk_stats_stats_t *usb_risk_stats,
@@ -102,7 +101,6 @@ void display_known_usb_device(usb_device_info_t *usb_device_info,
  * @param usb_db_entry Pointer to the partially matching USB database entry (vendor matched only)
  * @param usb_risk_stats Pointer to the risk statistics structure to update the medium risk counter
  * @param output_file Optional file pointer to write output (if not NULL)
- * @return None (void)
  */
 void display_partially_known_usb_device(usb_device_info_t *usb_device_info,
     usb_db_entry_t *usb_db_entry, usb_risk_stats_stats_t *usb_risk_stats,
@@ -164,7 +162,6 @@ void display_partially_known_usb_device(usb_device_info_t *usb_device_info,
  * @param usb_db_entry Pointer to the database entry (likely empty/placeholder)
  * @param usb_risk_stats Pointer to the risk statistics structure to update the major risk counter
  * @param output_file Optional file pointer to write output (if not NULL)
- * @return None (void)
  */
 void display_unknown_usb_device(usb_device_info_t *usb_device_info,
     usb_db_entry_t *usb_db_entry, usb_risk_stats_stats_t *usb_risk_stats,
@@ -222,7 +219,6 @@ void display_unknown_usb_device(usb_device_info_t *usb_device_info,
  *             FILE *output_file)
  * @param usb_risk_stats Pointer to the structure containing aggregated risk counters
  * @param output_file Optional file pointer to write output (if not NULL)
- * @return None (void)
  */
 void display_risk_table(usb_risk_stats_stats_t *usb_risk_stats, FILE *output_file)
 {

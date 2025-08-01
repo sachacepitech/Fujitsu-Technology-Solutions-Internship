@@ -28,7 +28,6 @@
  * 
  * @details void free_unknown_usb_db_entry(usb_db_entry_t *unknown)
  * @param unknown Pointer to the usb_db_entry_t structure to be freed
- * @return None (void)
  */
 void free_unknown_usb_db_entry(usb_db_entry_t *unknown)
 {
@@ -44,7 +43,6 @@ void free_unknown_usb_db_entry(usb_db_entry_t *unknown)
  * 
  * @details void free_usb_db(usb_db_t *usb_db)
  * @param usb_db Pointer to the usb_db_t structure to be freed
- * @return None (void)
  */
 void free_usb_db(usb_db_t *usb_db)
 {

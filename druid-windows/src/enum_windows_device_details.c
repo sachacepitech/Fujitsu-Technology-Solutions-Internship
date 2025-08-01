@@ -71,7 +71,6 @@ PSP_DEVICE_INTERFACE_DETAIL_DATA_A get_device_interface_detail(void* device_info
  * @param hardware_id Pointer to the null-terminated hardware ID string
  * @param vendor_id Pointer to a buffer (at least 5 bytes) to store the extracted vendor ID
  * @param product_id Pointer to a buffer (at least 5 bytes) to store the extracted product ID
- * @return None (void)
  */
 void extract_vendor_and_product_ids_from_hardware_id(const char* hardware_id,
     char* vendor_id, char* product_id)
@@ -104,7 +103,6 @@ void extract_vendor_and_product_ids_from_hardware_id(const char* hardware_id,
  * @param property Identifier for the property to retrieve
  * @param buffer Pointer to a buffer to store the retrieved property value
  * @param size Size of the buffer in bytes
- * @return None (void)
  */
 void get_device_property(void* device_info_set, SP_DEVINFO_DATA* device_info_data,
     unsigned long property, char* buffer, unsigned long size)

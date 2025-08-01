@@ -56,7 +56,6 @@ static int check_for_output_file(cli_args_t *cli_args)
  * 
  * @details void str_to_lower(char *str)
  * @param str Pointer to a null-terminated string to be modified in-place
- * @return None (void)
  */
 void str_to_lower(char *str) {
     for (; *str; ++str) {
@@ -80,7 +79,6 @@ void str_to_lower(char *str) {
  *        memory for strings is dynamically allocated and must be freed by the caller
  * @param dev_info_data Pointer to SP_DEVINFO_DATA for the current device
  * 
- * @return None (void)
  */
 void get_vendor_product_device(usb_tools_t *usb_tools,
     usb_device_info_t *usb_device_info, SP_DEVINFO_DATA* dev_info_data)
@@ -146,7 +144,6 @@ static int check_already_seen(usb_device_info_t *usb_device_info, long unsigned 
  * @param usb_device_info Pointer to the usb_device_info_t structure containing current device info
  * @param seen_count Pointer to the current count of seen devices (incremented if added)
  * 
- * @return None (void)
  */
 static void add_to_seen(usb_device_info_t *usb_device_info, long unsigned int *seen_count)
 {
@@ -174,8 +171,7 @@ static void add_to_seen(usb_device_info_t *usb_device_info, long unsigned int *s
  * @param usb_db_entry Pointer to a reusable usb_db_entry_t structure (for matches)
  * @param usb_device_info Pointer to the usb_device_info_t structure containing current device info
  * @param usb_risk_stats Pointer to the usb_risk_stats_stats_t structure to update statistics
- * 
- * @return None (void)
+ * @param output_file Pointer to the FILE object where device information will be logged
  */
 static void check_usb_exist(usb_db_t *usb_db, usb_db_entry_t *usb_db_entry,
     usb_device_info_t *usb_device_info, usb_risk_stats_stats_t *usb_risk_stats,
@@ -220,7 +216,6 @@ static void check_usb_exist(usb_db_t *usb_db, usb_db_entry_t *usb_db_entry,
  * @param usb_device_info Pointer to the usb_device_info_t structure containing device info to free
  * @param detail Pointer to PSP_DEVICE_INTERFACE_DETAIL_DATA_A structure to free
  * 
- * @return None (void)
  */
 void free_usb_device_and_details(usb_device_info_t *usb_device_info,
     PSP_DEVICE_INTERFACE_DETAIL_DATA_A detail)

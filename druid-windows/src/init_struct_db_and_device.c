@@ -28,7 +28,6 @@
  * 
  * @details void init_struct_usb_device_info(usb_device_info_t *usb_device_info)
  * @param usb_device_info Pointer to the usb_device_info_t structure to be initialized
- * @return None (void)
  */
 void init_struct_usb_device_info(usb_device_info_t *usb_device_info)
 {
@@ -69,7 +68,6 @@ int init_struct_usb_db(usb_db_t *usb_db, long unsigned int allocated_capacity)
  * 
  * @details void init_struct_usb_db_entry(usb_db_entry_t *usb_db_entry)
  * @param usb_db_entry Pointer to the usb_db_entry_t structure to be initialized
- * @return None (void)
  */
 void init_struct_usb_db_entry(usb_db_entry_t *usb_db_entry)
 {
@@ -87,7 +85,6 @@ void init_struct_usb_db_entry(usb_db_entry_t *usb_db_entry)
  * 
  * @details void init_struct_unknown_usb_db_entry(usb_db_entry_t *unknown)
  * @param unknown Pointer to the usb_db_entry_t structure to be initialized as unknown
- * @return None (void)
  */
 void init_struct_unknown_usb_db_entry(usb_db_entry_t *unknown)
 {
