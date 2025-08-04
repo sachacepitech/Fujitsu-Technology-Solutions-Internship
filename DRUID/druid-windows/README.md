@@ -36,7 +36,7 @@ This will display :
 
 ## 📦 Requirements
 
-Make sure your development environment supports Windows API development (e.g., Visual Studio with the Windows SDK):
+Make sure your development environment supports Windows API development (e.g., Visual Studio with the Windows SDK) :
 
 This version is designed for Windows and uses the native Windows APIs :
 
