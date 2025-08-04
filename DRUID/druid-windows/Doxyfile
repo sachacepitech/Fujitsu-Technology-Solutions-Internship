@@ -42,7 +42,7 @@ DOXYFILE_ENCODING      = UTF-8
 # title of most generated pages and in a few other places.
 # The default value is: My Project.
 
-PROJECT_NAME           = "DRUID linux"
+PROJECT_NAME           = "DRUID Windows"
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number. This
 # could be handy for archiving the generated documentation or if some version
@@ -68,7 +68,7 @@ PROJECT_LOGO           = ressources/DRUID_green_transparent_no_label_40x43.png
 # entered, it will be relative to the location where doxygen was started. If
 # left blank the current directory will be used.
 
-OUTPUT_DIRECTORY       = /home/acepitech/Epitech/stage/SCRAT/druid-linux
+OUTPUT_DIRECTORY       = /home/acepitech/Epitech/stage/Fujitsu-Technology-Solutions/DRUID/druid-linux
 
 # If the CREATE_SUBDIRS tag is set to YES then doxygen will create up to 4096
 # sub-directories (in 2 levels) under the output directory of each output format
@@ -943,7 +943,7 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = /home/acepitech/Epitech/stage/SCRAT/druid-linux
+INPUT                  = /home/acepitech/Epitech/stage/SCRAT/druid-windows
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses
