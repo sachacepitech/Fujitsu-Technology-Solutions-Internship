@@ -2,7 +2,7 @@
 # @name           druid
 # @version        1.0
 # @author         Sacha Lemée
-# @author 		  Fujitsu Technology Solutions
+# @author         Fujitsu Technology Solutions
 # @file           Makefile
 # @date           17 July 2025
 # @copyright      Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0 DEED)
