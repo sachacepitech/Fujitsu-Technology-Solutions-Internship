@@ -76,12 +76,12 @@ $(function() {
 <div class="textblock"><p><a class="anchor" id="md_README"></a> <img src="ressources/DRUID_green_transparent_no_label_4470x4470.png" alt="DRUID logo" class="inline"/></p>
 <p>DRUID is a tool that analyzes connected USB devices and classifies them by risk level based on a reference database.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md2"></a>
-🚀 Usage</h1>
+<h2><a class="anchor" id="autotoc_md2"></a>
+🚀 Usage</h2>
 <div class="fragment"><div class="line">druid.exe [options]</div>
 </div><!-- fragment --><p>By default, if no argument is passed, the program automatically detects connected USB devices and compares them to the database.</p>
-<h1><a class="anchor" id="autotoc_md3"></a>
-📖 Options</h1>
+<h2><a class="anchor" id="autotoc_md3"></a>
+📖 Options</h2>
 <p>To view the full list of options and usage examples :</p>
 <div class="fragment"><div class="line">druid.exe --help</div>
 </div><!-- fragment --><p>This will display :</p>
@@ -92,16 +92,28 @@ $(function() {
 <li>License details</li>
 <li>Required dependencies</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md4"></a>
-📦 Requirements</h1>
-<p>Make sure your development environment supports Windows API development (e.g., Visual Studio with the Windows SDK):</p>
+<h2><a class="anchor" id="autotoc_md4"></a>
+📦 Requirements</h2>
+<p>Make sure your development environment supports Windows API development (e.g., Visual Studio with the Windows SDK) :</p>
 <p>This version is designed for Windows and uses the native Windows APIs :</p>
 <div class="fragment"><div class="line">windows.h</div>
 </div><!-- fragment --><div class="fragment"><div class="line">setupapi.h</div>
-</div><!-- fragment --><p>📄 License</p><ul>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md5"></a>
+📊 Database</h2>
+<p>This project uses a <b>modified version</b> of the USB identifier database from :</p>
+<p><b>Original source</b> : </p><div class="fragment"><div class="line">http://www.linux-usb.org/usb.ids</div>
+</div><!-- fragment --><p> <b>Author and contact</b> : <b>Stephen J. Gowdy</b> </p><div class="fragment"><div class="line">&lt;linux.usb.ids@gmail.com&gt;  </div>
+</div><!-- fragment --><p> <b>Latest version used</b> : 2025.07.26</p>
+<p><b>Original name and format</b> : usb.ids, structured text file</p>
+<p><b>Modifications</b> : conversion to custom CSV format (semicolon) for internal use, name changed to <a class="el" href="vendor__id__product__id__and__name_8csv.html">vendor_id_product_id_and_name.csv</a></p>
+<h2><a class="anchor" id="autotoc_md6"></a>
+📄 License</h2>
+<ul>
 <li>This project is licensed under the <b>Creative Commons Attribution-ShareAlike 4.0 International License</b> (CC BY-SA 4.0 DEED).</li>
 </ul>
-<p>👤 Author</p><ul>
+<h2><a class="anchor" id="autotoc_md7"></a>
+👤 Author</h2>
+<ul>
 <li>Developed by <b>Sacha Lemée</b>, Junior Cybersecurity Consultant at <b>Fujitsu Technology Solutions SAS</b>, during an internship at <b>EPITECH Paris</b>. </li>
 </ul>
 </div></div><!-- PageDoc -->

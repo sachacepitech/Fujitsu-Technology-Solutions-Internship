@@ -68,7 +68,7 @@ PROJECT_LOGO           = ressources/DRUID_green_transparent_no_label_40x43.png
 # entered, it will be relative to the location where doxygen was started. If
 # left blank the current directory will be used.
 
-OUTPUT_DIRECTORY       = /home/acepitech/Epitech/stage/Fujitsu-Technology-Solutions/DRUID/druid-linux
+OUTPUT_DIRECTORY       = /home/acepitech/Epitech/stage/Fujitsu-Technology-Solutions/DRUID/druid-windows
 
 # If the CREATE_SUBDIRS tag is set to YES then doxygen will create up to 4096
 # sub-directories (in 2 levels) under the output directory of each output format

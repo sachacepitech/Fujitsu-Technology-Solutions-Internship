@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>DRUID Windows: Main Page</title>
+<title>DRUID linux: DRUID – &lt;em&gt;Detection Rogue USB and Illegitimate Devices&lt;/em&gt; (linux v1.0)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="DRUID_green_transparent_no_label_40x43.png"/></td>
   <td id="projectalign">
-   <div id="projectname">DRUID Windows<span id="projectnumber">&#160;v1.0</span>
+   <div id="projectname">DRUID linux<span id="projectnumber">&#160;v1.0</span>
    </div>
   </td>
  </tr>
@@ -69,10 +69,54 @@ $(function() {
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">DRUID Windows Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">DRUID – <em>Detection Rogue USB and Illegitimate Devices</em> (linux v1.0) </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_README"></a> <img src="ressources/DRUID_green_transparent_no_label_4470x4470.png" alt="DRUID logo" class="inline"/></p>
+<p>DRUID is a tool that analyzes connected USB devices and classifies them by risk level based on a reference database.</p>
+<hr  />
+<h2><a class="anchor" id="autotoc_md2"></a>
+🚀 Usage</h2>
+<div class="fragment"><div class="line">druid [options]</div>
+</div><!-- fragment --><p>By default, if no argument is passed, the program automatically detects connected USB devices and compares them to the database.</p>
+<h2><a class="anchor" id="autotoc_md3"></a>
+📖 Options</h2>
+<p>To view the full list of options and usage examples :</p>
+<div class="fragment"><div class="line">druid --help</div>
+</div><!-- fragment --><p>This will display :</p>
+<ul>
+<li>Available commands</li>
+<li>Expected CSV input format</li>
+<li>Example use cases</li>
+<li>License details</li>
+<li>Required dependencies</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md4"></a>
+📦 Requirements</h2>
+<p>Make sure systemd is installed on your system :</p>
+<p><b>Debian / Ubuntu</b>: </p><div class="fragment"><div class="line">sudo apt-get install systemd</div>
+</div><!-- fragment --><p><b>Red Hat</b>: </p><div class="fragment"><div class="line">sudo yum install systemd</div>
+</div><!-- fragment --><p><b>Arch Linux</b>: </p><div class="fragment"><div class="line">sudo pacman -S systemd</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md5"></a>
+📊 Database</h2>
+<p>This project uses a <b>modified version</b> of the USB identifier database from :</p>
+<p><b>Original source</b> : </p><div class="fragment"><div class="line">http://www.linux-usb.org/usb.ids</div>
+</div><!-- fragment --><p> <b>Author and contact</b> : <b>Stephen J. Gowdy</b> </p><div class="fragment"><div class="line">&lt;linux.usb.ids@gmail.com&gt;  </div>
+</div><!-- fragment --><p> <b>Latest version used</b> : 2025.07.26</p>
+<p><b>Original name and format</b> : usb.ids, structured text file</p>
+<p><b>Modifications</b> : conversion to custom CSV format (semicolon) for internal use, name changed to <a class="el" href="vendor__id__product__id__and__name_8csv.html">vendor_id_product_id_and_name.csv</a></p>
+<h2><a class="anchor" id="autotoc_md6"></a>
+📄 License</h2>
+<ul>
+<li>This project is licensed under the <b>Creative Commons Attribution-ShareAlike 4.0 International License</b> (CC BY-SA 4.0 DEED).</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md7"></a>
+👤 Author</h2>
+<ul>
+<li>Developed by <b>Sacha Lemée</b>, Junior Cybersecurity Consultant at <b>Fujitsu Technology Solutions SAS</b>, during an internship at <b>EPITECH Paris</b>. </li>
+</ul>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
