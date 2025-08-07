@@ -60,7 +60,7 @@ http://www.linux-usb.org/usb.ids
 ```
 <linux.usb.ids@gmail.com>  
 ```
-**Latest version used** : 2025.07.26
+**Latest version used** : 2025.07.17
 
 **Original name and format** : usb.ids, structured text file
 
